@@ -33,7 +33,7 @@ The system caters to three main user profiles: Customer, Restaurant, and Rider, 
 The system utilizes various data structures and algorithms for efficient operations:
 - Queue for order management
 - Hashing for storing restaurant and rider details
-- Circular linked list for menu representation
+- Doubly linked list for menu representation
 - Merge sort for sorting orders
 - Stack for managing delivery orders
 - Priority queue for processing paid orders
