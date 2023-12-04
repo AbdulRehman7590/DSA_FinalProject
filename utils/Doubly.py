@@ -39,6 +39,19 @@ class DoubleLinkedList:
             temp.next = new_tail
 
         return new_tail
+    
+    def insert(self, data):
+        if self.head is None:
+            self.head = Node(data)
+            return self.head
+
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+
+        temp.next = Node(data)
+        temp.next.previous = temp
+        return temp.next
 
     def search(self, data):
         if self.head is None:
