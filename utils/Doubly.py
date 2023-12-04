@@ -12,19 +12,6 @@ class DoubleLinkedList:
     def is_empty(self):
         return self.head is None
 
-    def insert(self, data):
-        if self.head is None:
-            self.head = Node(data)
-            return self.head
-
-        temp = self.head
-        while temp.next is not None:
-            temp = temp.next
-
-        temp.next = Node(data)
-        temp.next.previous = temp
-        return temp.next
-
     def insert_at_head(self, data):
         if self.head is None:
             self.head = Node(data)
