@@ -1,13 +1,16 @@
+# ------------------------- Node --------------------------------- #
 class Node:
     def __init__(self, value):
         self.data = value
         self.next = None
 
+# ------------------------ Queue --------------------------------- #
 class Queue:
     def __init__(self):
         self.front = None
         self.rear = None
 
+    # ----------------------- Enqueue ---------------------------- #
     def enqueue(self, value):
         new_node = Node(value)
         if self.is_empty():
@@ -17,6 +20,7 @@ class Queue:
             self.rear.next = new_node
             self.rear = new_node
 
+    # ----------------------- Dequeue ---------------------------- #
     def dequeue(self):
         if self.is_empty():
             print("Queue is empty")
@@ -27,18 +31,20 @@ class Queue:
 
         if self.front is None:
             self.rear = None
-
         return dequeued_value
 
+    # ----------------------- Front ---------------------------- #
     def front_element(self):
         if self.is_empty():
             print("Queue is empty")
             return None
         return self.front.data
 
+    # ---------------------- Empty? --------------------------- #
     def is_empty(self):
         return self.front is None
 
+    # --------------------- Display --------------------------- #
     def display(self):
         if self.is_empty():
             print("Queue is empty")
@@ -49,20 +55,3 @@ class Queue:
                 current = current.next
             print("rear")
 
-if __name__ == "__main__":
-    queue = Queue()
-
-    queue.enqueue(10)
-    queue.enqueue(20)
-    queue.enqueue(30)
-
-    print("Queue:")
-    queue.display()
-
-    print("Front element:", queue.front_element())
-
-    print("Dequeued element:", queue.dequeue())
-
-    print("Queue after dequeue:")
-    queue.display()
- 
