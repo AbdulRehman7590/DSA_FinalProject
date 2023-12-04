@@ -22,6 +22,9 @@ class DoubleLinkedList:
             self.head = new_head
 
         return self.head
+    
+    def randomm():
+        pass
 
     def insert_at_tail(self, data):
         if self.head is None:
