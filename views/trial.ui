@@ -178,7 +178,7 @@
    <widget class="QWidget" name="scrollAreaWidgetContents">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-445</x>
       <y>0</y>
       <width>944</width>
       <height>126</height>
@@ -410,7 +410,7 @@
    <widget class="QWidget" name="scrollAreaWidgetContents_2">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-445</x>
       <y>0</y>
       <width>944</width>
       <height>126</height>
