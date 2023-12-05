@@ -10,6 +10,7 @@ class MainWindow(QMainWindow):
         loadUi("SignUp.ui",self)
         
         
+        
 app = QApplication(sys.argv)
 window = MainWindow()
 window.show()
