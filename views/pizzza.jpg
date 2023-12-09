@@ -1,9 +1,0 @@
-<RCC>
-  <qresource prefix="pic1">
-    <file>addtoocart.png</file>
-    <file>wishicon.png</file>
-    <file>wishlistwicon.jpg</file>
-    <file>pizza.jpg</file>
-    <file>download.jpg</file>
-  </qresource>
-</RCC>

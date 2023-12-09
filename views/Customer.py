@@ -7,7 +7,11 @@ import time
 class MainWindow(QMainWindow): 
     def __init__(self):
         super(MainWindow,self).__init__()
+<<<<<<< HEAD
         loadUi(r"D:\DSAFinalProject\cs261f23pid28\views\Check.ui", self)
+=======
+        loadUi("Customer.ui", self)
+>>>>>>> bc9b2b4734cc6f981e7ab270f038e64e2459f973
       
 
         
