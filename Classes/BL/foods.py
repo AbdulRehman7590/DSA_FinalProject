@@ -5,6 +5,7 @@ import typing
 class Food():
         def __init__(self,food_name,food_price,food_description,food_id):
                 
+                self.__food_rating = []
                 self.__food_id = food_id
                 self.__food_name = food_name
                 self.__food_price = food_price
@@ -27,6 +28,9 @@ class Food():
         def food_id(self)->str:
                 return self.__food_id
         
+        @property
+        def food_rating(self)->int:
+                return sum(self.__food_rating)/len(self.__food_rating)
 
         # ------------------------ Setter ------------------------------ #
         @food_name.setter
@@ -44,4 +48,9 @@ class Food():
         @food_id.setter
         def food_id(self,food_id:str)->None:
                 self.__food_id = food_id
+
+
+        # ------------------------ Methods ------------------------------ #
+        def add_rating(self,rating:int)->None:
+                self.__food_rating.append(rating)
 
