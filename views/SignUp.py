@@ -7,7 +7,7 @@ import time
 class MainWindow(QMainWindow): 
     def __init__(self):
         super(MainWindow,self).__init__()
-        loadUi("SignUp.ui",self)
+        loadUi("trial.ui",self)
     #     #self.SignInButton.clicked.connect(lambda: self.toggle_ui(0))
     #     #self.SignUpButton.clicked.connect(lambda: self.toggle_ui(1))
     # def toggle_ui(self, index):
