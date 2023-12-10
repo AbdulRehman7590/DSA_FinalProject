@@ -1,12 +1,5 @@
 # ------------------------ Libraries ------------------------------- #
 from classes.BL.foods import Food
-
-import os,sys
-# Change the path to the project root directory to import files from different folders
-current_dir = os.path.dirname(os.path.realpath(__file__))
-project_root = os.path.abspath(os.path.join(current_dir, os.pardir))
-sys.path.append(project_root)
-
 from models.Doubly import DoubleLinkedList
 
 # ------------------------ Menu CLass ------------------------------ #
@@ -26,15 +19,18 @@ class Menu():
 
 
         # ------------------------ Methods ------------------------------ #
-        def add_food(self,food):
+        def add_food(self):
+                food = Food()
                 self.food_list.insert_at_tail(food)
         
-        def remove_food(self,food):
+        def remove_food(self):
+                food = Food()
                 self.food_list.remove(food)
 
         def display_food(self):
                 self.food_list.display()
         
-        def search_food(self,food):
+        def search_food(self):
+                food = Food()
                 return self.food_list.search(food)
         
