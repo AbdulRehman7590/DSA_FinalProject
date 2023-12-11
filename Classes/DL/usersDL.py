@@ -1,8 +1,8 @@
 # ------------------------ Libraries ------------------------------- #
 import typing
-from Classes.BL.Users import User
 from models.Doubly import DoubleLinkedList
 from models.BST import BST
+from classes.BL.users import User
 
 
 # ------------------------ UserDL ------------------------------- #

@@ -4,7 +4,6 @@ from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtCore import *
-from Classes.DL.usersDL import usersDL
 
 import os,sys
 # Change the path to the project root directory to import files from different folders
@@ -12,13 +11,15 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, os.pardir))
 sys.path.append(project_root)
 
+from classes.DL.usersDL import UsersDL as DL
+
 # ---------------------- Program -------------------------------- #
 class Mainwindow(QMainWindow):
     def __init__(self):
         super().__init__()
         loadUi("views/main.ui", self)
+        
         self.pushButton.clicked.connect(self.TakeInput)
-        usersDL.add_user()
         
         
 
@@ -55,7 +56,7 @@ class Mainwindow(QMainWindow):
         user = user(Name, email, Password, address)
 
         # Add the user to the UsersDL
-        usersDL.add_user(user)
+        DL.add_user(user)
         return user
         
 
