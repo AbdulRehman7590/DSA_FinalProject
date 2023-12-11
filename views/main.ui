@@ -52,7 +52,7 @@
        <string notr="true">background :rgb(253, 255, 242)</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="login_Page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -288,7 +288,22 @@
                   <height>16777215</height>
                  </size>
                 </property>
-                <layout class="QGridLayout" name="gridLayout_3">
+                <layout class="QGridLayout" name="gridLayout_2">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
                  <item row="0" column="0">
                   <widget class="QLabel" name="login_Lbl">
                    <property name="minimumSize">
@@ -373,6 +388,44 @@ border-radius:20%;</string>
                   </widget>
                  </item>
                  <item row="3" column="0">
+                  <widget class="QPushButton" name="pushButton_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>170</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>210</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Rockwell</family>
+                     <pointsize>15</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+	color: rgba(230, 0, 35, 1);
+	background-color:rgba(245, 206, 50, 1);
+	border-radius:10%;
+}
+QPushButton:hover{
+	background-color: rgba(230, 0, 35, 1);
+	color:rgba(245, 206, 50, 1);
+}	</string>
+                   </property>
+                   <property name="text">
+                    <string>Log In</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
                   <widget class="QWidget" name="widget_4" native="true">
                    <property name="minimumSize">
                     <size>
@@ -1295,7 +1348,7 @@ border-top-right-radius : 20%; </string>
 }</string>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Our diverse menu of delicious dishes, crafted with fresh ingredients,&lt;br/&gt; will tantalize your taste buds.&lt;br/&gt;Order your favorites through our user-friendly app and enjoy &lt;br/&gt;them delivered straight to your doorstep.&lt;br/&gt;Food Villa is your gateway to a world of culinary delights, making every mealtime &lt;br/&gt;a memorable experience.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Our diverse menu of delicious dishes, crafted with fresh ingredients, will tantalize your taste buds. Order your favorites through our user-friendly app and enjoy them delivered straight to your doorstep. Food Villa is your gateway to a world of culinary delights, making every mealtime a memorable experience.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -1327,7 +1380,7 @@ border-top-right-radius : 20%; </string>
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>Images/s3.jpg</pixmap>
+              <pixmap>Images/s4.jpg</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -1555,7 +1608,7 @@ border-radius:20%;
                    <x>0</x>
                    <y>0</y>
                    <width>900</width>
-                   <height>148</height>
+                   <height>131</height>
                   </rect>
                  </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -1890,7 +1943,7 @@ border-radius:20%;
                    <x>0</x>
                    <y>0</y>
                    <width>900</width>
-                   <height>148</height>
+                   <height>131</height>
                   </rect>
                  </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_3">

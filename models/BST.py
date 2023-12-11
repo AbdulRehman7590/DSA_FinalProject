@@ -93,38 +93,3 @@ class BST:
     def delete_data(self, data):
         self.root = self.delete_node(self.root, data)
 
-
-if __name__ == "__main__":
-    b = BST()
-    b.insert_data(11)
-    b.insert_data(-1)
-    b.insert_data(10)
-    b.insert_data(12)
-    b.insert_data(111)
-    b.insert_data(100)
-
-    # Insert more elements if needed
-    print("InOrder:")
-    b.inorder(b.get_root())  # Print the elements in order
-    print("\n")
-
-    #Uncomment the following lines to print preorder and postorder traversals
-    print("PreOrder:")
-    b.preorder(b.get_root())
-    print("\nPostOrder:")
-    b.postorder(b.get_root())
-
-    b.insert_data(100)
-    b.inorder(b.get_root())  # Print the elements in order
-    print("\n")
-
-    key = 111
-
-    # Searching in a BST
-    if b.search(b.get_root(), key) is None:
-        print(f"{key} not found")
-    else:
-        print(f"{key} found")
-
-    b.delete_data(12)
-    b.inorder(b.get_root())
