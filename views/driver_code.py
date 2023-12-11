@@ -4,7 +4,7 @@ from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtCore import *
-
+from Classes.DL.usersDL import usersDL
 
 import os,sys
 # Change the path to the project root directory to import files from different folders
@@ -17,6 +17,10 @@ class Mainwindow(QMainWindow):
     def __init__(self):
         super().__init__()
         loadUi("views/main.ui", self)
+        self.pushButton.clicked.connect(self.TakeInput)
+        usersDL.add_user()
+        
+        
 
 
         # ---------------------- Defaults ------------------------ #
@@ -35,6 +39,25 @@ class Mainwindow(QMainWindow):
         # ------------------- Button Functions -------------------- #
     def changing_PageNo(self, index):
         self.mainStack.setCurrentIndex(index)
+        
+        
+        
+        
+        #------------------- Taking Input from Sign Up page --------------#
+        
+    def TakeInput(self):
+        Name = self.signUp_userName.text()
+        Password = self.signUp_passWord.text()
+        email = self.signUp_email.text()
+        address = self.signUp_address.text()
+        
+        # Assuming your User class is defined in usersDL module
+        user = user(Name, email, Password, address)
+
+        # Add the user to the UsersDL
+        usersDL.add_user(user)
+        return user
+        
 
 
 # ------------------------- Main --------------------------------- #
@@ -44,9 +67,11 @@ def Start():
         window = Mainwindow()
         window.show()
         sys.exit(app.exec_())
+        
     except Exception as e:
         print("An error occured: ", str(e))
 
 
 if __name__ == "__main__":
     Start()
+    

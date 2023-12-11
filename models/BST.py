@@ -18,8 +18,10 @@ class BST:
             current.right = self.insert(current.right, data)
         else:
             print("No duplicates allowed")
-
+        print("Entered in BST")
         return current
+    
+    
 
     def inorder(self, current):
         if not current:
