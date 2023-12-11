@@ -6,27 +6,30 @@ from models.Doubly import DoubleLinkedList
 
 # ------------------------ UserDL ------------------------------- #
 class UsersDL():
-    def __init__(self):
-            self.__user_list = DoubleLinkedList()
+    _user_list = DoubleLinkedList()
     
-    # ------------------------ Getter ------------------------------ #
-    @property
-    def user_list(self):
-            return self.__user_list
-
-
     # ------------------------ Methods ------------------------------ #
-    def add_user(self,user):
-            pass
-    
-    def remove_user(self,user):
-            pass
+    @staticmethod
+    def get_user_list():
+        return UsersDL._user_list
 
-    def display_users(self):
-            pass
+
+    @staticmethod
+    def add_user(user):
+        pass
     
-    def search_user_by_name(self,user_name):
-            pass
+    @staticmethod
+    def remove_user(user):
+        pass
+
+    @staticmethod
+    def display_users():
+        pass
     
-    def search_user_by_email(self,user_email):
-            pass
+    @staticmethod
+    def search_user_by_name(user_name):
+        pass
+    
+    @staticmethod
+    def search_user_by_email(user_email):
+        pass
