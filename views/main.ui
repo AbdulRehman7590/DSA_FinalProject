@@ -58,7 +58,7 @@
        <string notr="true">background :rgb(253, 255, 242)</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="login_Page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -1725,6 +1725,9 @@ QPushButton:hover{
              <property name="styleSheet">
               <string notr="true">background-color:rgb(244,244,244);</string>
              </property>
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
              <widget class="QWidget" name="ViewFood">
               <layout class="QGridLayout" name="gridLayout_11">
                <item row="0" column="0">
@@ -2021,7 +2024,224 @@ background-color: rgb(170, 170, 0);</string>
                </item>
               </layout>
              </widget>
-             <widget class="QWidget" name="page_2"/>
+             <widget class="QWidget" name="AddFood">
+              <layout class="QGridLayout" name="gridLayout_5">
+               <item row="0" column="0">
+                <widget class="QWidget" name="AddfoodWidget1" native="true">
+                 <property name="maximumSize">
+                  <size>
+                   <width>2000</width>
+                   <height>1000</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(230, 0, 35, 1);</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_7">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_4">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>218</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="label_11">
+                    <property name="maximumSize">
+                     <size>
+                      <width>300</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Script MT Bold</family>
+                      <pointsize>30</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(230, 0, 35, 1);
+color:rgba(245, 206, 50, 1);</string>
+                    </property>
+                    <property name="text">
+                     <string>Add Something Delicious</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <spacer name="horizontalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>216</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QWidget" name="Addfoodwidget2_2" native="true">
+                    <property name="maximumSize">
+                     <size>
+                      <width>600</width>
+                      <height>300</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_6">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="additemLabel_2">
+                       <property name="maximumSize">
+                        <size>
+                         <width>200</width>
+                         <height>35</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Script MT Bold</family>
+                         <pointsize>15</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgba(230, 0, 35, 1);</string>
+                       </property>
+                       <property name="text">
+                        <string>Add New Item</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLineEdit" name="additemline_3">
+                       <property name="maximumSize">
+                        <size>
+                         <width>250</width>
+                         <height>35</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">background-color: rgb(255, 255, 255);</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="addpricelabel_2">
+                       <property name="maximumSize">
+                        <size>
+                         <width>200</width>
+                         <height>35</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Script MT Bold</family>
+                         <pointsize>15</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgba(230, 0, 35, 1);</string>
+                       </property>
+                       <property name="text">
+                        <string>Add Price</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QLineEdit" name="addpriceline_2">
+                       <property name="maximumSize">
+                        <size>
+                         <width>250</width>
+                         <height>35</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">background-color: rgb(255, 255, 255);</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="0">
+                      <widget class="QLabel" name="adddescriptionlabel">
+                       <property name="maximumSize">
+                        <size>
+                         <width>200</width>
+                         <height>35</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Script MT Bold</family>
+                         <pointsize>15</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgba(230, 0, 35, 1);</string>
+                       </property>
+                       <property name="text">
+                        <string>Add Description</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="0">
+                      <widget class="QLineEdit" name="adddescriptionline">
+                       <property name="maximumSize">
+                        <size>
+                         <width>250</width>
+                         <height>35</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">background-color: rgb(255, 255, 255);</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QPushButton" name="pushButton">
+                    <property name="maximumSize">
+                     <size>
+                      <width>100</width>
+                      <height>35</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Script MT Bold</family>
+                      <pointsize>15</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
+                    </property>
+                    <property name="text">
+                     <string>Add New Item</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                 <zorder>label_11</zorder>
+                 <zorder>horizontalSpacer_3</zorder>
+                 <zorder>horizontalSpacer_4</zorder>
+                 <zorder>pushButton</zorder>
+                 <zorder>Addfoodwidget2_2</zorder>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>
@@ -2235,7 +2455,7 @@ background-color: rgb(170, 170, 0);</string>
            <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>4</number>
           </property>
           <widget class="QWidget" name="customer_start_page">
            <layout class="QHBoxLayout" name="horizontalLayout_21">
@@ -2383,7 +2603,7 @@ border-radius:20%;
                        <x>0</x>
                        <y>0</y>
                        <width>900</width>
-                       <height>143</height>
+                       <height>153</height>
                       </rect>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -2718,7 +2938,7 @@ border-radius:20%;
                        <x>0</x>
                        <y>0</y>
                        <width>900</width>
-                       <height>143</height>
+                       <height>153</height>
                       </rect>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -3066,7 +3286,7 @@ border-radius:20%;
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>979</width>
+                 <width>983</width>
                  <height>536</height>
                 </rect>
                </property>
