@@ -3,13 +3,13 @@ import typing
 
 # --------------------- Food CLass ---------------------------- #
 class Food():
-        def __init__(self,food_name,food_price,food_description,food_id):
+        def __init__(self,food_name,food_price,food_img_path,food_id):
                 
                 self.__food_rating = []
                 self.__food_id = food_id
                 self.__food_name = food_name
                 self.__food_price = food_price
-                self.__food_description = food_description
+                self.__food_img_path = food_img_path
 
         # ------------------------ Getter ------------------------------ #
         @property
@@ -21,8 +21,8 @@ class Food():
                 return self.__food_price
         
         @property
-        def food_description(self)->str:
-                return self.__food_description
+        def food_img_path(self)->str:
+                return self.__food_img_path
         
         @property
         def food_id(self)->str:
@@ -41,9 +41,9 @@ class Food():
         def food_price(self,food_price:str)->None:
                 self.__food_price = food_price
         
-        @food_description.setter
-        def food_description(self,food_description:str)->None:
-                self.__food_description = food_description
+        @food_img_path.setter
+        def food_img_path(self,food_img_path:str)->None:
+                self.__food_img_path = food_img_path
         
         @food_id.setter
         def food_id(self,food_id:str)->None:

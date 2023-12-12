@@ -19,7 +19,7 @@ class Mainwindow(QMainWindow):
         super().__init__()
         loadUi("views/main.ui", self)
         
-        self.pushButton.clicked.connect(self.TakeInput)
+        self.login_Btn.clicked.connect(self.TakeInput)
         
         
 
@@ -31,13 +31,13 @@ class Mainwindow(QMainWindow):
 
         # ------------------- Button Connections ------------------ #
         self.back_Btn.clicked.connect(lambda: self.changing_PageNo(0))
-        self.login_Btn.clicked.connect(lambda: self.changing_PageNo(0))
+        self.login_page_Btn.clicked.connect(lambda: self.changing_PageNo(0))
         self.signUp_Btn.clicked.connect(lambda: self.changing_PageNo(1))
         self.about_Btn.clicked.connect(lambda: self.changing_PageNo(2))
         self.about_Btn_2.clicked.connect(lambda: self.changing_PageNo(2))
 
 
-        # ------------------- Button Functions -------------------- #
+    # ---------------------- Changing Page ------------------------ #
     def changing_PageNo(self, index):
         self.mainStack.setCurrentIndex(index)
         

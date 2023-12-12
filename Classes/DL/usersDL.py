@@ -7,7 +7,6 @@ from classes.BL.users import User
 
 # ------------------------ UserDL ------------------------------- #
 class UsersDL():
-    _user_list = DoubleLinkedList()
     _user_bst = BST()
     
     # ------------------------ Methods ------------------------------ #
