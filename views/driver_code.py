@@ -4,21 +4,22 @@ from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtCore import *
-from Classes.DL.usersDL import usersDL
+
 
 import os,sys
 # Change the path to the project root directory to import files from different folders
 current_dir = os.path.dirname(os.path.realpath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, os.pardir))
 sys.path.append(project_root)
-
+from Classes.DL.usersDL import UsersDL as DL
+from Classes.BL.Users import User as BL
 # ---------------------- Program -------------------------------- #
 class Mainwindow(QMainWindow):
     def __init__(self):
         super().__init__()
         loadUi("views/main.ui", self)
         self.pushButton.clicked.connect(self.TakeInput)
-        usersDL.add_user()
+    
         
         
 
@@ -51,14 +52,32 @@ class Mainwindow(QMainWindow):
         email = self.signUp_email.text()
         address = self.signUp_address.text()
         
+        if not all([Name, Password, email, address]):
+            QMessageBox.warning(self, "Incomplete Information", "Please fill in all the fields.")
+            return None
+        
+        if "@" not in email:
+            QMessageBox.warning(self, "Invalid Email", "Please enter a valid email address.")
+            return None
+        
+        if not (8 <= len(Password) <= 8):
+            QMessageBox.warning(self, "Invalid Password", "Password must be exactly 8 characters long.")
+            return None 
         # Assuming your User class is defined in usersDL module
-        user = user(Name, email, Password, address)
+        user = BL(Name,email,Password,address)
 
         # Add the user to the UsersDL
-        usersDL.add_user(user)
+        if user is not None:
+            DL.add_user(user)
+    
         return user
         
-
+    def TakeSignINInput(self):
+        
+        Name = self.userName.text()
+        Password = self.passWord.text()
+      
+        
 
 # ------------------------- Main --------------------------------- #
 def Start():

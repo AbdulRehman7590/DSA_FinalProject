@@ -1,14 +1,17 @@
 # ------------------------ Libraries ------------------------------- #
 import typing
+import csv
 from Classes.BL.Users import User
 from models.Doubly import DoubleLinkedList
 from models.BST import BST
+
 
 
 # ------------------------ UserDL ------------------------------- #
 class UsersDL():
     _user_list = DoubleLinkedList()
     _user_bst = BST()
+   
     
     # ------------------------ Methods ------------------------------ #
     @staticmethod
@@ -20,6 +23,7 @@ class UsersDL():
     def add_user(user):
         UsersDL._user_bst.insert(None,user)
         print("Entered in DL happily")
+            
     
     @staticmethod
     def remove_user(user):
@@ -34,6 +38,7 @@ class UsersDL():
         pass
     
     @staticmethod
-    def search_user_by_email(user_email):
-        pass
+    def search_user_by_email(user):
+        UsersDL._user_bst.search(None,user)
+        print("Entered in DL happily")                                       
     

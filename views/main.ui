@@ -871,6 +871,9 @@ border-radius:20%;</string>
                         <pointsize>12</pointsize>
                        </font>
                       </property>
+                      <property name="echoMode">
+                       <enum>QLineEdit::PasswordEchoOnEdit</enum>
+                      </property>
                       <property name="placeholderText">
                        <string>Password</string>
                       </property>
@@ -1608,7 +1611,7 @@ border-radius:20%;
                    <x>0</x>
                    <y>0</y>
                    <width>900</width>
-                   <height>131</height>
+                   <height>148</height>
                   </rect>
                  </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -1943,7 +1946,7 @@ border-radius:20%;
                    <x>0</x>
                    <y>0</y>
                    <width>900</width>
-                   <height>131</height>
+                   <height>148</height>
                   </rect>
                  </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_3">
