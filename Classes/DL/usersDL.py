@@ -1,8 +1,9 @@
 # ------------------------ Libraries ------------------------------- #
 from models.BST import BST
-from classes.BL.customers import Customer
-from classes.BL.admin import Admin
+from Classes.BL.Customers import Customer
+from Classes.BL.admin import Admin
 import csv
+
 
 # ------------------------ UserDL ------------------------------- #
 class UsersDL():
@@ -17,6 +18,7 @@ class UsersDL():
     def add_user(user):
         UsersDL._user_list.insertNode(user)
         print("Entered in DL happily")
+            
     
     @staticmethod
     def remove_user(user):

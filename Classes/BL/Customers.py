@@ -1,5 +1,5 @@
 # ------------------------ Libraries ------------------------------- #
-from classes.BL.users import User
+from Classes.BL.Users import User
 
 # --------------------- Customers CLass ---------------------------- #
 class Customer(User):
