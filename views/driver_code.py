@@ -11,7 +11,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, os.pardir))
 sys.path.append(project_root)
 
-from classes.DL.usersDL import UsersDL as DL
+#from Classes.DL.usersDL import UsersDL as DL
 
 # ---------------------- Program -------------------------------- #
 class Mainwindow(QMainWindow):
@@ -19,14 +19,15 @@ class Mainwindow(QMainWindow):
         super().__init__()
         loadUi("views/main.ui", self)
         
-        self.login_Btn.clicked.connect(self.TakeInput)
+        
+        # self.login_Btn.clicked.connect(self.TakeInput)
         
         
 
 
         # ---------------------- Defaults ------------------------ #
         self.mainStack = self.findChild(QStackedWidget, "main_Stack")
-        self.changing_PageNo(0)
+        self.changing_PageNo(3)
 
 
         # ------------------- Button Connections ------------------ #
@@ -41,23 +42,32 @@ class Mainwindow(QMainWindow):
     def changing_PageNo(self, index):
         self.mainStack.setCurrentIndex(index)
         
+    def enterInTable(self , data) :
+        self.ViewFoodTable.clearContents ()
+        table = self.DataTable
+        table.setRowCount(len(data))
+        table.setColumnCount(len(data[0]))
+        for i, row in enumerate(data):
+            for j, value in enumerate(row):
+                item = QTableWidgetItem(str ( value ))
+                table.setItem(i,j,item)
         
         
         
         #------------------- Taking Input from Sign Up page --------------#
         
-    def TakeInput(self):
-        Name = self.signUp_userName.text()
-        Password = self.signUp_passWord.text()
-        email = self.signUp_email.text()
-        address = self.signUp_address.text()
+    # def TakeInput(self):
+    #     Name = self.signUp_userName.text()
+    #     Password = self.signUp_passWord.text()
+    #     email = self.signUp_email.text()
+    #     address = self.signUp_address.text()
         
-        # Assuming your User class is defined in usersDL module
-        user = user(Name, email, Password, address)
+    #     # Assuming your User class is defined in usersDL module
+    #     user = user(Name, email, Password, address)
 
-        # Add the user to the UsersDL
-        DL.add_user(user)
-        return user
+    #     # Add the user to the UsersDL
+    #     DL.add_user(user)
+    #     return user
         
 
 
