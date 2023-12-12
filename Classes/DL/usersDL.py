@@ -1,23 +1,21 @@
 # ------------------------ Libraries ------------------------------- #
-import typing
-from models.Doubly import DoubleLinkedList
 from models.BST import BST
-from classes.BL.users import User
-
+from classes.BL.customers import Customer
+from classes.BL.admin import Admin
+import csv
 
 # ------------------------ UserDL ------------------------------- #
 class UsersDL():
-    _user_bst = BST()
+    _user_list = BST()
     
     # ------------------------ Methods ------------------------------ #
     @staticmethod
-    def get_user_list():
-        return UsersDL._user_list
-
+    def get_user(username):
+        return UsersDL._user_list.findNode(username)
 
     @staticmethod
     def add_user(user):
-        UsersDL._user_bst.insert(None,user)
+        UsersDL._user_list.insertNode(user)
         print("Entered in DL happily")
     
     @staticmethod
@@ -25,14 +23,22 @@ class UsersDL():
         pass
 
     @staticmethod
-    def display_users():
-        pass
-    
+    def store_in_csv():
+        UsersDL._user_list.inOrderTraversal(UsersDL._user_list.root)
+
     @staticmethod
-    def search_user_by_name(user_name):
-        pass
-    
-    @staticmethod
-    def search_user_by_email(user_email):
-        pass
-    
+    def load_from_csv():
+        with open('inputs/user_data.csv', 'r') as file:
+            reader = csv.reader(file)
+            try:
+                next(reader)
+                for row in reader:
+                    if row:
+                        if row[4] == "Admin":
+                            user = Admin(row[0], row[1], row[2], row[3])
+                        else:
+                            user = Customer(row[0], row[1], row[2], row[3])
+                        UsersDL._user_list.insertNode(user)
+                        
+            except Exception as e:
+                print(f"An error occurred: {e}")
