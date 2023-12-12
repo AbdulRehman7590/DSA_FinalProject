@@ -1725,10 +1725,302 @@ QPushButton:hover{
              <property name="styleSheet">
               <string notr="true">background-color:rgb(244,244,244);</string>
              </property>
-             <property name="currentIndex">
-              <number>1</number>
-             </property>
-             <widget class="QWidget" name="page"/>
+             <widget class="QWidget" name="ViewFood">
+              <layout class="QGridLayout" name="gridLayout_11">
+               <item row="0" column="0">
+                <widget class="QWidget" name="ViewFoodWidget" native="true">
+                 <property name="maximumSize">
+                  <size>
+                   <width>2000</width>
+                   <height>1000</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_12">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="sflabel_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>300</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Script MT Bold</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(170, 170, 0);
+</string>
+                    </property>
+                    <property name="text">
+                     <string>Search Filter Type</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="pcomboBox">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>300</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Script MT Bold</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">
+background-color: rgb(170, 170, 0);</string>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>Menu</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Price</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Rating</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLineEdit" name="lineEdit">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>300</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Script MT Bold</family>
+                      <pointsize>10</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">
+background-color: rgb(170, 170, 0);</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QComboBox" name="secomboBox">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>300</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Script MT Bold</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">
+background-color: rgb(170, 170, 0);</string>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>contains</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>starts_with</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>ends_with</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="sepushButton">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>250</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Script MT Bold</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+	
+background-color: rgb(170, 170, 0);
+	
+	color: rgb(0, 0, 0);
+	border-radius:10%;
+}
+
+
+QPushButton:hover{
+	color: rgba(230, 0, 35, 1);
+	background-color:rgb(244,244,244);
+}	</string>
+                    </property>
+                    <property name="text">
+                     <string>Searching</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QPushButton" name="sepushButton_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>250</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Script MT Bold</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">
+QPushButton{
+	
+background-color: rgb(170, 170, 0);
+	
+	color: rgb(0, 0, 0);
+	border-radius:10%;
+}
+
+
+QPushButton:hover{
+	color: rgba(230, 0, 35, 1);
+	background-color:rgb(244,244,244);
+}	</string>
+                    </property>
+                    <property name="text">
+                     <string>Sorting</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0" colspan="3">
+                   <widget class="QTableWidget" name="ViewFoodTable">
+                    <property name="maximumSize">
+                     <size>
+                      <width>2000</width>
+                      <height>600</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">
+background-color: rgb(170, 170, 0);</string>
+                    </property>
+                    <property name="verticalScrollBarPolicy">
+                     <enum>Qt::ScrollBarAlwaysOn</enum>
+                    </property>
+                    <property name="horizontalScrollBarPolicy">
+                     <enum>Qt::ScrollBarAsNeeded</enum>
+                    </property>
+                    <property name="autoScrollMargin">
+                     <number>10</number>
+                    </property>
+                    <property name="rowCount">
+                     <number>0</number>
+                    </property>
+                    <attribute name="horizontalHeaderDefaultSectionSize">
+                     <number>500</number>
+                    </attribute>
+                    <column>
+                     <property name="text">
+                      <string>Menu</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Price</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Rating</string>
+                     </property>
+                    </column>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
              <widget class="QWidget" name="page_2"/>
             </widget>
            </item>

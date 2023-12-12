@@ -4,8 +4,8 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
-from classes.DL.usersDL import UsersDL as dL
-from classes.BL.customers import Customer
+from Classes.DL.usersDL import UsersDL as dL
+from Classes.BL.Customers import Customer
 
 #----------------- Taking Input from Sign Up page --------------#
 def TakeInput_SignIn(self):
