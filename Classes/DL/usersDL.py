@@ -24,12 +24,18 @@ class UsersDL():
 
     @staticmethod
     def store_in_csv():
-        UsersDL._user_list.inOrderTraversal(UsersDL._user_list.root)
+        users = UsersDL._user_list.preOrderTraversal(UsersDL._user_list.root)
+        with open('inputs/user_data.csv', 'w', newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow(["Username", "Email", "Password", "Address", "Type"])
+            for user in users:
+                writer.writerow([user.username, user.email, user.password, user.address, "Customer" if type(user) == Customer else "Admin"])
 
     @staticmethod
     def load_from_csv():
         with open('inputs/user_data.csv', 'r') as file:
             reader = csv.reader(file)
+            
             try:
                 next(reader)
                 for row in reader:
