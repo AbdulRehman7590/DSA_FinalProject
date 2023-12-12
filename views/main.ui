@@ -1722,12 +1722,6 @@ QPushButton:hover{
              <property name="styleSheet">
               <string notr="true">background-color:rgb(244,244,244);</string>
              </property>
-<<<<<<< HEAD
-             <property name="currentIndex">
-              <number>1</number>
-             </property>
-             <widget class="QWidget" name="page"/>
-=======
              <widget class="QWidget" name="ViewFood">
               <layout class="QGridLayout" name="gridLayout_11">
                <item row="0" column="0">
@@ -2024,7 +2018,6 @@ background-color: rgb(170, 170, 0);</string>
                </item>
               </layout>
              </widget>
->>>>>>> 43119b80d6175ca0344d0726468bb81503207647
              <widget class="QWidget" name="page_2"/>
             </widget>
            </item>

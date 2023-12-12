@@ -1,5 +1,5 @@
 # ------------------------ Libraries ------------------------------- #
-from classes.BL.foods import Food
+from Classes.BL.foods import Food
 from models.Doubly import DoubleLinkedList
 
 # ------------------------ Menu CLass ------------------------------ #
