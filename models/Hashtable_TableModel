@@ -1,0 +1,44 @@
+#----------------------- Imports ---------------------------------#
+from PyQt5.QtCore import QAbstractTableModel, Qt, QVariant
+
+
+# ------------------ Dataframe into Model ----------------------- #
+class HashTableModel(QAbstractTableModel):
+    def __init__(self, hash_table=None, column_names=None, parent=None):
+        super().__init__(parent)
+        self.hash_table = hash_table
+        self.column_names = column_names if column_names else ['Key', 'Value']
+
+    def rowCount(self, parent=None):
+        if self.hash_table:
+            return sum(1 for entry in self.hash_table.table if entry is not None)
+        return 0
+
+    def columnCount(self, parent=None):
+        return len(self.column_names)
+
+    def data(self, index, role):
+        if not index.isValid():
+            return None
+
+        if role == Qt.DisplayRole:
+            row = index.row()
+            column = index.column()
+            entries = [entry for entry in self.hash_table.table if entry is not None]
+            if row < len(entries):
+                key, value = entries[row][0]
+                if column == 0:
+                    return str(key)
+                elif column == 1:
+                    return str(value)
+
+        return None
+
+    def headerData(self, section, orientation, role):
+        if role == Qt.DisplayRole:
+            if orientation == Qt.Horizontal:
+                if section < len(self.column_names):
+                    return self.column_names[section]
+            elif orientation == Qt.Vertical:
+                return str(section + 1)
+        return None
