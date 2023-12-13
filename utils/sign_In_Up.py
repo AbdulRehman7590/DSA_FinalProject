@@ -3,8 +3,8 @@ from PyQt5 import QtGui, QtWidgets, QtCore
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
-from Classes.DL.usersDL import UsersDL as dL
-from Classes.BL.Customers import Customer
+from classes.DL.usersDL import UsersDL as dL
+from classes.BL.Customers import Customer
 
 #----------------- Taking Input from Sign Up page --------------#
 def TakeInput_SignIn(self):

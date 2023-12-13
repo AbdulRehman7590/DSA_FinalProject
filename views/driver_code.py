@@ -42,6 +42,8 @@ class Mainwindow(QMainWindow):
         self.about_Btn_2.clicked.connect(lambda: self.changing_mainStack_PageNo(2))
         self.register_Btn.clicked.connect(lambda: TakeInput_SignIn(self))
         self.login_Btn.clicked.connect(lambda: TakeInput_LogIn(self))
+        self.logout_Btn.clicked.connect(lambda: self.changing_mainStack_PageNo(0))
+        self.logout_Btn_2.clicked.connect(lambda: self.changing_mainStack_PageNo(0))
 
 
     # ---------------------- Changing Page ------------------------ #

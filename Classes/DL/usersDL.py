@@ -1,7 +1,7 @@
 # ------------------------ Libraries ------------------------------- #
 from models.BST import BST
-from Classes.BL.Customers import Customer
-from Classes.BL.admin import Admin
+from classes.BL.Customers import Customer
+from classes.BL.admin import Admin
 import csv
 
 
