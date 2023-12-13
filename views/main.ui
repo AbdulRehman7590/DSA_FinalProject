@@ -2051,8 +2051,8 @@ background-color: rgb(170, 170, 0);</string>
                     </property>
                    </spacer>
                   </item>
-                  <item row="0" column="1">
-                   <widget class="QLabel" name="label_11">
+                  <item row="0" column="1" colspan="2">
+                   <widget class="QLabel" name="HeaderLabel">
                     <property name="maximumSize">
                      <size>
                       <width>300</width>
@@ -2077,7 +2077,7 @@ color:rgba(245, 206, 50, 1);</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="0" column="2">
+                  <item row="0" column="3">
                    <spacer name="horizontalSpacer_3">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>
@@ -2210,6 +2210,25 @@ color:rgba(245, 206, 50, 1);</string>
                     </layout>
                    </widget>
                   </item>
+                  <item row="1" column="2" colspan="2">
+                   <widget class="QLabel" name="label_23">
+                    <property name="maximumSize">
+                     <size>
+                      <width>250</width>
+                      <height>300</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="pixmap">
+                     <pixmap>Images/chef2.png</pixmap>
+                    </property>
+                    <property name="scaledContents">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
                   <item row="2" column="1">
                    <widget class="QPushButton" name="pushButton">
                     <property name="maximumSize">
@@ -2233,11 +2252,12 @@ color:rgba(245, 206, 50, 1);</string>
                    </widget>
                   </item>
                  </layout>
-                 <zorder>label_11</zorder>
+                 <zorder>HeaderLabel</zorder>
                  <zorder>horizontalSpacer_3</zorder>
                  <zorder>horizontalSpacer_4</zorder>
                  <zorder>pushButton</zorder>
                  <zorder>Addfoodwidget2_2</zorder>
+                 <zorder>label_23</zorder>
                 </widget>
                </item>
               </layout>
@@ -2603,7 +2623,7 @@ border-radius:20%;
                        <x>0</x>
                        <y>0</y>
                        <width>900</width>
-                       <height>153</height>
+                       <height>135</height>
                       </rect>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -2938,7 +2958,7 @@ border-radius:20%;
                        <x>0</x>
                        <y>0</y>
                        <width>900</width>
-                       <height>153</height>
+                       <height>135</height>
                       </rect>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -3286,8 +3306,8 @@ border-radius:20%;
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>983</width>
-                 <height>536</height>
+                 <width>83</width>
+                 <height>26</height>
                 </rect>
                </property>
                <widget class="QWidget" name="widget_12" native="true">
