@@ -2821,7 +2821,7 @@ QPushButton:hover{
            <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
           </property>
           <property name="currentIndex">
-           <number>3</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="customer_start_page">
            <layout class="QHBoxLayout" name="horizontalLayout_21">
@@ -2966,10 +2966,10 @@ border-radius:20%;
                     <widget class="QWidget" name="top_items">
                      <property name="geometry">
                       <rect>
-                       <x>-52</x>
+                       <x>0</x>
                        <y>0</y>
                        <width>900</width>
-                       <height>148</height>
+                       <height>153</height>
                       </rect>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -3304,7 +3304,7 @@ border-radius:20%;
                        <x>0</x>
                        <y>0</y>
                        <width>900</width>
-                       <height>148</height>
+                       <height>153</height>
                       </rect>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_3">
