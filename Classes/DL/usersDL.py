@@ -4,6 +4,7 @@ from Classes.BL.Customers import Customer
 from Classes.BL.admin import Admin
 import csv
 
+
 # ------------------------ UserDL ------------------------------- #
 class UsersDL():
     _user_list = BST()
@@ -17,6 +18,7 @@ class UsersDL():
     def add_user(user):
         UsersDL._user_list.insertNode(user)
         print("Entered in DL happily")
+            
     
     @staticmethod
     def remove_user(user):
@@ -24,12 +26,18 @@ class UsersDL():
 
     @staticmethod
     def store_in_csv():
-        UsersDL._user_list.inOrderTraversal(UsersDL._user_list.root)
+        users = UsersDL._user_list.preOrderTraversal(UsersDL._user_list.root)
+        with open('inputs/user_data.csv', 'w', newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow(["Username", "Email", "Password", "Address", "Type"])
+            for user in users:
+                writer.writerow([user.username, user.email, user.password, user.address, "Customer" if type(user) == Customer else "Admin"])
 
     @staticmethod
     def load_from_csv():
         with open('inputs/user_data.csv', 'r') as file:
             reader = csv.reader(file)
+            
             try:
                 next(reader)
                 for row in reader:

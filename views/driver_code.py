@@ -7,17 +7,22 @@ sys.path.append(project_root)
 
 from PyQt5.uic import loadUi
 from PyQt5 import QtGui, QtWidgets
-from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
 from utils.sign_In_Up import *
+from Classes.DL.usersDL import UsersDL as dL
 
 # ---------------------- Program -------------------------------- #
 class Mainwindow(QMainWindow):
     def __init__(self):
         super().__init__()
         loadUi("views/main.ui", self)
+
+
+        # -------------------- Loading Data ---------------------- #
+        dL.load_from_csv()
+
 
 
         # ---------------------- Defaults ------------------------ #

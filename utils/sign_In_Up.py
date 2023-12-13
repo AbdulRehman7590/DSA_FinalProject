@@ -1,6 +1,5 @@
 from PyQt5.uic import loadUi
 from PyQt5 import QtGui, QtWidgets, QtCore
-from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
@@ -28,8 +27,6 @@ def TakeInput_SignIn(self):
 
 # -------------------- Sign In Implementation ----------------- #
 def TakeInput_LogIn(self):
-    dL.load_from_csv()                          # Loading from csv file
-
     userName = self.findChild(QLineEdit, "userName").text()
     passWord = self.findChild(QLineEdit, "passWord").text()
 
@@ -40,7 +37,7 @@ def TakeInput_LogIn(self):
         us = dL.get_user(userName)
         if us.data.username == userName and us.data.password == passWord:
             QMessageBox.information(self, "Information", "Login Successful")
-            if us.data is Customer:
+            if type(us.data) == Customer:
                 self.changing_mainStack_PageNo(4)
             else:
                 self.changing_mainStack_PageNo(3)

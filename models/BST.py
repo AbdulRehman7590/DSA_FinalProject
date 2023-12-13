@@ -92,18 +92,13 @@ class BST:
                 temp = temp.parent
             return temp
 
-    def inOrderTraversal(self, T):
+    def preOrderTraversal(self, T):
+        nodes = []
         if T is None:
-            with open('inputs/user_data.csv', 'w') as file:
-                writer = csv.writer(file)
-                writer.writerow(["User Name", "Email", "Password", "Address", "Type"])
-            return
-        
-        # Storing data in file recursively
-        with open('inputs/user_data.csv', 'w') as file:
-            writer = csv.writer(file)
-            writer.writerow([T.data.username, T.data.email, T.data.password, T.data.address, "Customer"])
-        
-        self.inOrderTraversal(T.left)
-        print(T.data.username, end=" ")
-        self.inOrderTraversal(T.right)
+            return nodes
+
+        nodes.append(T.data)
+        nodes += self.preOrderTraversal(T.left)
+        nodes += self.preOrderTraversal(T.right)
+
+        return nodes
