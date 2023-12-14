@@ -1,5 +1,5 @@
 # ------------------------ Libraries ------------------------------- #
-from classes.BL.users import User
+from classes.BL.Users import User
 
 # ------------------------ Cook CLass ------------------------------ #
 class Admin(User):
