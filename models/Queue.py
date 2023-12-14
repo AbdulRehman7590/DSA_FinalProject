@@ -43,6 +43,15 @@ class Queue:
     # ---------------------- Empty? --------------------------- #
     def is_empty(self):
         return self.front is None
+    
+    # ----------------------- Size ---------------------------- #
+    def size(self):
+        count = 0
+        current = self.front
+        while current is not None:
+            count += 1
+            current = current.next
+        return count
 
     # --------------------- Display --------------------------- #
     def display(self):

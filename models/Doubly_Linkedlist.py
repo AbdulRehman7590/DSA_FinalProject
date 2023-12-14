@@ -40,19 +40,61 @@ class DoubleLinkedList:
             temp.next = new_tail
         return new_tail
 
-    # ----------------------- Search ---------------------------- #
-    def search(self, data):
+    # ------------------- Deleting node ------------------------- #
+    def delete_data(self, data):
         if self.head is None:
             return False
         else:
             temp = self.head
             while temp.next is not None:
                 if temp.data == data:
+                    temp.previous.next = temp.next
+                    temp.next.previous = temp.previous
                     return True
                 else:
                     temp = temp.next
-        return False
+            return False
 
+    # ----------------------- Search ---------------------------- #
+    def search_data(self, foodname):
+        if self.head is None:
+            return None
+        else:
+            temp = self.head
+            while temp.next is not None:
+                if temp.data.food_name == foodname:
+                    return temp.data
+                else:
+                    temp = temp.next
+        return None
+    
+    # ------------------- Get item at Index  --------------------- #
+    def get_item_at_index(self, index):
+        idx = 0
+        if self.head is None:
+            return None
+        else:
+            temp = self.head
+            while temp.next is not None:
+                if idx == index:
+                    return temp.data
+                else:
+                    temp = temp.next
+                    idx += 1
+        return None
+    
+    # --------------------- Get items count ---------------------- #
+    def get_items_count(self):
+        count = 0
+        if self.head is None:
+            return count
+        else:
+            temp = self.head
+            while temp.next is not None:
+                count += 1
+                temp = temp.next
+        return count
+    
     # ----------------------- Display ---------------------------- #
     def display(self):
         print("Null->", end="")

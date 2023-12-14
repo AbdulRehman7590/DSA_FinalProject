@@ -1,6 +1,3 @@
-# ------------------------ Libraries ------------------------------- #
-import typing
-
 # ------------------------ Food CLass ------------------------------ #
 class Order():
     def __init__(self,order_id,order_status,order_date,ordered_items,order_address,order_total_price):

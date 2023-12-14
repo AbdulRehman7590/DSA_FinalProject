@@ -1,88 +1,52 @@
 # ------------------------ Libraries ------------------------------- #
-from classes.BL.Users import User
+from classes.BL.users import User
+from models.Stack import Stack
+from models.Queue import Queue
+from models.Hash_Table import HashTable
 
 # ------------------------ Cook CLass ------------------------------ #
 class Admin(User):
         def __init__(self,username,email,password,address):
                 super().__init__(username, email, password, address)
 
-                self.__rating = []
-                self.__food_menu = None
-                self.__order_list = None
-                self.__delivered_orders = None
-                self.__cancel_orders = None
+                self.__all_orders_history = HashTable()
+                self.__pending_orders = Queue()
+                self.__delivered_orders = Stack()
+                self.__cancel_orders = HashTable()
 
-
-        # ------------------------ Getter ------------------------------- #
+        # ------------------------ Getter ------------------------------ #
         @property
-        def cook_id(self):
-                return self.__cook_id
+        def all_orders_history(self)->HashTable:
+                return self.__all_orders_history
         
         @property
-        def rating(self):
-                return self.__rating
+        def pending_orders(self)->Queue:
+                return self.__pending_orders
         
         @property
-        def food_menu(self):
-                return self.__food_menu    
-        
-        @property
-        def order_list(self):
-                return self.__order_list
-        
-        @property
-        def delivered_orders(self):
+        def delivered_orders(self)->Stack:
                 return self.__delivered_orders
         
         @property
-        def cancel_orders(self):
+        def cancel_orders(self)->HashTable:
                 return self.__cancel_orders
         
-        
-        # ------------------------ Setter ------------------------------- #
-        @cook_id.setter
-        def cook_id(self,cook_id):
-                self.__cook_id = cook_id
-
-        @rating.setter
-        def rating(self,rating):
-                self.__rating = rating % 5
-        
-        @food_menu.setter
-        def food_menu(self,food_menu):
-                self.__food_menu = food_menu
-
-        @order_list.setter
-        def order_list(self,order_list):
-                self.__order_list = order_list
-        
-        @delivered_orders.setter
-        def delivered_orders(self,delivered_orders):
-                self.__delivered_orders = delivered_orders
-
-        @cancel_orders.setter
-        def cancel_orders(self,cancel_orders):
-                self.__cancel_orders = cancel_orders
-
-
         # ------------------------ Methods ------------------------------ #
-        def view_all_orders(self):
-                pass
-
-        def view_all_delivered_orders(self):
-                pass
-
-        def view_all_pending_orders(self):
-                pass
-
-        def view_all_cancelled_orders(self):
-                pass
-
-        def view_all_orders_by_date(self):
-                pass
+        def add_order(self,order):
+                self.__all_orders_history.insert(order)
+                self.__pending_orders.enqueue(order)
         
-        def add_rating(self, rate):
-                self.__rating.append(rate)
-                
-        def view_profile(self):
-                return super().view_profile()
+        def add_delivered_order(self,order):
+                self.__pending_orders.dequeue()
+                self.__delivered_orders.push(order)
+        
+        def add_cancel_order(self):
+                self.__cancel_orders.insert(self.__pending_orders.dequeue())
+
+        def remove_cancel_order(self,order):
+                self.__cancel_orders.remove(order)
+                self.__pending_orders.enqueue(order)
+
+        def remove_order(self,order):
+                self.__all_orders_history.remove(order)
+                self.__pending_orders.dequeue()

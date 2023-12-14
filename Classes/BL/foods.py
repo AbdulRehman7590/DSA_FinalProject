@@ -1,15 +1,13 @@
-# ------------------------ Libraries ------------------------------- #
-import typing
-
 # --------------------- Food CLass ---------------------------- #
 class Food():
-        def __init__(self,food_name,food_price,food_img_path,food_description):
+        def __init__(self,food_name,food_price,food_img_path,food_description,food_rating):
                 
-                self.__food_rating = []
                 self.__food_name = food_name
                 self.__food_price = food_price
-                self.__food_img_path = food_img_path
                 self.__food_description = food_description
+                self.__food_img_path = food_img_path
+                self.__food_rating = food_rating
+                self.__likes = 0
 
         # ------------------------ Getter ------------------------------ #
         @property
@@ -30,7 +28,11 @@ class Food():
         
         @property
         def food_rating(self)->int:
-                return sum(self.__food_rating)/len(self.__food_rating)
+                return self.__food_rating
+        
+        @property
+        def likes(self)->int:
+                return self.__likes
 
         # ------------------------ Setter ------------------------------ #
         @food_name.setter
@@ -51,6 +53,12 @@ class Food():
 
 
         # ------------------------ Methods ------------------------------ #
-        def add_rating(self,rating:int)->None:
-                self.__food_rating.append(rating)
+        def set_like_and_rate(self):
+                self.__likes += 1
+                if self.__likes > 5:
+                        self.__food_rating += 1
+                        self.__likes = 0
+                if self.__food_rating > 5:
+                        self.__food_rating = 5
+
 

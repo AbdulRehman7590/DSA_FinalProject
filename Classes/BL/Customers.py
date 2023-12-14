@@ -1,69 +1,62 @@
 # ------------------------ Libraries ------------------------------- #
-from classes.BL.Users import User
+from classes.BL.users import User
+from models.Hash_Table import HashTable
+from models.Doubly_Linkedlist import DoubleLinkedList
+from models.Stack import Stack
+from models.Queue import Queue
 
 # --------------------- Customers CLass ---------------------------- #
 class Customer(User):
         def __init__(self,username,email,password,address):
                 super().__init__(username, email, password, address)
 
-                self.__cart = None
-                self.__order_history = None
-                self.__received_order_list = None
-                self.__wishlist = None
+                self.__cart = HashTable()
+                self.__order_history = HashTable()
+                self.__ordered_items_list = Queue()
+                self.__delivered_order_list = Stack()
+                self.__wishlist = DoubleLinkedList()
 
-
-        # ------------------------ Getter ------------------------------- #
+        # ------------------------ Getter ------------------------------ #
         @property
-        def cart(self):
+        def cart(self)->HashTable:
                 return self.__cart
         
         @property
-        def order_history(self):
+        def order_history(self)->HashTable:
                 return self.__order_history
         
         @property
-        def received_order_list(self):
-                return self.__received_order_list
+        def ordered_items_list(self)->Queue:
+                return self.__ordered_items_list
         
         @property
-        def wishlist(self):
+        def delivered_order_list(self)->Stack:
+                return self.__delivered_order_list
+        
+        @property
+        def wishlist(self)->DoubleLinkedList:
                 return self.__wishlist
-
-
-        # ------------------------ Setter ------------------------------- #
-        @received_order_list.setter
-        def received_order_list(self,received_order_list):
-                self.__received_order_list = received_order_list
-
-        @wishlist.setter
-        def wishlist(self,wishlist):
-                self.__wishlist = wishlist
         
-        @cart.setter
-        def cart(self,cart):
-                self.__cart = cart
-        
-        @order_history.setter
-        def order_history(self,order_history):
-                self.__order_history = order_history
-
-
         # ------------------------ Methods ------------------------------ #
-        def view_all_orders(self):
-                pass
+        def add_to_wishlist(self,item):
+                self.__wishlist.append(item)
 
-        def view_all_delivered_orders(self):
-                pass
+        def remove_from_wishlist(self,item):
+                self.__wishlist.remove(item)
 
-        def view_all_pending_orders(self):
-                pass
+        def add_to_cart(self,item):
+                self.__cart.insert(item)
 
-        def view_all_cancelled_orders(self):
-                pass
+        def remove_from_cart(self,item):
+                self.__cart.remove(item)
 
-        def view_all_orders_by_date(self):
-                pass
+        def add_to_ordered_items_list(self,item):
+                self.__order_history.insert(item)
+                self.__ordered_items_list.enqueue(item)
+                self.remove_from_cart(item)
 
-        def view_profile(self):
-                return super().view_profile()
+        def add_to_delivered_order_list(self):
+                self.__delivered_order_list.push(self.__ordered_items_list.dequeue())
 
+        def remove_from_delivered_order_list(self):
+                self.__delivered_order_list.pop()

@@ -36,6 +36,15 @@ class Stack:
     def is_empty(self):
         return self.top is None
 
+    # ----------------------- Size ---------------------------- #
+    def size(self):
+        count = 0
+        current = self.top
+        while current is not None:
+            count += 1
+            current = current.next
+        return count
+
     # ----------------------- Display ---------------------------- #
     def display(self):
         if self.is_empty():
