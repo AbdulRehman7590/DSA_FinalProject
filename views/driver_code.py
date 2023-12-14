@@ -51,6 +51,7 @@ class Mainwindow(QMainWindow):
         self.viewCustomers_Btn.clicked.connect(lambda: self.changing_adminoption_stack_PageNo(2))
         self.viewStats_Btn.clicked.connect(lambda: self.changing_adminStack_PageNo(2))
         self.addFood_Btn.clicked.connect(lambda: self.changing_adminStack_PageNo(1))
+        self.uploadPhoto_Btn.clicked.connect(self.upload_photo)
 
 
         # -------------------- Customer Options ----------------------- #
@@ -79,6 +80,10 @@ class Mainwindow(QMainWindow):
 
     def changing_customerStack_PageNo(self, index):
         self.customerStack.setCurrentIndex(index)
+
+    def upload_photo(self):
+        path , _ = QFileDialog.getOpenFileName(self, "Upload food image", "","")
+        
 
 
 # ------------------------- Main --------------------------------- #
