@@ -2930,7 +2930,7 @@ color:rgba(245, 206, 50, 1);</string>
            <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
           </property>
           <property name="currentIndex">
-           <number>4</number>
+           <number>5</number>
           </property>
           <widget class="QWidget" name="customer_start_page">
            <layout class="QHBoxLayout" name="horizontalLayout_21">
@@ -3078,7 +3078,7 @@ border-radius:20%;
                        <x>0</x>
                        <y>0</y>
                        <width>900</width>
-                       <height>143</height>
+                       <height>148</height>
                       </rect>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -3413,7 +3413,7 @@ border-radius:20%;
                        <x>0</x>
                        <y>0</y>
                        <width>900</width>
-                       <height>143</height>
+                       <height>148</height>
                       </rect>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -3766,8 +3766,8 @@ QPushButton:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>979</width>
-                 <height>536</height>
+                 <width>79</width>
+                 <height>26</height>
                 </rect>
                </property>
                <widget class="QWidget" name="widget_12" native="true">
@@ -5259,10 +5259,12 @@ QPushButton:hover{
             </item>
            </layout>
           </widget>
+          <widget class="QWidget" name="credentials_page"/>
          </widget>
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="Welcome_page"/>
      </widget>
     </item>
    </layout>
