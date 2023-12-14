@@ -1,5 +1,4 @@
-import csv
-
+# ----------------------- Node -------------------------------- #
 class Node:
     def __init__(self, value, parentNode=None):
         self.data = value
@@ -7,10 +6,12 @@ class Node:
         self.left = None
         self.parent = parentNode
 
+# ------------------------ Bst -------------------------------- #
 class BST:
     def __init__(self):
         self.root = None
 
+    # ---------------------- Insert --------------------------- #
     def insertNode(self, value):
         newNode = Node(value)
         if self.root is None:
@@ -29,8 +30,8 @@ class BST:
                 parent.left = newNode
             else:
                 parent.right = newNode
-        return newNode
 
+    # ---------------------- Search --------------------------- #
     def findNode(self, value):
         temp = self.root
         lastNode = None
@@ -45,11 +46,13 @@ class BST:
                 return temp
         return lastNode
 
+    # -------------------- Total nodes ------------------------ #
     def NumberOfNodes(self, T):
         if T is None:
             return 0
         return 1 + self.NumberOfNodes(T.left) + self.NumberOfNodes(T.right)
 
+    # ---------------------- Delete --------------------------- #
     def deleteNode(self, value):
         nodeToDelete = self.findNode(value)
         if nodeToDelete is None:
@@ -92,6 +95,7 @@ class BST:
                 temp = temp.parent
             return temp
 
+    # ------------------- Pre Order Traversal ------------------- #
     def preOrderTraversal(self, T):
         nodes = []
         if T is None:

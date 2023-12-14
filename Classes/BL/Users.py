@@ -1,6 +1,3 @@
-# ------------------------ Libraries ------------------------------- #
-import typing
-
 # ------------------------ User CLass ------------------------------ #
 class User:
     def __init__(self,username:str ,email: str ,password: str,address: str ) -> None:

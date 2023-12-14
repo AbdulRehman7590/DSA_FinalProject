@@ -6,7 +6,6 @@ project_root = os.path.abspath(os.path.join(current_dir, os.pardir))
 sys.path.append(project_root)
 
 from PyQt5.uic import loadUi
-from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
@@ -51,6 +50,7 @@ class Mainwindow(QMainWindow):
         self.viewCustomers_Btn.clicked.connect(lambda: self.changing_adminoption_stack_PageNo(2))
         self.viewStats_Btn.clicked.connect(lambda: self.changing_adminStack_PageNo(2))
         self.addFood_Btn.clicked.connect(lambda: self.changing_adminStack_PageNo(1))
+        self.uploadPhoto_Btn.clicked.connect(self.upload_photo)
 
 
         # -------------------- Customer Options ----------------------- #
@@ -79,6 +79,10 @@ class Mainwindow(QMainWindow):
 
     def changing_customerStack_PageNo(self, index):
         self.customerStack.setCurrentIndex(index)
+
+    def upload_photo(self):
+        path , _ = QFileDialog.getOpenFileName(self, "Upload food image", "","")
+        
 
 
 # ------------------------- Main --------------------------------- #

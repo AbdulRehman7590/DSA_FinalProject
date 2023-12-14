@@ -17,12 +17,14 @@ class UsersDL():
     @staticmethod
     def add_user(user):
         UsersDL._user_list.insertNode(user)
-        print("Entered in DL happily")
-            
-    
+        print("User added in BST")
+
     @staticmethod
     def remove_user(user):
-        pass
+        if UsersDL._user_list.deleteNode(user):
+            print("User removed from BST")
+        else:
+            print("User not found in BST")
 
     @staticmethod
     def store_in_csv():
@@ -47,6 +49,5 @@ class UsersDL():
                         else:
                             user = Customer(row[0], row[1], row[2], row[3])
                         UsersDL._user_list.insertNode(user)
-                        
             except Exception as e:
                 print(f"An error occurred: {e}")
