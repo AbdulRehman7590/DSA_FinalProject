@@ -1,9 +1,9 @@
 #----------------------- Imports ---------------------------------#
-from PyQt5.QtCore import Qt, QAbstractTableModel, QModelIndex
-
+from PyQt5.QtCore import Qt, QAbstractTableModel, QVariant
+from classes.BL.Customers import Customer
 
 # -------------------- BST into Model -------------------------- #
-class BSTTableModel(QAbstractTableModel):
+class UserTableModel(QAbstractTableModel):
     def __init__(self, tree, headers):
         super().__init__()
         self._tree = tree  
@@ -19,19 +19,20 @@ class BSTTableModel(QAbstractTableModel):
         if role == Qt.DisplayRole:
             row = index.row()
             col = self._headers[index.column()]
-            node = self._tree.findNode(row)
-            if node:
-                if col == "Username":
-                    return node.data.username
+            user = self._tree.inOrderTraversal(self._tree.root, row)
+            print(user)
+            if user:
+                if col == "Name":
+                    return user.username
                 elif col == "Email":
-                    return node.data.email
-                elif col == "Password":
-                    return node.data.password
+                    return user.email
                 elif col == "Address":
-                    return node.data.address
+                    return user.address
+                elif col == "Type":
+                    return "Customer" if type(user) == Customer else "Admin"
         return None
 
     def headerData(self, section, orientation, role=Qt.DisplayRole):
         if role == Qt.DisplayRole and orientation == Qt.Horizontal:
             return self._headers[section]
-        return None
+        return QVariant()
