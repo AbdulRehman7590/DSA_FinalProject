@@ -39,10 +39,14 @@ class Customer(User):
         
         # ------------------------ Methods ------------------------------ #
         def add_to_wishlist(self,item):
-                self.__wishlist.append(item)
+                if self.__wishlist.search_data(item.food_name):
+                        print(f"{item.food_name} already stored in wishlist")
+                else:
+                        print(f"{item.food_name} stored in wishlist")
+                        self.__wishlist.insert_at_tail(item)
 
         def remove_from_wishlist(self,item):
-                self.__wishlist.remove(item)
+                self.__wishlist.delete_data(item)
 
         def add_to_cart(self,item):
                 self.__cart.insert(item)

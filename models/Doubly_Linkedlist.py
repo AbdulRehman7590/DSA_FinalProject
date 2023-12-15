@@ -38,7 +38,8 @@ class DoubleLinkedList:
             new_tail = Node(data)
             new_tail.previous = temp
             temp.next = new_tail
-        return new_tail
+            self.tail = new_tail
+            
 
     # ------------------- Deleting node ------------------------- #
     def delete_data(self, data):

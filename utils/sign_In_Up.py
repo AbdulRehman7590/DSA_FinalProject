@@ -35,15 +35,15 @@ def TakeInput_SignIn(self):
 
 # -------------------- Sign In Implementation ----------------- #
 def TakeInput_LogIn(self):
-    userName = self.findChild(QLineEdit, "userName").text()
-    passWord = self.findChild(QLineEdit, "passWord").text()
+    self.userName = self.findChild(QLineEdit, "userName").text()
+    self.passWord = self.findChild(QLineEdit, "passWord").text()
 
-    if userName == "" or passWord == "":
+    if self.userName == "" or self.passWord == "":
         show_Warning(self, "Please fill all the fields")
         return
     else:
-        us = dL.get_user(userName)
-        if us.data.username == userName and us.data.password == passWord:
+        us = dL.get_user(self.userName)
+        if us.data.username == self.userName and us.data.password == self.passWord:
             show_Information(self, "Sign In Successful")
             if type(us.data) == Customer:
                 self.changing_mainStack_PageNo(4)

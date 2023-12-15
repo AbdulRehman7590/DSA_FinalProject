@@ -15,7 +15,10 @@ class Menu():
         
         @staticmethod
         def remove_food(food):
-                Menu._food_list.delete_data(food)
+                if Menu._food_list.delete_data(food):
+                        print("Food deleted from DLL")
+                else:
+                        print("Food not found in DLL")
         
         @staticmethod
         def search_food(foodname):

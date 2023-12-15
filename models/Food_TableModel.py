@@ -3,7 +3,7 @@ from PyQt5.QtCore import QAbstractTableModel, Qt, QVariant
 
 
 # ----------------- Linked list into Model ---------------------- #
-class LinkedListTableModel(QAbstractTableModel):
+class FoodTableModel(QAbstractTableModel):
     def __init__(self, linked_list, headers):
         super().__init__()
         self._linked_list = linked_list 
@@ -21,7 +21,7 @@ class LinkedListTableModel(QAbstractTableModel):
             col = self._headers[index.column()]
             
             if row is not None:
-                if col == "Item_Name":
+                if col == "Food_Name":
                     return row.food_name
                 elif col == "Price":
                     return row.food_price

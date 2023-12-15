@@ -2,24 +2,24 @@
 from PyQt5.QtCore import QAbstractTableModel, Qt, QVariant
 
 
-# ------------------ stack into Model ----------------------- #
-class StackTableModel(QAbstractTableModel):
-    def __init__(self, stack, headers):
+# ------------------ orderdata into Model ---------------------- #
+class OrderTableModel(QAbstractTableModel):
+    def __init__(self, orderdata, headers):
         super().__init__()
-        self._stack = stack
+        self._orderdata = orderdata
         self._headers = headers
 
     def rowCount(self, index):
-        return self._stack.size()
+        return self._orderdata.size()
 
     def columnCount(self, index):
         return len(self._headers)
 
     def data(self, index, role):
         if role == Qt.DisplayRole:
-            key = list(self._stack.keys())[index.row()]
+            key = list(self._orderdata.keys())[index.row()]
             column = self._headers[index.column()]
-            value = self._stack[key]
+            value = self._orderdata[key]
         
             if column == "Order ID":
                 return value.order_id

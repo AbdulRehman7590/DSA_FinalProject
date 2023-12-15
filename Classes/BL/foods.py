@@ -55,7 +55,7 @@ class Food():
         # ------------------------ Methods ------------------------------ #
         def set_like_and_rate(self):
                 self.__likes += 1
-                if self.__likes > 5:
+                if self.__likes > 2:
                         self.__food_rating += 1
                         self.__likes = 0
                 if self.__food_rating > 5:
