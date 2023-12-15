@@ -55,7 +55,9 @@ def showing_add_to_cart(self, food):
     no_of_items = self.findChild(QSpinBox, "items_no_for_order")
     no_of_items.valueChanged.connect(lambda: self.findChild(QLabel, "food_price_Lbl").setText(f"{int(food.food_price) * int(no_of_items.value())}"))
 
-    self.backexplore_Btn.clicked.connect(lambda: self.changing_customerStack_PageNo(1), lambda: self.findChild(QLabel, "food_price_Lbl").setText(f"{food.food_price}"))
+    self.backexplore_Btn.clicked.connect(lambda: self.changing_customerStack_PageNo(1))
+    self.backexplore_Btn.clicked.connect(lambda: no_of_items.setValue(1))
+
     self.add_tofvt_Btn.clicked.connect(lambda: add_to_fvt(self, food))
 
 
