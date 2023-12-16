@@ -1,11 +1,14 @@
+# ------------------------- Modules -------------------------------- #
+from models.Doubly_Linkedlist import DoubleLinkedList
+
 # ------------------------ Food CLass ------------------------------ #
 class Order():
-    def __init__(self,order_id,order_status,order_date,ordered_items,order_address,order_total_price):
+    def __init__(self,order_id,order_date,order_address,ordered_items,ordered_items_count,order_total_price):
         self.__order_id = order_id
-        self.__order_status = order_status
         self.__order_date = order_date
-        self.__ordered_items = ordered_items
         self.__order_address = order_address
+        self.__ordered_items = ordered_items
+        self.__ordered_items_count = ordered_items_count
         self.__order_total_price = order_total_price
 
     # ------------------------ Getter ------------------------------ #
@@ -22,12 +25,16 @@ class Order():
         return self.__order_date
     
     @property
+    def order_address(self)->str:
+        return self.__order_address
+    
+    @property
     def ordered_items(self)->str:
         return self.__ordered_items
     
     @property
-    def order_address(self)->str:
-        return self.__order_address
+    def ordered_items_count(self)->str:
+        return self.__ordered_items_count
     
     @property
     def order_total_price(self)->str:
@@ -47,17 +54,22 @@ class Order():
     def order_date(self,order_date:str)->None:
         self.__order_date = order_date
 
-    @ordered_items.setter
-    def ordered_items(self,ordered_items:str)->None:
-        self.__ordered_items = ordered_items
-
     @order_address.setter
     def order_address(self,order_address:str)->None:
         self.__order_address = order_address
 
+    @ordered_items.setter
+    def ordered_items(self,ordered_items:str)->None:
+        self.__ordered_items = ordered_items
+
+    @ordered_items_count.setter
+    def ordered_items_count(self,ordered_items_count:str)->None:
+        self.__ordered_items_count = ordered_items_count
+
     @order_total_price.setter
     def order_total_price(self,order_total_price:str)->None:
         self.__order_total_price = order_total_price
+
 
 
 

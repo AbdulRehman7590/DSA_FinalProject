@@ -16,11 +16,10 @@ class UserTableModel(QAbstractTableModel):
         return len(self._headers)
 
     def data(self, index, role=Qt.DisplayRole):
-        if role == Qt.DisplayRole:
-            row = index.row()
+        if role == Qt.DisplayRole:            
+            user = self._tree.inOrderTraversal(self._tree.root, index.row())
             col = self._headers[index.column()]
-            user = self._tree.inOrderTraversal(self._tree.root, row)
-            print(user)
+            
             if user:
                 if col == "Name":
                     return user.username
