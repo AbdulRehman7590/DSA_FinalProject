@@ -69,5 +69,5 @@ class Customer(User):
 
         def add_to_delivered_order_list(self):
                 self.__delivered_order_list.push(self.__ordered_items_list.dequeue())
-                print("item stored in delivered order list")
+                print("item stored in delivered orders list")
 

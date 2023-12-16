@@ -58,7 +58,7 @@
        <string notr="true">background :rgb(253, 255, 242)</string>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="login_Page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -1729,7 +1729,7 @@ QPushButton:hover{
               <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
              </property>
              <property name="currentIndex">
-              <number>2</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="viewadminoption_pages">
               <layout class="QHBoxLayout" name="horizontalLayout_34">
@@ -2047,7 +2047,7 @@ QPushButton:hover{
                      </size>
                     </property>
                     <property name="currentIndex">
-                     <number>0</number>
+                     <number>2</number>
                     </property>
                     <widget class="QWidget" name="admin_viewFood">
                      <layout class="QHBoxLayout" name="horizontalLayout_38">
@@ -2965,7 +2965,7 @@ color:rgba(245, 206, 50, 1);</string>
            <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="customer_start_page">
            <layout class="QHBoxLayout" name="horizontalLayout_21">
@@ -3110,10 +3110,10 @@ border-radius:20%;
                     <widget class="QWidget" name="top_items">
                      <property name="geometry">
                       <rect>
-                       <x>0</x>
+                       <x>-52</x>
                        <y>0</y>
                        <width>900</width>
-                       <height>148</height>
+                       <height>153</height>
                       </rect>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -3448,7 +3448,7 @@ border-radius:20%;
                        <x>0</x>
                        <y>0</y>
                        <width>900</width>
-                       <height>148</height>
+                       <height>153</height>
                       </rect>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_3">
