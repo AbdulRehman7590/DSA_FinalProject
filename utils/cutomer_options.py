@@ -4,19 +4,25 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
+import random as rnd
+from datetime import date
+
 from classes.BL.order import Order
 from classes.DL.menu import Menu
 from classes.DL.usersDL import UsersDL as dL
 
+
+
 # ------------------- Showing explore menu ------------------------- #
 def showing_explore_menu(self):
     self.changing_customerStack_PageNo(1)
-    self.explore_more_page.setLayout(add_foodtab_in_widget(self, Menu._food_list))
+    self.explore_more_page.setLayout(add_foodtab_in_widget(self, Menu._food_list, True))
 
 
-# ----------------- Adding food in fvt list ------------------------ #
-def add_to_fvt(self, food):
-    (dL.get_user(self.userName).data).add_to_wishlist(Menu._food_list.search_data(food.food_name))
+# ------------------ Showing fvt items list ------------------------ #
+def showing_fvt_items(self):
+    self.changing_customerStack_PageNo(3)
+    self.cust_fvt_page.setLayout(add_foodtab_in_widget(self, self.user.wishlist, False))
 
 
 # ----------------- Showing add to cart page ----------------------- #
@@ -24,30 +30,26 @@ def showing_add_to_cart(self, food):
     self.changing_customerStack_PageNo(2)
 
     photo = self.findChild(QLabel, "food_img_Lbl")
-    pixmap = QPixmap(food.food_img_path)
-    photo.setPixmap(pixmap)
+    photo.setPixmap(QPixmap(food.food_img_path))
     photo.setScaledContents(True)
 
     name = self.findChild(QLabel, "food_name_Lbl")
     name.setText(food.food_name)
 
-    rating = self.findChild(QLabel, "food_rating_Lbl")
-    if food.food_rating == 5:
-        path = f"views/Icons & logos/5star.png"
-    elif food.food_rating == 4:
-        path = f"views/Icons & logos/4star.png"
-    elif food.food_rating == 3:
-        path = f"views/Icons & logos/3star.png"
-    elif food.food_rating == 2:
-        path = f"views/Icons & logos/2star.png"
-    else:
-        path = f"views/Icons & logos/1star.png"
-    pixmap = QPixmap(path)
-    rating.setPixmap(pixmap)
-    rating.setScaledContents(True)
-
+    rate_wdgt = self.findChild(QWidget, "food_rating_wdgt")
+    layout = QHBoxLayout()
+    rate_wdgt.setLayout(layout)
+    for _ in range(int(food.food_rating)):
+        label = QLabel()
+        label.setFixedWidth(20)
+        label.setFixedHeight(20)
+        label.setPixmap(QPixmap("views/Icons & logos/star.png"))
+        label.setScaledContents(True)
+        layout.addWidget(label)
+    
     desc = self.findChild(QLabel, "food_description_Lbl")
     desc.setText(food.food_description)
+    desc.setWordWrap(True)
 
     price = self.findChild(QLabel, "food_price_Lbl")
     price.setText(f"{food.food_price}")
@@ -55,14 +57,37 @@ def showing_add_to_cart(self, food):
     no_of_items = self.findChild(QSpinBox, "items_no_for_order")
     no_of_items.valueChanged.connect(lambda: self.findChild(QLabel, "food_price_Lbl").setText(f"{int(food.food_price) * int(no_of_items.value())}"))
 
-    self.backexplore_Btn.clicked.connect(lambda: self.changing_customerStack_PageNo(1))
+    self.backexplore_Btn.clicked.connect(self.back_from_cart_interface)
     self.backexplore_Btn.clicked.connect(lambda: no_of_items.setValue(1))
 
     self.add_tofvt_Btn.clicked.connect(lambda: add_to_fvt(self, food))
 
+    self.add_tocart_Btn.clicked.connect(lambda: add_to_cart(self, food, int(no_of_items.value())))
 
-# ---------------------- Food Tab ------------------------------- #
-def food_tab(self, food):
+
+# ------------------- Showing cart items --------------------------- #
+def showing_cart_items(self):
+    self.view_orders(self,self.user.cart, self.customer_table)
+
+    self.remove_cart_Btn.clicked.connect(lambda: self.user.remove_from_cart(self.user.cart.search_data(self.customer_table.model().data(self.customer_table.currentIndex()))))
+    self.view_order_Btn.clicked.connect(lambda: self.view_orders(self,(self.user.cart.search_data(self.customer_table.model().data(self.customer_table.currentIndex()))).ordered_items_list, self.customer_table))
+    self.buy_items_Btn.clicked.connect(lambda: self.user.add_to_ordered_items_list(self.user.cart.search_data(self.customer_table.model().data(self.customer_table.currentIndex()))))
+
+
+# ----------------- Adding food in fvt list ------------------------ #
+def add_to_fvt(self, food):
+    self.user.add_to_wishlist(Menu._food_list.search_data(food.food_name))
+
+
+# ------------------ Adding food in cart --------------------------- #
+def add_to_cart(self, food, no_of_items):
+    order = Order(rnd.randint(1, 999), date.today(), self.user.address)
+    order.add_ordered_items(food, no_of_items)
+    self.user.add_to_cart(order)
+
+
+# ------------------------ Food Tab ------------------------------- #
+def food_tab(self, food, menu_flag):
     main_widget = QWidget()
     main_layout = QVBoxLayout()
 
@@ -118,8 +143,12 @@ def food_tab(self, food):
                 }
                 """
     )
-    button1.setIcon(QtGui.QIcon("views/Icons & logos/touch_fvt.png"))
-    button1.clicked.connect(lambda: add_to_fvt(self, food))
+    if menu_flag:
+        button1.setIcon(QtGui.QIcon("views/Icons & logos/touch_fvt.png"))
+        button1.clicked.connect(lambda: add_to_fvt(self, food))
+    else:
+        button1.setIcon(QtGui.QIcon("views/Icons & logos/remove.png"))
+        button1.clicked.connect(lambda: self.user.remove_from_wishlist(food))
 
     button2 = QPushButton()
     button2.setMinimumHeight(30)
@@ -173,7 +202,7 @@ def food_tab(self, food):
 
 
 # ------------------- Adding tab in widget ------------------------ #
-def add_foodtab_in_widget(self, _food_list):
+def add_foodtab_in_widget(self, food_list, menu_flag):
     scroll_area = QScrollArea()
     scroll_area.setWidgetResizable(True)
     scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
@@ -185,8 +214,8 @@ def add_foodtab_in_widget(self, _food_list):
 
     row = 0
     col = 0
-    for i in range(_food_list.get_items_count()):
-        grid_layout.addWidget(food_tab(self, _food_list.get_item_at_index(i)), row, col)
+    for i in range(food_list.get_items_count()):
+        grid_layout.addWidget(food_tab(self, food_list.get_item_at_index(i), menu_flag), row, col)
         col += 1
         if col >= 3:
             col = 0
@@ -196,3 +225,5 @@ def add_foodtab_in_widget(self, _food_list):
     layout.addWidget(scroll_area)
 
     return layout
+
+
