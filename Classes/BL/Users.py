@@ -41,8 +41,5 @@ class User:
         self.__address = address
 
 
-    # ------------------------ Methods ------------------------------ #
-    def view_profile(self)->str:
-        return f"Username: {self.__username}\nEmail: {self.__email}\nAddress: {self.__address}"
 
 

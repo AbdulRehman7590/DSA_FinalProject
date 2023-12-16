@@ -11,6 +11,15 @@ class HashTable:
     def size(self):
         return self._count
 
+    def keys(self):
+        keys = []
+        for item in self._table:
+            if item:
+                for user in item:
+                    keys.append(user.order_id)
+        return keys
+
+    # ------------------------ Hash Function --------------------- #
     def _hash_function(self, key):
         sum = 0
         for ch in key:
@@ -65,19 +74,13 @@ class HashTable:
                     return order
         return None
     
-    # ---------------------- Get Order At Index ----------------- #
-    def get_order_at_index(self, index):
-        if self._table[index]:
-            return self._table[index]
-        return None
-    
     # ------------------------ Search ---------------------------- #
     def search(self, order_id):
         index = self._hash_function(order_id)
         if self._table[index]:
             for order in self._table[index]:
                 if order.order_id == order_id:
-                    return True
-        return False
+                    return order
+        return None
     
     

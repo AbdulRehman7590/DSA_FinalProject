@@ -20,7 +20,7 @@ class FoodTableModel(QAbstractTableModel):
             row = self._linked_list.get_item_at_index(index.row())
             col = self._headers[index.column()]
             
-            if row is not None:
+            if row:
                 if col == "Food_Name":
                     return row.food_name
                 elif col == "Price":
@@ -29,9 +29,11 @@ class FoodTableModel(QAbstractTableModel):
                     return row.food_description
                 elif col == "Rating":
                     return row.food_rating
+                elif col == "Likes":
+                    return row.food_likes
         return None
     
     def headerData(self, section, orientation, role=Qt.DisplayRole):
         if role == Qt.DisplayRole and orientation == Qt.Horizontal:
             return self._headers[section]
-        return None
+        return QVariant()
