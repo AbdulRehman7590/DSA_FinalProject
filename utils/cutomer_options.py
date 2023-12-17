@@ -6,9 +6,6 @@ from PyQt5.QtCore import *
 import random as rnd
 from datetime import date
 
-import random as rnd
-from datetime import date
-
 from classes.BL.order import Order
 from classes.DL.menu import Menu
 

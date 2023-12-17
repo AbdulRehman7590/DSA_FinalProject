@@ -56,7 +56,7 @@ class Mainwindow(QMainWindow):
         self.adminStack = self.findChild(QStackedWidget,"adminoption_stack")
         self.adminoption_stack = self.findChild(QStackedWidget,"admin_suboptions_stack")
         self.customerStack = self.findChild(QStackedWidget,"customerpages_stack")
-        self.changing_mainStack_PageNo(0)
+        self.changing_mainStack_PageNo(3)
 
 
         # ------------------- Button Connections ----------------- #
@@ -76,9 +76,12 @@ class Mainwindow(QMainWindow):
         self.viewCustomers_Btn.clicked.connect(self.view_customers)
         self.viewStats_Btn.clicked.connect(lambda: showing_stats(self))
         self.addnew_Food_Btn.clicked.connect(lambda: self.changing_adminStack_PageNo(1))
-        self.add_food_Btn.clicked.connect(lambda: add_new_food(self))
-
-
+        if self.add_food_Btn.clicked:
+            
+            self.add_food_Btn.clicked.connect(lambda: add_new_food(self))
+            self.view_foods()
+        self.SortBtn.clicked.connect(lambda: Sort(self))
+        
         # -------------------- Customer Options ----------------------- #
         self.home_Btn.clicked.connect(lambda: self.changing_customerStack_PageNo(0))
         self.customer_logout_Btn.clicked.connect(lambda: self.changing_mainStack_PageNo(0))

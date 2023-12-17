@@ -58,7 +58,7 @@
        <string notr="true">background :rgb(253, 255, 242)</string>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="login_Page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -1729,7 +1729,7 @@ QPushButton:hover{
               <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
              </property>
              <property name="currentIndex">
-              <number>1</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="viewadminoption_pages">
               <layout class="QHBoxLayout" name="horizontalLayout_34">
@@ -1768,7 +1768,7 @@ QPushButton:hover{
                       <height>80</height>
                      </size>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_10">
+                    <layout class="QGridLayout" name="gridLayout_9">
                      <item row="0" column="0">
                       <widget class="QLabel" name="sflabel_4">
                        <property name="minimumSize">
@@ -1834,7 +1834,7 @@ border-radius:10%;</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="0" column="2" rowspan="3">
+                     <item row="0" column="2" colspan="2">
                       <widget class="QWidget" name="widget_29" native="true">
                        <layout class="QHBoxLayout" name="horizontalLayout_40">
                         <property name="spacing">
@@ -1853,48 +1853,7 @@ border-radius:10%;</string>
                          <number>0</number>
                         </property>
                         <item>
-                         <widget class="QPushButton" name="start_Search">
-                          <property name="minimumSize">
-                           <size>
-                            <width>0</width>
-                            <height>0</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>200</width>
-                            <height>30</height>
-                           </size>
-                          </property>
-                          <property name="font">
-                           <font>
-                            <family>Rockwell</family>
-                            <pointsize>15</pointsize>
-                            <weight>75</weight>
-                            <bold>true</bold>
-                           </font>
-                          </property>
-                          <property name="cursor">
-                           <cursorShape>PointingHandCursor</cursorShape>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">QPushButton{
-	color: rgba(230, 0, 35, 1);
-	background-color:rgba(245, 206, 50, 1);
-	border-radius:10%;
-}
-QPushButton:hover{
-	background-color: rgb(244,244,244);
-	color:rgba(245, 206, 50, 1);
-}	</string>
-                          </property>
-                          <property name="text">
-                           <string>Search</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QComboBox" name="admin_attribute_2">
+                         <widget class="QComboBox" name="SortingOrderCB">
                           <property name="minimumSize">
                            <size>
                             <width>200</width>
@@ -1934,7 +1893,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QComboBox" name="admin_attribute">
+                      <widget class="QComboBox" name="SearchCB">
                        <property name="minimumSize">
                         <size>
                          <width>200</width>
@@ -2020,6 +1979,88 @@ QPushButton:hover{
                          <string>ends_with</string>
                         </property>
                        </item>
+                      </widget>
+                     </item>
+                     <item row="1" column="2">
+                      <widget class="QPushButton" name="SortBtn">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>200</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Rockwell</family>
+                         <pointsize>15</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="cursor">
+                        <cursorShape>PointingHandCursor</cursorShape>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QPushButton{
+	color: rgba(230, 0, 35, 1);
+	background-color:rgba(245, 206, 50, 1);
+	border-radius:10%;
+}
+QPushButton:hover{
+	background-color: rgb(244,244,244);
+	color:rgba(245, 206, 50, 1);
+}	</string>
+                       </property>
+                       <property name="text">
+                        <string>Sort</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="3">
+                      <widget class="QPushButton" name="start_Search">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>200</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Rockwell</family>
+                         <pointsize>15</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="cursor">
+                        <cursorShape>PointingHandCursor</cursorShape>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QPushButton{
+	color: rgba(230, 0, 35, 1);
+	background-color:rgba(245, 206, 50, 1);
+	border-radius:10%;
+}
+QPushButton:hover{
+	background-color: rgb(244,244,244);
+	color:rgba(245, 206, 50, 1);
+}	</string>
+                       </property>
+                       <property name="text">
+                        <string>Search</string>
+                       </property>
                       </widget>
                      </item>
                     </layout>
@@ -3035,7 +3076,7 @@ color:rgba(245, 206, 50, 1);</string>
            <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="customer_start_page">
            <layout class="QHBoxLayout" name="horizontalLayout_21">

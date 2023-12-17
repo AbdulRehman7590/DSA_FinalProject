@@ -4,6 +4,7 @@ from PyQt5.QtCore import *
 
 from classes.BL.foods import Food
 from classes.DL.menu import Menu
+import utils.algorithms as algo
 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -15,7 +16,7 @@ def upload_photo(self):
         print(self.food_img_path)
 
 
-# -------------------- Add foodin list ------------------------- #
+# -------------------- Add food in list ------------------------- #
 def add_new_food(self):
     food_name = self.findChild(QLineEdit, "food_name").text()
     food_price = self.findChild(QLineEdit, "food_price").text()
@@ -36,6 +37,7 @@ def add_new_food(self):
         self.view_foods()
         
         Menu.store_in_csv()
+    
 
 
 # ------------------- View food stats --------------------------- #
@@ -77,4 +79,25 @@ def showing_stats(self):
     self.canvas.draw()
 
 
+#----------------------------- Sort Data --------------------------#
+def Sort(self):
+    print("Entered")
+    temp = Menu._food_list.head
+    # while temp is not None:
+    #     print(f"Food Name: {temp.data.food_name}, Price: {temp.data.food_price}, Description: {temp.data.food_description}, Rating: {temp.data.food_rating}")
+    #     temp = temp.next
+
+    column = 1  # Change this to the appropriate column index
+    print(column)
+    algo.MergeSort(Menu._food_list, column)
+
+    print("Sorted list:")
+    temp = Menu._food_list.head
+    while temp is not None:
+        print(f"Food Name: {temp.data.food_name}, Price: {temp.data.food_price}")
+        temp = temp.next
+
+    Menu.store_in_csv()
+    print("Sorting done")
+    
 
