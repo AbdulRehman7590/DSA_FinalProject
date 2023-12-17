@@ -38,21 +38,27 @@ class DoubleLinkedList:
             new_tail = Node(data)
             new_tail.previous = temp
             temp.next = new_tail
-        return new_tail
+            self.tail = new_tail
+            
 
     # ------------------- Deleting node ------------------------- #
     def delete_data(self, data):
         if self.head is None:
             return False
         else:
-            temp = self.head
-            while temp.next is not None:
-                if temp.data == data:
-                    temp.previous.next = temp.next
-                    temp.next.previous = temp.previous
-                    return True
-                else:
-                    temp = temp.next
+            if self.head.data == data:
+                self.head.previous = None
+                self.head = self.head.next
+                return True
+            else:
+                temp = self.head
+                while temp.next is not None:
+                    if temp.data == data:
+                        temp.next.previous = temp.previous
+                        temp.previous.next = temp.next
+                        return True
+                    else:
+                        temp = temp.next
             return False
 
     # ----------------------- Search ---------------------------- #
@@ -61,7 +67,7 @@ class DoubleLinkedList:
             return None
         else:
             temp = self.head
-            while temp.next is not None:
+            while temp is not None:
                 if temp.data.food_name == foodname:
                     return temp.data
                 else:
@@ -75,7 +81,7 @@ class DoubleLinkedList:
             return None
         else:
             temp = self.head
-            while temp.next is not None:
+            while temp is not None:
                 if idx == index:
                     return temp.data
                 else:
@@ -90,7 +96,7 @@ class DoubleLinkedList:
             return count
         else:
             temp = self.head
-            while temp.next is not None:
+            while temp is not None:
                 count += 1
                 temp = temp.next
         return count
