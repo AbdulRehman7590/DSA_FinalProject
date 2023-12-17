@@ -34,19 +34,28 @@ class Admin(User):
         # ------------------------ Methods ------------------------------ #
         def add_order(self,order):
                 self.__all_orders_history.insert(order)
+                print("Order Added in history")
                 self.__pending_orders.enqueue(order)
+                print("Order Added in pending")
         
         def add_delivered_order(self,order):
                 self.__pending_orders.dequeue()
+                print("Order Removed from pending")
                 self.__delivered_orders.push(order)
+                print("Order Added in delivered")
         
         def add_cancel_order(self):
                 self.__cancel_orders.insert(self.__pending_orders.dequeue())
+                print("Order Removed from pending")
 
         def remove_cancel_order(self,order):
                 self.__cancel_orders.remove(order)
+                print("Order Removed from cancel")
                 self.__pending_orders.enqueue(order)
+                print("Order Added in pending")
 
         def remove_order(self,order):
                 self.__all_orders_history.remove(order)
+                print("Order Removed from history")
                 self.__pending_orders.dequeue()
+                print("Order Removed from pending")

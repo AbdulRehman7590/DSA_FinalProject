@@ -34,11 +34,16 @@ class Mainwindow(QMainWindow):
 
 
         # ---------------------- Variables ----------------------- #
-        self.path = ""
+        self.food_img_path = ""
         self.about_pagerecord = -1
+        self.back_from_cart = -1
+        self.cart_item = ""
+
+
+        # ---------------------- Columns ------------------------- #
         self.users_columns = ["Name", "Email", "Address", "Type"]
-        self.foods_columns = ["Food_Name", "Price", "Description", "Rating"]
-        self.orders_columns = ["Order_ID", "Order_Status", "Order_Date", "Ordered_Items", "Order_Address", "Order_Total_Price"]
+        self.foods_columns = ["Food_Name", "Price", "Description", "Rating", "Likes"]
+        self.orders_columns = ["Order_ID", "Order_Date", "Order_Address", "Order_Item", "Order_Quantity", "Order_Total_Price"]
 
 
         # ------------------------ Tables ------------------------ #
@@ -67,25 +72,47 @@ class Mainwindow(QMainWindow):
         # ---------------------- Admin Options ------------------------ #
         self.admin_logout_Btn.clicked.connect(lambda: self.changing_mainStack_PageNo(0))
         self.viewFood_Btn.clicked.connect(self.view_foods)
-        self.viewOrders_Btn.clicked.connect(lambda: self.view_orders(dL.get_user(self.userName).all_orders_history))
+        self.viewOrders_Btn.clicked.connect(lambda: self.view_orders(self.user.all_orders_history, self.adminTable))
         self.viewCustomers_Btn.clicked.connect(self.view_customers)
         self.viewStats_Btn.clicked.connect(lambda: showing_stats(self))
         self.addnew_Food_Btn.clicked.connect(lambda: self.changing_adminStack_PageNo(1))
-        self.add_food_Btn.clicked.connect(lambda: add_new_food(self))
-        self.uploadPhoto_Btn.clicked.connect(lambda: upload_photo(self))
-
-
+        if self.add_food_Btn.clicked:            
+            self.add_food_Btn.clicked.connect(lambda: add_new_food(self))
+            self.view_foods()
+        self.SortBtn.clicked.connect(lambda: Sort(self))
+        if self.add_food_Btn.clicked:  
+            
+            self.start_Search.clicked.connect(lambda: Search(self))
+            self.view_foods()
+        
         # -------------------- Customer Options ----------------------- #
-        self.customer_logout_Btn.clicked.connect(lambda: self.changing_mainStack_PageNo(0))
-        self.explore_Btn.clicked.connect(lambda: showing_food_tabs(self))
-        self.fvt_Btn.clicked.connect(lambda: self.changing_customerStack_PageNo(3))
-        self.cart_Btn.clicked.connect(lambda: self.changing_customerStack_PageNo(4))
         self.home_Btn.clicked.connect(lambda: self.changing_customerStack_PageNo(0))
+        self.customer_logout_Btn.clicked.connect(lambda: self.changing_mainStack_PageNo(0))
+        self.explore_Btn.clicked.connect(lambda: showing_explore_menu(self))
+        self.fvt_Btn.clicked.connect(lambda: showing_fvt_items(self))
+        self.cart_Btn.clicked.connect(lambda: showing_cart_items(self))
+        self.order_history_Btn.clicked.connect(lambda: showing_all_orders(self))
+        self.credentials_Btn.clicked.connect(lambda: self.changing_customerStack_PageNo(6))
+
+
+    # ---------------------- Message Boxes ------------------------ #
+    def show_Warning(self, message):
+        QMessageBox.warning(self, "Warning", message)
+
+    def show_Information(self, message):
+        QMessageBox.information(self, "Information", message)
 
 
     # ---------------------- Changing Page ------------------------ #
     def back_from_about(self):
         self.changing_mainStack_PageNo(self.about_pagerecord)
+
+    def back_from_cart_interface(self):
+        self.backexplore_Btn.clicked.disconnect(self.back_from_cart_interface)
+        self.add_tofvt_Btn.clicked.disconnect(self.add_tofvt_Btn_lambda)
+        self.add_tocart_Btn.clicked.disconnect(self.add_tocart_Btn_lambda)
+
+        self.changing_customerStack_PageNo(self.back_from_cart)
 
     def changing_mainStack_PageNo(self, index):
         if index == 2:
@@ -107,6 +134,12 @@ class Mainwindow(QMainWindow):
         self.changing_adminStack_PageNo(0)
 
     def changing_customerStack_PageNo(self, index):
+        if index == 0:
+            showing_first_page(self)
+
+        elif index == 2:
+            self.back_from_cart = self.customerStack.currentIndex()
+
         self.customerStack.setCurrentIndex(index)
 
 
@@ -117,11 +150,10 @@ class Mainwindow(QMainWindow):
         header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
         self.changing_adminoption_stack_PageNo(0)
 
-    def view_orders(self,ordlist):
-        self.adminTable.setModel(OrderTableModel(ordlist, self.orders_columns))
-        header = self.adminTable.horizontalHeader()
+    def view_orders(self,ordlist,table):
+        table.setModel(OrderTableModel(ordlist, self.orders_columns))
+        header = table.horizontalHeader()
         header.setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
-        self.changing_adminoption_stack_PageNo(1)
 
     def view_customers(self):
         self.adminTable.setModel(UserTableModel(dL._user_list, self.users_columns))

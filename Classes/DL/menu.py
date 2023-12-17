@@ -10,12 +10,20 @@ class Menu():
         # --------------------- Methods ---------------------------- #
         @staticmethod
         def add_food(food):
-                Menu._food_list.insert_at_tail(food)
-                print("Food added in DLL")
+                if Menu._food_list.search_data(food.food_name):
+                        print("Food already exists in DLL")
+                        return False
+                else:
+                        Menu._food_list.insert_at_tail(food)
+                        print("Food added in DLL")
+                        return True
         
         @staticmethod
         def remove_food(food):
-                Menu._food_list.delete_data(food)
+                if Menu._food_list.delete_data(food):
+                        print("Food deleted from DLL")
+                else:
+                        print("Food not found in DLL")
         
         @staticmethod
         def search_food(foodname):
@@ -40,6 +48,8 @@ class Menu():
                                 next(reader)
                                 for row in reader:
                                         if row:
-                                                Menu._food_list.insert_at_tail(Food(row[0], row[1], f"views/Images/{row[0]}.jpg", row[2], row[3]))
+                                                food = Food(row[0], row[1], f"views/Images/{row[0]}.jpg", row[2], row[3])
+                                                food.food_likes = int(row[4])
+                                                Menu._food_list.insert_at_tail(food)
                         except Exception as e:
                                 print(f"An error occurred: {e}")

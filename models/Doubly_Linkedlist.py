@@ -11,7 +11,7 @@ class DoubleLinkedList:
         self.head = None
         self.tail = None
 
-    # ----------------------- Empty? ---------------------------- #
+    # ----------------------- Check Empty ---------------------------- #
     def is_empty(self):
         return self.head is None
 
@@ -40,6 +40,8 @@ class DoubleLinkedList:
             temp.next = new_tail
             self.tail = new_tail
             
+            self.tail = new_tail
+            
 
     # ------------------- Deleting node ------------------------- #
     def delete_data(self, data):
@@ -62,13 +64,13 @@ class DoubleLinkedList:
             return False
 
     # ----------------------- Search ---------------------------- #
-    def search_data(self, foodname):
+    def search_data(self, foodName):
         if self.head is None:
             return None
         else:
             temp = self.head
-            while temp is not None:
-                if temp.data.food_name == foodname:
+            while temp.next is not None:
+                if temp.data.food_name == foodName:
                     return temp.data
                 else:
                     temp = temp.next

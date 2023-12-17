@@ -10,6 +10,7 @@ class Node:
 class BST:
     def __init__(self):
         self.root = None
+        self.counter = 0
 
     # ---------------------- Insert --------------------------- #
     def insertNode(self, value):
@@ -106,3 +107,28 @@ class BST:
         nodes += self.preOrderTraversal(T.right)
 
         return nodes
+
+    # ------------------- In Order Traversal -------------------- #
+    def inOrderTraversal(self, T, idx):
+        if T is None:
+            return None
+
+        left = self.inOrderTraversal(T.left, idx)
+        if left is not None:
+            if hasattr(left, 'data'):
+                return left.data
+
+        if self.counter == idx:
+            if hasattr(T, 'data'):
+                return T.data
+
+        self.counter += 1
+
+        right = self.inOrderTraversal(T.right, idx)
+        if right is not None:
+            if hasattr(right, 'data'):
+                return right.data
+
+        return None
+
+
