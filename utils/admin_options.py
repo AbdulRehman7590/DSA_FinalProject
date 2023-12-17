@@ -100,4 +100,17 @@ def Sort(self):
     Menu.store_in_csv()
     print("Sorting done")
     
+    
+#-----------------------------Search Data-----------------------------------#
+def Search(self):
+    text = self.search_content.text()
+    filter = self.search_filter.text()
+    col = self.SearchCB.index()
+    algo.LinearSearch(Menu._food_list,col,text,filter)
+    temp = Menu._food_list.head
+    while temp is not None:
+        print(f"Food Name: {temp.data.food_name}, Price: {temp.data.food_price}")
+        temp = temp.next
+    print(text)
+    
 
