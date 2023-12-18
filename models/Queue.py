@@ -1,66 +1,41 @@
-# ------------------------- Node --------------------------------- #
-class Node:
-    def __init__(self, value):
-        self.data = value
-        self.next = None
+# ------------------------ Imports ------------------------------ #
+from models.Linkedlist import LinkedList
 
 # ------------------------ Queue --------------------------------- #
 class Queue:
     def __init__(self):
-        self.front = None
-        self.rear = None
+        self._queue_list = LinkedList()
 
     # ----------------------- Enqueue ---------------------------- #
     def enqueue(self, value):
-        new_node = Node(value)
-        if self.is_empty():
-            self.front = new_node
-            self.rear = new_node
-        else:
-            self.rear.next = new_node
-            self.rear = new_node
+        self._queue_list.insert_at_tail(value)
 
     # ----------------------- Dequeue ---------------------------- #
     def dequeue(self):
-        if self.is_empty():
-            print("Queue is empty")
-            return None
-
-        dequeued_value = self.front.data
-        self.front = self.front.next
-
-        if self.front is None:
-            self.rear = None
-        return dequeued_value
+        return self._queue_list.delete_from_head()
 
     # ----------------------- Front ---------------------------- #
     def front_element(self):
         if self.is_empty():
             print("Queue is empty")
             return None
-        return self.front.data
+        return self._queue_list.head.data
 
     # ---------------------- Empty? --------------------------- #
     def is_empty(self):
-        return self.front is None
+        return self._queue_list.get_items_count() == 0
     
     # ----------------------- Size ---------------------------- #
     def size(self):
-        count = 0
-        current = self.front
-        while current is not None:
-            count += 1
-            current = current.next
-        return count
+        return self._queue_list.get_items_count()
 
     # --------------------- Display --------------------------- #
     def display(self):
         if self.is_empty():
             print("Queue is empty")
         else:
-            current = self.front
-            while current is not None:
-                print(current.data, end=" <- ")
-                current = current.next
-            print("rear")
+            self._queue_list.display()
 
+    # --------------- get item at index ------------------------- #
+    def get_item_at(self, index):
+        return self._queue_list.get_item_at_index(index)
