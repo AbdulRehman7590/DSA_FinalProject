@@ -2,9 +2,8 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
-from  classes.BL.foods import Food
+from classes.BL.foods import Food
 from classes.DL.menu import Menu
-import utils.algorithms as algo
 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -16,13 +15,12 @@ def upload_photo(self):
         print(self.food_img_path)
 
 
-# -------------------- Add food in list ------------------------- #
+# -------------------- Add foodin list ------------------------- #
 def add_new_food(self):
     food_name = self.findChild(QLineEdit, "food_name").text()
     food_price = self.findChild(QLineEdit, "food_price").text()
     food_description = self.findChild(QLineEdit, "food_description").text()
     
-    self.uploadPhoto_Btn.clicked.connect(lambda: upload_photo(self))
     image_path = f"views/Images/{self.food_img_path}"
 
     if food_name == "" or food_price == "" or food_description == "" or image_path == "":
@@ -37,7 +35,6 @@ def add_new_food(self):
         self.view_foods()
         
         Menu.store_in_csv()
-    
 
 
 # ------------------- View food stats --------------------------- #
@@ -79,38 +76,4 @@ def showing_stats(self):
     self.canvas.draw()
 
 
-#----------------------------- Sort Data --------------------------#
-def Sort(self):
-    print("Entered")
-    temp = Menu._food_list.head
-    # while temp is not None:
-    #     print(f"Food Name: {temp.data.food_name}, Price: {temp.data.food_price}, Description: {temp.data.food_description}, Rating: {temp.data.food_rating}")
-    #     temp = temp.next
-
-    column = 1  # Change this to the appropriate column index
-    print(column)
-    algo.MergeSort(Menu._food_list, column)
-
-    print("Sorted list:")
-    temp = Menu._food_list.head
-    while temp is not None:
-        print(f"Food Name: {temp.data.food_name}, Price: {temp.data.food_price}")
-        temp = temp.next
-
-    Menu.store_in_csv()
-    print("Sorting done")
-    
-    
-#-----------------------------Search Data-----------------------------------#
-def Search(self):
-    text = self.search_content.text()
-    filter = self.search_filter.text()
-    col = self.SearchCB.index()
-    algo.LinearSearch(Menu._food_list,col,text,filter)
-    temp = Menu._food_list.head
-    while temp is not None:
-        print(f"Food Name: {temp.data.food_name}, Price: {temp.data.food_price}")
-        temp = temp.next
-    print(text)
-    
 

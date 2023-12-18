@@ -18,6 +18,10 @@ class Stack:
     def top_element(self):
         return self._stack_list.head.data
 
+    # --------------- get item at index ------------------------- #
+    def get_item_at(self, index):
+        return self._stack_list.get_item_at_index(index)
+
     # ----------------------- Empty? ---------------------------- #
     def is_empty(self):
         return self._stack_list.get_items_count() == 0
@@ -33,6 +37,3 @@ class Stack:
         else:
             self._stack_list.display()
 
-    # --------------- get item at index ------------------------- #
-    def get_item_at(self, index):
-        return self._stack_list.get_item_at_index(index)

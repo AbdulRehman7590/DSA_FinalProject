@@ -1,11 +1,11 @@
 # ------------------------ Libraries ------------------------------- #
-from models.Doubly_Linkedlist import DoubleLinkedList
+from models.Linkedlist import LinkedList
 from classes.BL.foods import Food
 import csv
 
 # ------------------------ Menu CLass ------------------------------ #
 class Menu():
-        _food_list = DoubleLinkedList()
+        _food_list = LinkedList()
         
         # --------------------- Methods ---------------------------- #
         @staticmethod
@@ -20,7 +20,7 @@ class Menu():
         
         @staticmethod
         def remove_food(food):
-                if Menu._food_list.delete_data(food):
+                if Menu._food_list.delete_node(food):
                         print("Food deleted from DLL")
                 else:
                         print("Food not found in DLL")
@@ -36,7 +36,7 @@ class Menu():
                         writer.writerow(["Item_Name", "Price", "Description", "Rating"])
                         temp = Menu._food_list.head
                         while temp is not None:
-                                writer.writerow([temp.data.food_name, temp.data.food_price, temp.data.food_description, temp.data.food_rating])
+                                writer.writerow([temp.data.food_name, temp.data.food_price, temp.data.food_description, temp.data.food_rating, temp.data.food_likes])
                                 temp = temp.next
 
         @staticmethod
