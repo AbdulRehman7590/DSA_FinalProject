@@ -1,7 +1,7 @@
 # ------------------------ Libraries ------------------------------- #
 from classes.BL.users import User
 from models.Hash_Table import HashTable
-from models.Doubly_Linkedlist import DoubleLinkedList
+from models.Linkedlist import DoubleLinkedList
 from models.Stack import Stack
 from models.Queue import Queue
 
