@@ -2,16 +2,15 @@
 class Node:
     def __init__(self, data):
         self.next = None
-        self.previous = None
         self.data = data
 
 # --------------------- Linked List ------------------------------ #
-class DoubleLinkedList: 
+class LinkedList: 
     def __init__(self):
         self.head = None
         self.tail = None
 
-    # ----------------------- Check Empty ---------------------------- #
+    # ----------------------- Empty? ---------------------------- #
     def is_empty(self):
         return self.head is None
 
@@ -22,48 +21,71 @@ class DoubleLinkedList:
         else:
             new_head = Node(data)
             new_head.next = self.head
-            self.head.previous = new_head
             self.head = new_head
         return self.head
 
     # ------------------- Insert at tail ------------------------- #
     def insert_at_tail(self, data):
         if self.head is None:
-            self.head = Node(data)
+            obj = Node(data)
+            self.head = obj
+            self.tail = obj
         else:
             temp = self.head
             while temp.next is not None:
                 temp = temp.next
 
             new_tail = Node(data)
-            new_tail.previous = temp
             temp.next = new_tail
             self.tail = new_tail
             
-
     # ------------------- Deleting node ------------------------- #
-    def delete_data(self, data):
+    def delete_node(self, data):
         if self.head is None:
-            return False
+            return None
         else:
-            temp = self.head
-            while temp.next is not None:
-                if temp.data == data:
-                    temp.previous.next = temp.next
-                    temp.next.previous = temp.previous
-                    return True
-                else:
+            if self.head.data == data:
+                return self.delete_from_head()
+            else:
+                temp = self.head
+                while temp.next.data != data:
                     temp = temp.next
-            return False
+                temp.next = temp.next.next
+                return temp.next.data
 
-    # ----------------------- Search ---------------------------- #
-    def search_data(self, foodName):
+    # -------------------- Delete head -------------------------- #
+    def delete_from_head(self):
         if self.head is None:
             return None
         else:
             temp = self.head
-            while temp.next is not None:
-                if temp.data.food_name == foodName:
+            self.head = self.head.next
+            return temp.data
+
+    # -------------------- Delete Tail -------------------------- #
+    def delete_from_tail(self):
+        if self.head is None:
+            return None
+        else:
+            if self.tail == self.head:
+                return self.delete_from_head()
+            else:
+                temp = self.head
+                while temp.next.data != self.tail.data:
+                    temp = temp.next
+                
+                temp.next = self.tail.next
+                self.tail = temp
+                return self.tail.data
+
+    # ----------------------- Search ---------------------------- #
+    def search_data(self, foodname):
+        if self.head is None:
+            return None
+        else:
+            temp = self.head
+            while temp is not None:
+                if temp.data.food_name == foodname:
                     return temp.data
                 else:
                     temp = temp.next
@@ -76,7 +98,7 @@ class DoubleLinkedList:
             return None
         else:
             temp = self.head
-            while temp.next is not None:
+            while temp is not None:
                 if idx == index:
                     return temp.data
                 else:
@@ -91,7 +113,7 @@ class DoubleLinkedList:
             return count
         else:
             temp = self.head
-            while temp.next is not None:
+            while temp is not None:
                 count += 1
                 temp = temp.next
         return count

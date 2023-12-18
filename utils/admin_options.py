@@ -2,7 +2,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
-from classes.BL.foods import Food
+from  classes.BL.foods import Food
 from classes.DL.menu import Menu
 import utils.algorithms as algo
 
