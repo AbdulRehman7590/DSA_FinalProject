@@ -33,6 +33,8 @@ class Food():
         @property
         def food_likes(self)->int:
                 return self.__food_likes
+        def food_likes(self)->int:
+                return self.__food_likes
 
         # ------------------------ Setter ------------------------------ #
         @food_name.setter
@@ -56,14 +58,43 @@ class Food():
                 self.__food_likes = food_likes
         
         
+
+        @food_likes.setter
+        def food_likes(self,food_likes:int)->None:
+                self.__food_likes = food_likes
+        
+        
         # ------------------------ Methods ------------------------------ #
         def add_like_and_rate(self):
                 self.__food_likes += 1
                 if self.__food_likes > 2:
+        def add_like_and_rate(self):
+                self.__food_likes += 1
+                if int(self.__food_likes) > 2:
                         self.__food_rating += 1
                         self.__food_likes = 0
                 if self.__food_rating > 5:
+                        self.__food_likes = 0
+                if int(self.__food_rating) > 5:
                         self.__food_rating = 5
+                print("Thanks for liking the food")
+
+        def remove_like_and_rate(self):
+                self.__food_likes -= 1
+                if int(self.__food_likes) < 0:
+                        self.__food_rating -= 1
+                        self.__food_likes = 3
+                if int(self.__food_rating) < 0:
+                        self.__food_rating = 0
+                print("Sorry for disliking the food")
+
+        def remove_like_and_rate(self):
+                self.__food_likes -= 1
+                if self.__food_likes < 0:
+                        self.__food_rating -= 1
+                        self.__food_likes = 3
+                if self.__food_rating < 0:
+                        self.__food_rating = 0
 
         def remove_like_and_rate(self):
                 self.__food_likes -= 1
