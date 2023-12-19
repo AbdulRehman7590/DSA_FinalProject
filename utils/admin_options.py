@@ -4,7 +4,7 @@ from PyQt5.QtCore import *
 
 from classes.BL.foods import Food
 from classes.DL.menu import Menu
-import algorithms as algo
+from utils.algorithms import *
 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -87,7 +87,7 @@ def Sort(self):
 
     column = 1  # Change this to the appropriate column index
     print(column)
-    algo.merge_sort_linked_list(Menu._food_list)
+    merge_sort_linked_list(Menu._food_list)
 
     print("Sorted list:")
     temp = Menu._food_list.head
