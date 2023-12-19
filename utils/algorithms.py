@@ -64,3 +64,6 @@ def LinearSearch(df, columnName, search_key, filter_type):
                 indexList.append(value)
         
         return indexList
+    
+    
+    

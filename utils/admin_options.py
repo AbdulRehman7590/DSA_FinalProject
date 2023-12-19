@@ -75,5 +75,3 @@ def showing_stats(self):
     self.ax.bar(food_names, food_ratings, color="green")
     self.canvas.draw()
 
-
-

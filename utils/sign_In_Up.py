@@ -27,10 +27,10 @@ def TakeInput_SignIn(self):
 
 # -------------------- Sign In Implementation ----------------- #
 def TakeInput_LogIn(self):
-    self.userName = self.findChild(QLineEdit, "userName").text()
-    self.passWord = self.findChild(QLineEdit, "passWord").text()
+    userName = self.findChild(QLineEdit, "userName").text()
+    passWord = self.findChild(QLineEdit, "passWord").text()
 
-    if self.userName == "" or self.passWord == "":
+    if userName == "" or passWord == "":
         self.show_Warning("Please fill all the fields")
         return
     else:

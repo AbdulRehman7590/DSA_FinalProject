@@ -26,20 +26,27 @@ def showing_first_page(self):
 def showing_explore_menu(self):
     self.changing_customerStack_PageNo(1)
 
-    if self.explore_more_page.layout() is None:
-        add_foodtab_in_widget(self, self.explore_more_page.layout(), Menu._food_list, True)
+    Layout = self.findChild(QHBoxLayout, "explore_layout")
+
+    if Layout.count() > 0:
+        for i in reversed(range(Layout.count())):
+            Layout.itemAt(i).widget().setParent(None)
+
+    add_foodtab_in_widget(self, Layout, Menu._food_list, True)
 
 
 # ------------------ Showing fvt items list ------------------------ #
 def showing_fvt_items(self):
     self.changing_customerStack_PageNo(3)
-    
-    if self.cust_fvt_page.layout() is not None:
-        for i in reversed(range(self.cust_fvt_page.layout().count())):
-            self.cust_fvt_page.layout().itemAt(i).widget().setParent(None)
 
-    if self.cust_fvt_page.layout() is None:
-        add_foodtab_in_widget(self, self.cust_fvt_page.layout(), self.user.wishlist, False)
+    if self.user.wishlist.get_items_count() == 0:
+        self.show_Warning("No items in wishlist")
+    else:
+        Layout = self.findChild(QHBoxLayout, "fvt_items_layout")
+        if Layout.count() > 0:
+            for i in reversed(range(Layout.count())):
+                Layout.itemAt(i).widget().setParent(None)
+        add_foodtab_in_widget(self, Layout, self.user.wishlist, False)
 
 
 # ----------------- Showing add to cart page ----------------------- #
@@ -111,10 +118,16 @@ def check_item(self):
         self.show_Information("Item removed from cart successfully.")
 
 def buy_all_items(self):
-    keys = self.user.cart.get_keys()
-    for i in range(self.user.cart.size()):
-        self.user.add_to_ordered_items_list(self.user.cart.get_item_at_index(i))
+    key = self.user.cart.keys()
+    if len(key) > 0:
+        for i in range(len(key)):
+            ord = self.user.cart.search(key[i])
+            self.user.add_to_ordered_items_list(ord)
+            admin = dL.get_user("admin")
+            admin.add_order(ord)
         self.show_Information("Items bought successfully. Check the order history section")
+    else:
+        self.show_Warning("Please add items in cart first")
 
 
 # ------------------- Showing order history ------------------------ #
@@ -232,7 +245,7 @@ def change_password(self):
         dL.store_in_csv()
 
 def change_address(self):
-    new_address = self.findChild(QLineEdit, "change_address_Line")
+    new_address = self.findChild(QLineEdit,"change_address_Line")
     if new_address.text() == "":
         self.show_Warning("Please enter a valid address")
     else:

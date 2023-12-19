@@ -1,3 +1,5 @@
+# ----------------------- imports -------------------------------- #
+from utils.algorithms import *
 # ------------------------- Node --------------------------------- #
 class Node:
     def __init__(self, data):
@@ -90,6 +92,24 @@ class LinkedList:
                 else:
                     temp = temp.next
         return None
+    
+    # ----------------------- Search ---------------------------- #
+    def search_data_with_filter(self, columnName, search_key, filter):
+        data = []
+        if self.head is None:
+            return None
+        else:
+            temp = self.head
+            while temp is not None:
+                if filter == 1 and search_key in temp.data.columnName:
+                    data.append(temp.data)
+                elif filter == 2 and temp.data.columnName.starts_With(search_key):
+                    data.append(temp.data)
+                elif filter == 3 and temp.data.columnName.ends_With(search_key):
+                    data.append(temp.data)
+                else:
+                    temp = temp.next
+        return None if len(data) == 0 else data
     
     # ------------------- Get item at Index  --------------------- #
     def get_item_at_index(self, index):
