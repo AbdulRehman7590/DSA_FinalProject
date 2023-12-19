@@ -64,13 +64,15 @@ class Food():
                         self.__food_likes = 0
                 if self.__food_rating > 5:
                         self.__food_rating = 5
+                print("Thanks for liking the food")
 
         def remove_like_and_rate(self):
                 self.__food_likes -= 1
-                if self.__food_likes < 0:
+                if int(self.__food_likes) < 0:
                         self.__food_rating -= 1
                         self.__food_likes = 3
-                if self.__food_rating < 0:
+                if int(self.__food_rating) < 0:
                         self.__food_rating = 0
+                print("Sorry for disliking the food")
 
 

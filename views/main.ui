@@ -1729,9 +1729,9 @@ QPushButton:hover{
               <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
              </property>
              <property name="currentIndex">
-              <number>1</number>
+              <number>0</number>
              </property>
-             <widget class="QWidget" name="viewadminoption_pages">
+             <widget class="QWidget" name="adminoption_pages">
               <layout class="QHBoxLayout" name="horizontalLayout_34">
                <property name="spacing">
                 <number>5</number>
@@ -1760,27 +1760,222 @@ QPushButton:hover{
                   <string notr="true">background-color: rgba(230, 0, 35, 1);</string>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_13">
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>5</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>5</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>5</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>5</number>
+                  </property>
                   <item>
-                   <widget class="QWidget" name="widget_18" native="true">
+                   <widget class="QWidget" name="search_sort_option_wdgt" native="true">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
                       <height>80</height>
                      </size>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_10">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="sflabel_4">
+                    <layout class="QHBoxLayout" name="horizontalLayout_43">
+                     <property name="spacing">
+                      <number>10</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QWidget" name="widget_39" native="true">
+                       <layout class="QGridLayout" name="gridLayout_10">
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="sflabel_4">
+                          <property name="minimumSize">
+                           <size>
+                            <width>200</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>200</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>Rockwell</family>
+                            <pointsize>12</pointsize>
+                            <weight>75</weight>
+                            <bold>true</bold>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color: rgba(230, 0, 35, 1);
+background-color:rgba(245, 206, 50, 1);
+border-radius:10%;</string>
+                          </property>
+                          <property name="text">
+                           <string>Select column</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="1" rowspan="2">
+                         <widget class="QLineEdit" name="search_content">
+                          <property name="minimumSize">
+                           <size>
+                            <width>200</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>200</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>Rockwell</family>
+                            <pointsize>12</pointsize>
+                            <weight>50</weight>
+                            <bold>false</bold>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background-color: rgb(244,244,244);</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>Enter Item to search</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="1" column="0" rowspan="2">
+                         <widget class="QComboBox" name="searching_attribute">
+                          <property name="minimumSize">
+                           <size>
+                            <width>200</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>200</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>Rockwell</family>
+                            <pointsize>12</pointsize>
+                            <weight>50</weight>
+                            <bold>false</bold>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background-color:rgb(244,244,244);</string>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>Food_Name</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>Food_Price</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>Food_Description</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>Food_Rating</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>Food_Likes</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item row="2" column="1">
+                         <widget class="QComboBox" name="search_filter">
+                          <property name="minimumSize">
+                           <size>
+                            <width>200</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>200</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>Rockwell</family>
+                            <pointsize>12</pointsize>
+                            <weight>50</weight>
+                            <bold>false</bold>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background-color:rgb(244,244,244);</string>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>contains</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>starts_with</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>ends_with</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="admin_search_Btn">
                        <property name="minimumSize">
                         <size>
-                         <width>200</width>
-                         <height>0</height>
+                         <width>80</width>
+                         <height>60</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>200</width>
-                         <height>30</height>
+                         <width>80</width>
+                         <height>60</height>
                         </size>
                        </property>
                        <property name="font">
@@ -1792,53 +1987,36 @@ QPushButton:hover{
                         </font>
                        </property>
                        <property name="styleSheet">
-                        <string notr="true">color: rgba(230, 0, 35, 1);
-background-color:rgba(245, 206, 50, 1);
-border-radius:10%;</string>
+                        <string notr="true">QPushButton{
+	background-color: rgba(230, 0, 35, 1);
+	color:rgba(245, 206, 50, 1);
+	border-radius:30%;
+}
+QPushButton:hover{
+	color: rgba(230, 0, 35, 1);
+	background-color:rgb(244,244,244);
+}	</string>
                        </property>
                        <property name="text">
-                        <string>Select column</string>
+                        <string/>
                        </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>Icons &amp; logos/search.png</normaloff>Icons &amp; logos/search.png</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>50</width>
+                         <height>50</height>
+                        </size>
                        </property>
                       </widget>
                      </item>
-                     <item row="0" column="1">
-                      <widget class="QLineEdit" name="search_content">
-                       <property name="minimumSize">
-                        <size>
-                         <width>200</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Rockwell</family>
-                         <pointsize>12</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(244,244,244);</string>
-                       </property>
-                       <property name="placeholderText">
-                        <string>Enter Item to search</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="2" rowspan="3">
-                      <widget class="QWidget" name="widget_29" native="true">
-                       <layout class="QHBoxLayout" name="horizontalLayout_40">
+                     <item>
+                      <widget class="QWidget" name="sorting_wdgt" native="true">
+                       <layout class="QVBoxLayout" name="verticalLayout_21">
                         <property name="spacing">
-                         <number>6</number>
+                         <number>5</number>
                         </property>
                         <property name="leftMargin">
                          <number>0</number>
@@ -1853,10 +2031,10 @@ border-radius:10%;</string>
                          <number>0</number>
                         </property>
                         <item>
-                         <widget class="QPushButton" name="start_Search">
+                         <widget class="QComboBox" name="sorting_attribute">
                           <property name="minimumSize">
                            <size>
-                            <width>0</width>
+                            <width>200</width>
                             <height>0</height>
                            </size>
                           </property>
@@ -1869,32 +2047,38 @@ border-radius:10%;</string>
                           <property name="font">
                            <font>
                             <family>Rockwell</family>
-                            <pointsize>15</pointsize>
-                            <weight>75</weight>
-                            <bold>true</bold>
+                            <pointsize>12</pointsize>
+                            <weight>50</weight>
+                            <bold>false</bold>
                            </font>
                           </property>
-                          <property name="cursor">
-                           <cursorShape>PointingHandCursor</cursorShape>
-                          </property>
                           <property name="styleSheet">
-                           <string notr="true">QPushButton{
-	color: rgba(230, 0, 35, 1);
-	background-color:rgba(245, 206, 50, 1);
-	border-radius:10%;
-}
-QPushButton:hover{
-	background-color: rgb(244,244,244);
-	color:rgba(245, 206, 50, 1);
-}	</string>
+                           <string notr="true">background-color:rgb(244,244,244);</string>
                           </property>
-                          <property name="text">
-                           <string>Search</string>
-                          </property>
+                          <item>
+                           <property name="text">
+                            <string>Food_Name</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>Food_Price</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>Food_Rating</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>Food_Likes</string>
+                           </property>
+                          </item>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QComboBox" name="admin_attribute_2">
+                         <widget class="QComboBox" name="sorting_order">
                           <property name="minimumSize">
                            <size>
                             <width>200</width>
@@ -1933,95 +2117,6 @@ QPushButton:hover{
                        </layout>
                       </widget>
                      </item>
-                     <item row="1" column="0">
-                      <widget class="QComboBox" name="admin_attribute">
-                       <property name="minimumSize">
-                        <size>
-                         <width>200</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Rockwell</family>
-                         <pointsize>12</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color:rgb(244,244,244);</string>
-                       </property>
-                       <item>
-                        <property name="text">
-                         <string>Food Name</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Price</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Description</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Rating</string>
-                        </property>
-                       </item>
-                      </widget>
-                     </item>
-                     <item row="1" column="1">
-                      <widget class="QComboBox" name="search_filter">
-                       <property name="minimumSize">
-                        <size>
-                         <width>200</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Rockwell</family>
-                         <pointsize>12</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color:rgb(244,244,244);</string>
-                       </property>
-                       <item>
-                        <property name="text">
-                         <string>contains</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>starts_with</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>ends_with</string>
-                        </property>
-                       </item>
-                      </widget>
-                     </item>
                     </layout>
                    </widget>
                   </item>
@@ -2033,35 +2128,44 @@ QPushButton:hover{
                    </widget>
                   </item>
                   <item>
-                   <widget class="QStackedWidget" name="admin_suboptions_stack">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>60</height>
-                     </size>
-                    </property>
+                   <widget class="QStackedWidget" name="adminsuboption_Stack">
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>60</height>
+                      <height>70</height>
                      </size>
                     </property>
                     <property name="currentIndex">
-                     <number>2</number>
+                     <number>0</number>
                     </property>
-                    <widget class="QWidget" name="admin_viewFood">
-                     <layout class="QHBoxLayout" name="horizontalLayout_38">
+                    <widget class="QWidget" name="food_option_page">
+                     <layout class="QHBoxLayout" name="horizontalLayout_37">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
                       <item>
                        <widget class="QWidget" name="widget_15" native="true">
                         <property name="minimumSize">
                          <size>
                           <width>0</width>
-                          <height>50</height>
+                          <height>70</height>
                          </size>
                         </property>
                         <layout class="QHBoxLayout" name="horizontalLayout_30">
                          <item>
-                          <widget class="QPushButton" name="remove_food">
+                          <widget class="QPushButton" name="remove_food_Btn">
                            <property name="minimumSize">
                             <size>
                              <width>150</width>
@@ -2154,19 +2258,37 @@ QPushButton:hover{
                       </item>
                      </layout>
                     </widget>
-                    <widget class="QWidget" name="admin_viewOrders">
-                     <layout class="QHBoxLayout" name="horizontalLayout_37">
+                    <widget class="QWidget" name="order_option_page">
+                     <layout class="QHBoxLayout" name="horizontalLayout_38">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
                       <item>
-                       <widget class="QWidget" name="widget_17" native="true">
+                       <widget class="QWidget" name="widget_36" native="true">
                         <property name="minimumSize">
                          <size>
                           <width>0</width>
-                          <height>50</height>
+                          <height>70</height>
                          </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">background-color: rgba(230, 0, 35, 1);</string>
                         </property>
                         <layout class="QHBoxLayout" name="horizontalLayout_31">
                          <item>
-                          <widget class="QPushButton" name="view_pending">
+                          <widget class="QPushButton" name="view_pending_Btn">
                            <property name="minimumSize">
                             <size>
                              <width>150</width>
@@ -2207,20 +2329,48 @@ QPushButton:hover{
                           </widget>
                          </item>
                          <item>
-                          <spacer name="horizontalSpacer_6">
-                           <property name="orientation">
-                            <enum>Qt::Horizontal</enum>
-                           </property>
-                           <property name="sizeHint" stdset="0">
+                          <widget class="QPushButton" name="order_complete_Btn">
+                           <property name="minimumSize">
                             <size>
-                             <width>409</width>
-                             <height>20</height>
+                             <width>175</width>
+                             <height>30</height>
                             </size>
                            </property>
-                          </spacer>
+                           <property name="maximumSize">
+                            <size>
+                             <width>175</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Rockwell</family>
+                             <pointsize>15</pointsize>
+                             <weight>75</weight>
+                             <bold>true</bold>
+                            </font>
+                           </property>
+                           <property name="cursor">
+                            <cursorShape>PointingHandCursor</cursorShape>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QPushButton{
+	color: rgba(230, 0, 35, 1);
+	background-color:rgba(245, 206, 50, 1);
+	border-radius:10%;
+}
+QPushButton:hover{
+	background-color: rgb(244,244,244);
+	color:rgba(245, 206, 50, 1);
+}	</string>
+                           </property>
+                           <property name="text">
+                            <string>Complete Order</string>
+                           </property>
+                          </widget>
                          </item>
                          <item>
-                          <widget class="QPushButton" name="view_cancelled">
+                          <widget class="QPushButton" name="view_delivered_Btn">
                            <property name="minimumSize">
                             <size>
                              <width>150</width>
@@ -2256,7 +2406,7 @@ QPushButton:hover{
 }	</string>
                            </property>
                            <property name="text">
-                            <string>Cancelled</string>
+                            <string>Delivered</string>
                            </property>
                           </widget>
                          </item>
@@ -2265,8 +2415,23 @@ QPushButton:hover{
                       </item>
                      </layout>
                     </widget>
-                    <widget class="QWidget" name="admin_viewCustomers">
+                    <widget class="QWidget" name="customer_option_page">
                      <layout class="QHBoxLayout" name="horizontalLayout_36">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
                       <item>
                        <widget class="QWidget" name="widget_19" native="true">
                         <property name="minimumSize">
@@ -2277,7 +2442,7 @@ QPushButton:hover{
                         </property>
                         <layout class="QHBoxLayout" name="horizontalLayout_33">
                          <item>
-                          <widget class="QPushButton" name="remove_customer_Btn">
+                          <widget class="QPushButton" name="remove_user_Btn">
                            <property name="minimumSize">
                             <size>
                              <width>150</width>
@@ -2373,10 +2538,16 @@ QPushButton:hover{
                   </item>
                   <item row="0" column="1">
                    <widget class="QLabel" name="label_11">
+                    <property name="minimumSize">
+                     <size>
+                      <width>450</width>
+                      <height>60</height>
+                     </size>
+                    </property>
                     <property name="maximumSize">
                      <size>
                       <width>450</width>
-                      <height>50</height>
+                      <height>60</height>
                      </size>
                     </property>
                     <property name="font">
@@ -2386,8 +2557,9 @@ QPushButton:hover{
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">background-color: rgba(230, 0, 35, 1);
-color:rgba(245, 206, 50, 1);</string>
+                     <string notr="true">color:rgba(245, 206, 50, 1);
+border:2px solid rgb(244,244,244);
+border-radius:10%;</string>
                     </property>
                     <property name="text">
                      <string>Add Something Delicious</string>
@@ -3035,7 +3207,7 @@ color:rgba(245, 206, 50, 1);</string>
            <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="customer_start_page">
            <layout class="QHBoxLayout" name="horizontalLayout_21">
@@ -3070,7 +3242,7 @@ color:rgba(245, 206, 50, 1);</string>
                 <number>0</number>
                </property>
                <property name="topMargin">
-                <number>10</number>
+                <number>5</number>
                </property>
                <property name="rightMargin">
                 <number>0</number>
@@ -3147,10 +3319,16 @@ border-radius:20%;
                </item>
                <item>
                 <widget class="QWidget" name="widget_6" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>185</height>
+                  </size>
+                 </property>
                  <property name="maximumSize">
                   <size>
                    <width>16777215</width>
-                   <height>180</height>
+                   <height>185</height>
                   </size>
                  </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_11">
@@ -3180,13 +3358,13 @@ border-radius:20%;
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
-                   <height>52</height>
+                   <height>54</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
                    <width>16777215</width>
-                   <height>52</height>
+                   <height>54</height>
                   </size>
                  </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_12">
@@ -3197,7 +3375,7 @@ border-radius:20%;
                    <number>0</number>
                   </property>
                   <property name="topMargin">
-                   <number>0</number>
+                   <number>4</number>
                   </property>
                   <property name="rightMargin">
                    <number>0</number>
@@ -3253,10 +3431,16 @@ border-radius:20%;
                </item>
                <item>
                 <widget class="QWidget" name="widget_8" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>185</height>
+                  </size>
+                 </property>
                  <property name="maximumSize">
                   <size>
                    <width>16777215</width>
-                   <height>180</height>
+                   <height>185</height>
                   </size>
                  </property>
                  <layout class="QHBoxLayout" name="horizontalLayout_10">
@@ -3370,9 +3554,159 @@ QPushButton:hover{
           </widget>
           <widget class="QWidget" name="explore_more_page">
            <property name="styleSheet">
-            <string notr="true">background-color:rgba(245, 206, 50, 1);
-</string>
+            <string notr="true">background-color: rgba(230, 0, 35, 1);</string>
            </property>
+           <layout class="QVBoxLayout" name="verticalLayout_17">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>5</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>5</number>
+            </property>
+            <property name="bottomMargin">
+             <number>5</number>
+            </property>
+            <item>
+             <widget class="QWidget" name="widget_35" native="true">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>80</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <property name="spacing">
+                <number>20</number>
+               </property>
+               <property name="leftMargin">
+                <number>100</number>
+               </property>
+               <property name="topMargin">
+                <number>5</number>
+               </property>
+               <property name="rightMargin">
+                <number>100</number>
+               </property>
+               <property name="bottomMargin">
+                <number>5</number>
+               </property>
+               <item>
+                <widget class="QLineEdit" name="explore_search_Line">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>35</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Rockwell</family>
+                   <pointsize>14</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(244,244,244);
+border-radius:10px;</string>
+                 </property>
+                 <property name="cursorPosition">
+                  <number>0</number>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Enter food name to Search</string>
+                 </property>
+                 <property name="cursorMoveStyle">
+                  <enum>Qt::LogicalMoveStyle</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="explore_search_Btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>80</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>80</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Rockwell</family>
+                   <pointsize>12</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	background-color: rgba(230, 0, 35, 1);
+	color:rgba(245, 206, 50, 1);
+	border-radius:30%;
+}
+QPushButton:hover{
+	color: rgba(230, 0, 35, 1);
+	background-color:rgb(244,244,244);
+}	</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset>
+                   <normaloff>Icons &amp; logos/search.png</normaloff>Icons &amp; logos/search.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>50</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="widget_17" native="true">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_40">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="explore_layout"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="add_to_cart_page">
            <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -3884,6 +4218,26 @@ QPushButton:hover{
            <property name="styleSheet">
             <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
            </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_46">
+            <property name="spacing">
+             <number>5</number>
+            </property>
+            <property name="leftMargin">
+             <number>5</number>
+            </property>
+            <property name="topMargin">
+             <number>5</number>
+            </property>
+            <property name="rightMargin">
+             <number>5</number>
+            </property>
+            <property name="bottomMargin">
+             <number>5</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="fvt_items_layout"/>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="cust_cart_page">
            <layout class="QHBoxLayout" name="horizontalLayout_44">
@@ -3914,290 +4268,6 @@ QPushButton:hover{
                <property name="bottomMargin">
                 <number>5</number>
                </property>
-               <item>
-                <widget class="QWidget" name="widget_21" native="true">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>80</height>
-                  </size>
-                 </property>
-                 <layout class="QGridLayout" name="gridLayout_11">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="spacing">
-                   <number>0</number>
-                  </property>
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="sflabel_5">
-                    <property name="minimumSize">
-                     <size>
-                      <width>200</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>200</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Rockwell</family>
-                      <pointsize>12</pointsize>
-                      <weight>75</weight>
-                      <bold>true</bold>
-                     </font>
-                    </property>
-                    <property name="cursor">
-                     <cursorShape>ArrowCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">color: rgba(230, 0, 35, 1);
-background-color:rgba(245, 206, 50, 1);
-border-radius:10%;</string>
-                    </property>
-                    <property name="text">
-                     <string>Search Filter Type</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
-                   <widget class="QLineEdit" name="search_content_2">
-                    <property name="minimumSize">
-                     <size>
-                      <width>200</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>200</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Rockwell</family>
-                      <pointsize>12</pointsize>
-                      <weight>50</weight>
-                      <bold>false</bold>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: rgb(244,244,244);</string>
-                    </property>
-                    <property name="placeholderText">
-                     <string>Enter Item to search</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="2" rowspan="2">
-                   <widget class="QWidget" name="widget_30" native="true">
-                    <property name="maximumSize">
-                     <size>
-                      <width>500</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_41">
-                     <property name="spacing">
-                      <number>6</number>
-                     </property>
-                     <property name="leftMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="rightMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <widget class="QPushButton" name="start_Search_2">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Rockwell</family>
-                         <pointsize>15</pointsize>
-                         <weight>75</weight>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="cursor">
-                        <cursorShape>PointingHandCursor</cursorShape>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">QPushButton{
-	color: rgba(230, 0, 35, 1);
-	background-color:rgba(245, 206, 50, 1);
-	border-radius:10%;
-}
-QPushButton:hover{
-	background-color: rgb(244,244,244);
-	color:rgba(245, 206, 50, 1);
-}	</string>
-                       </property>
-                       <property name="text">
-                        <string>Search</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QComboBox" name="admin_attribute_3">
-                       <property name="minimumSize">
-                        <size>
-                         <width>200</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Rockwell</family>
-                         <pointsize>12</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color:rgb(244,244,244);</string>
-                       </property>
-                       <item>
-                        <property name="text">
-                         <string>A-Z</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Z-A</string>
-                        </property>
-                       </item>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QComboBox" name="search_filter_2">
-                    <property name="minimumSize">
-                     <size>
-                      <width>200</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>200</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Rockwell</family>
-                      <pointsize>12</pointsize>
-                      <weight>50</weight>
-                      <bold>false</bold>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color:rgb(244,244,244);</string>
-                    </property>
-                    <item>
-                     <property name="text">
-                      <string>contains</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>starts_with</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>ends_with</string>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                  <item row="1" column="1">
-                   <widget class="QComboBox" name="admin_attribute_4">
-                    <property name="minimumSize">
-                     <size>
-                      <width>200</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>200</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Rockwell</family>
-                      <pointsize>12</pointsize>
-                      <weight>50</weight>
-                      <bold>false</bold>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color:rgb(244,244,244);</string>
-                    </property>
-                    <item>
-                     <property name="text">
-                      <string>Food Name</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Price</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Rating</string>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
                <item>
                 <widget class="QTableView" name="customer_table">
                  <property name="styleSheet">
@@ -4588,319 +4658,584 @@ QPushButton:hover{
           </widget>
           <widget class="QWidget" name="credentials_page">
            <layout class="QHBoxLayout" name="horizontalLayout_27">
+            <property name="spacing">
+             <number>5</number>
+            </property>
+            <property name="leftMargin">
+             <number>5</number>
+            </property>
+            <property name="topMargin">
+             <number>5</number>
+            </property>
+            <property name="rightMargin">
+             <number>5</number>
+            </property>
+            <property name="bottomMargin">
+             <number>5</number>
+            </property>
             <item>
              <widget class="QWidget" name="widget_12" native="true">
               <property name="styleSheet">
                <string notr="true">background-color: rgba(230, 0, 35, 1);</string>
               </property>
-              <layout class="QGridLayout" name="gridLayout_4">
-               <item row="0" column="4">
-                <widget class="QLabel" name="imagelabel_2">
-                 <property name="maximumSize">
-                  <size>
-                   <width>180</width>
-                   <height>300</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap>../../Images/4.png</pixmap>
-                 </property>
-                 <property name="scaledContents">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <spacer name="horizontalSpacer_18">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>243</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="1" column="2">
-                <widget class="QLabel" name="HeaderLabel_4">
-                 <property name="maximumSize">
-                  <size>
-                   <width>450</width>
-                   <height>50</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Harlow Solid Italic</family>
-                   <pointsize>30</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgba(230, 0, 35, 1);
-color:rgba(245, 206, 50, 1);</string>
-                 </property>
-                 <property name="text">
-                  <string>Change Credentials</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="3">
-                <spacer name="horizontalSpacer_17">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>311</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="2" column="0">
-                <widget class="QWidget" name="widget_38" native="true">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>50</height>
-                  </size>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_47"/>
-                </widget>
-               </item>
-               <item row="2" column="2">
-                <widget class="QWidget" name="optionwidget2_5" native="true">
-                 <property name="maximumSize">
-                  <size>
-                   <width>600</width>
-                   <height>300</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_20">
-                  <property name="spacing">
-                   <number>0</number>
-                  </property>
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>0</number>
-                  </property>
+              <layout class="QVBoxLayout" name="verticalLayout_16">
+               <property name="spacing">
+                <number>5</number>
+               </property>
+               <property name="leftMargin">
+                <number>200</number>
+               </property>
+               <property name="topMargin">
+                <number>5</number>
+               </property>
+               <property name="rightMargin">
+                <number>200</number>
+               </property>
+               <property name="bottomMargin">
+                <number>20</number>
+               </property>
+               <item>
+                <widget class="QWidget" name="widget_28" native="true">
+                 <layout class="QHBoxLayout" name="horizontalLayout_3">
                   <item>
-                   <widget class="QWidget" name="widget_36" native="true">
-                    <property name="maximumSize">
+                   <widget class="QLabel" name="label_13">
+                    <property name="minimumSize">
                      <size>
-                      <width>500</width>
-                      <height>400</height>
+                      <width>450</width>
+                      <height>60</height>
                      </size>
                     </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
+                    <property name="maximumSize">
+                     <size>
+                      <width>450</width>
+                      <height>60</height>
+                     </size>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_21">
-                     <item>
-                      <widget class="QLabel" name="user_Label_6">
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Harlow Solid Italic</family>
-                         <pointsize>18</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">color: rgba(230, 0, 35, 1);</string>
-                       </property>
-                       <property name="text">
-                        <string>User Name</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="username_line_7">
-                       <property name="maximumSize">
-                        <size>
-                         <width>250</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 255, 255);</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="passwordlabel_6">
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Harlow Solid Italic</family>
-                         <pointsize>18</pointsize>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">color: rgba(230, 0, 35, 1);</string>
-                       </property>
-                       <property name="text">
-                        <string>Password</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="passwordline_6">
-                       <property name="maximumSize">
-                        <size>
-                         <width>250</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 255, 255);</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="email_label_5">
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Harlow Solid Italic</family>
-                         <pointsize>18</pointsize>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">color: rgba(230, 0, 35, 1);</string>
-                       </property>
-                       <property name="text">
-                        <string>Email</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="email_line_5">
-                       <property name="maximumSize">
-                        <size>
-                         <width>250</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 255, 255);</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="addresslabel_6">
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Harlow Solid Italic</family>
-                         <pointsize>18</pointsize>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">color: rgba(230, 0, 35, 1);</string>
-                       </property>
-                       <property name="text">
-                        <string>Address</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="addressline_6">
-                       <property name="maximumSize">
-                        <size>
-                         <width>250</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 255, 255);</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="save_Btn_5">
-                       <property name="maximumSize">
-                        <size>
-                         <width>150</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Harlow Solid Italic</family>
-                         <pointsize>21</pointsize>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">QPushButton{
-	color:rgba(245, 206, 50, 1);
-	background-color: rgba(230, 0, 35, 1);
-	border-radius:10%;
-}</string>
-                       </property>
-                       <property name="text">
-                        <string>Save</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
+                    <property name="font">
+                     <font>
+                      <family>Harlow Solid Italic</family>
+                      <pointsize>30</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgba(245, 206, 50, 1);
+border:2px solid rgb(244,244,244);
+border-radius:10%;</string>
+                    </property>
+                    <property name="text">
+                     <string>Update Your Data</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
                    </widget>
                   </item>
                  </layout>
                 </widget>
                </item>
-               <item row="3" column="2">
-                <spacer name="horizontalSpacer_16">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+               <item>
+                <widget class="QWidget" name="widget_31" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
                  </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>310</width>
-                   <height>17</height>
-                  </size>
+                 <layout class="QGridLayout" name="gridLayout_4">
+                  <property name="leftMargin">
+                   <number>50</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>50</number>
+                  </property>
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="old_name_Lbl">
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgba(230, 0, 35, 1);</string>
+                    </property>
+                    <property name="text">
+                     <string>old username</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="change_name_Btn">
+                    <property name="minimumSize">
+                     <size>
+                      <width>120</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+	background-color: rgba(230, 0, 35, 1);
+	color:rgba(245, 206, 50, 1);
+	border-radius:10%;
+}
+QPushButton:hover{
+	background-color:rgb(244,244,244);
+	color: rgba(230, 0, 35, 1);
+}	</string>
+                    </property>
+                    <property name="text">
+                     <string>Update</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_20">
+                    <property name="font">
+                     <font>
+                      <family>Harlow Solid Italic</family>
+                      <pointsize>18</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgba(230, 0, 35, 1);</string>
+                    </property>
+                    <property name="text">
+                     <string>  Enter new Username:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLineEdit" name="change_name_Line">
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>250</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>12</pointsize>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(244,244,244);</string>
+                    </property>
+                    <property name="placeholderText">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_34" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
                  </property>
-                </spacer>
+                 <layout class="QGridLayout" name="gridLayout_9">
+                  <property name="leftMargin">
+                   <number>50</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>50</number>
+                  </property>
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_21">
+                    <property name="font">
+                     <font>
+                      <family>Harlow Solid Italic</family>
+                      <pointsize>18</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgba(230, 0, 35, 1);</string>
+                    </property>
+                    <property name="text">
+                     <string>  Enter new E-mail:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="old_mail_Lbl">
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgba(230, 0, 35, 1);</string>
+                    </property>
+                    <property name="text">
+                     <string>old mail</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLineEdit" name="change_mail_Line">
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>250</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>12</pointsize>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(244,244,244);</string>
+                    </property>
+                    <property name="placeholderText">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="change_mail_Btn">
+                    <property name="minimumSize">
+                     <size>
+                      <width>120</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+	background-color: rgba(230, 0, 35, 1);
+	color:rgba(245, 206, 50, 1);
+	border-radius:10%;
+}
+QPushButton:hover{
+	background-color:rgb(244,244,244);
+	color: rgba(230, 0, 35, 1);
+}	</string>
+                    </property>
+                    <property name="text">
+                     <string>Update</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_32" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_12">
+                  <property name="leftMargin">
+                   <number>50</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>50</number>
+                  </property>
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_23">
+                    <property name="font">
+                     <font>
+                      <family>Harlow Solid Italic</family>
+                      <pointsize>18</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgba(230, 0, 35, 1);</string>
+                    </property>
+                    <property name="text">
+                     <string>  Enter new Password:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="old_password_Lbl">
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgba(230, 0, 35, 1);</string>
+                    </property>
+                    <property name="text">
+                     <string>old password</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLineEdit" name="change_password_Line">
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>250</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>12</pointsize>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(244,244,244);</string>
+                    </property>
+                    <property name="placeholderText">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="change_password_Btn">
+                    <property name="minimumSize">
+                     <size>
+                      <width>120</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+	background-color: rgba(230, 0, 35, 1);
+	color:rgba(245, 206, 50, 1);
+	border-radius:10%;
+}
+QPushButton:hover{
+	background-color:rgb(244,244,244);
+	color: rgba(230, 0, 35, 1);
+}	</string>
+                    </property>
+                    <property name="text">
+                     <string>Update</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_33" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_13">
+                  <property name="leftMargin">
+                   <number>50</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>50</number>
+                  </property>
+                  <property name="spacing">
+                   <number>5</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_27">
+                    <property name="font">
+                     <font>
+                      <family>Harlow Solid Italic</family>
+                      <pointsize>18</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgba(230, 0, 35, 1);</string>
+                    </property>
+                    <property name="text">
+                     <string>  Enter new Address:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="old_address_Lbl">
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgba(230, 0, 35, 1);</string>
+                    </property>
+                    <property name="text">
+                     <string>old address</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLineEdit" name="change_address_Line">
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>250</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>12</pointsize>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(244,244,244);</string>
+                    </property>
+                    <property name="placeholderText">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="change_address_Btn">
+                    <property name="minimumSize">
+                     <size>
+                      <width>120</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Rockwell</family>
+                      <pointsize>13</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{
+	background-color: rgba(230, 0, 35, 1);
+	color:rgba(245, 206, 50, 1);
+	border-radius:10%;
+}
+QPushButton:hover{
+	background-color:rgb(244,244,244);
+	color: rgba(230, 0, 35, 1);
+}	</string>
+                    </property>
+                    <property name="text">
+                     <string>Update</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
                </item>
               </layout>
              </widget>

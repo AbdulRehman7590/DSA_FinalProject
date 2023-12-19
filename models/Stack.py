@@ -1,58 +1,39 @@
-# ------------------------- Node --------------------------------- #
-class Node:
-    def __init__(self, value):
-        self.data = value
-        self.next = None
+# ------------------------- Imports --------------------------------- #
+from models.Linkedlist import LinkedList
 
 # ------------------------ Stack --------------------------------- #
 class Stack:
     def __init__(self):
-        self.top = None
+        self._stack_list = LinkedList()
 
     # ------------------------ Push ------------------------------ #
     def push(self, value):
-        new_node = Node(value)
-        new_node.next = self.top
-        self.top = new_node
+        self._stack_list.insert_at_head(value)
 
     # ------------------------- Pop ------------------------------ #
     def pop(self):
-        if self.is_empty():
-            print("Stack is empty")
-            return None
-        
-        popped_value = self.top.data
-        self.top = self.top.next
-        return popped_value
+        return self._stack_list.delete_from_head()
 
     # ------------------------ Top ------------------------------ #
     def top_element(self):
-        if self.is_empty():
-            print("Stack is empty")
-            return None
-        return self.top.data
+        return self._stack_list.head.data
+
+    # --------------- get item at index ------------------------- #
+    def get_item_at(self, index):
+        return self._stack_list.get_item_at_index(index)
 
     # ----------------------- Empty? ---------------------------- #
     def is_empty(self):
-        return self.top is None
+        return self._stack_list.size() == 0
 
     # ----------------------- Size ---------------------------- #
     def size(self):
-        count = 0
-        current = self.top
-        while current is not None:
-            count += 1
-            current = current.next
-        return count
+        return self._stack_list.size()
 
     # ----------------------- Display ---------------------------- #
     def display(self):
         if self.is_empty():
-            print("Stack is empty")
+            print("stack is empty")
         else:
-            current = self.top
-            while current is not None:
-                print(current.data, end="    ")
-                current = current.next
-            print()
+            self._stack_list.display()
 
