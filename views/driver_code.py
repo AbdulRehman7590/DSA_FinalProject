@@ -80,9 +80,9 @@ class Mainwindow(QMainWindow):
         self.addnew_Food_Btn.clicked.connect(lambda: self.changing_adminStack_PageNo(1))
         self.add_food_Btn.clicked.connect(lambda: add_new_food(self))
         self.uploadPhoto_Btn.clicked.connect(lambda: upload_photo(self))
-       
-        
-  
+        self.start_Search_2.clicked.connect(lambda: Sort(self))
+
+
         # -------------------- Customer Options ----------------------- #
         self.home_Btn.clicked.connect(lambda: self.changing_customerStack_PageNo(0))
         self.customer_logout_Btn.clicked.connect(lambda: self.changing_mainStack_PageNo(0))

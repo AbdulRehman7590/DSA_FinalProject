@@ -4,6 +4,7 @@ from PyQt5.QtCore import *
 
 from classes.BL.foods import Food
 from classes.DL.menu import Menu
+from utils.algorithms import *
 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -75,3 +76,25 @@ def showing_stats(self):
     self.ax.bar(food_names, food_ratings, color="green")
     self.canvas.draw()
 
+
+#----------------------------- Sort Data --------------------------#
+def Sort(self):
+    print("Entered")
+    temp = Menu._food_list.head
+    while temp is not None:
+        print(f"Food Name: {temp.data.food_name}, Price: {temp.data.food_price}, Description: {temp.data.food_description}, Rating: {temp.data.food_rating}")
+        temp = temp.next
+
+    column = 1  # Change this to the appropriate column index
+    print(column)
+    mergeSort(self,Menu._food_list.head)
+
+    print("Sorted list:")
+    temp = Menu._food_list.head
+    while temp is not None:
+        print(f"Food Name: {temp.data.food_name}, Price: {temp.data.food_price}")
+        temp = temp.next
+
+    
+    print("Sorting done")
+    

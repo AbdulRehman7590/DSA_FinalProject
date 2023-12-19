@@ -1,38 +1,63 @@
-# ---------------------- Merge Sort ------------------------------- #
-def MergeSort(array,column,start = 0,end = None):
-    end = len(array) if end is None else end
+from classes.DL.menu import Menu
+from models.Linkedlist import *
+# Assuming Menu._food_list is a linked list
 
-    if start < end:
-        mid = (start + end) // 2
-        MergeSort(array,column, start, mid) 
-        MergeSort(array,column, mid + 1, end)
-        Merge(array, start, mid, end,column)
-
-def Merge(arr, p, q, r, column):
-    lefthalf = arr[p:q + 1]
-    righthalf = arr[q + 1:r + 1]
-
-    i = j = 0
-    k = p 
-
-    while i < len(lefthalf) and j < len(righthalf):
-        if lefthalf[i][column] < righthalf[j][column]:
-            arr[k] = lefthalf[i]
-            i += 1
+def sortedMerge(self, a, b):
+        result = None
+         
+        # Base cases
+        if a == None:
+            return b
+        if b == None:
+            return a
+             
+        # pick either a or b and recur..
+        if a.data <= b.data:
+            result = a
+            result.next = self.sortedMerge(a.next, b)
         else:
-            arr[k] = righthalf[j]
-            j += 1
-        k += 1
-        
-    while i < len(lefthalf):
-        arr[k] = lefthalf[i]
-        i += 1
-        k += 1
-
-    while j < len(righthalf):
-        arr[k] = righthalf[j]
-        j += 1
-        k += 1
+            result = b
+            result.next = self.sortedMerge(a, b.next)
+        return result
+     
+def mergeSort(self, h):
+         
+        # Base case if head is None
+        if h == None or h.next == None:
+            return h
+ 
+        # get the middle of the list 
+        middle = self.getMiddle(h)
+        nexttomiddle = middle.next
+ 
+        # set the next of middle node to None
+        middle.next = None
+ 
+        # Apply mergeSort on left list 
+        left = self.mergeSort(h)
+         
+        # Apply mergeSort on right list
+        right = self.mergeSort(nexttomiddle)
+ 
+        # Merge the left and right lists 
+        sortedlist = self.sortedMerge(left, right)
+        return sortedlist
+     
+    # Utility function to get the middle 
+    # of the linked list 
+def getMiddle(self, head):
+        if (head == None):
+            return head
+ 
+        slow = head
+        fast = head
+ 
+        while (fast.next != None and
+               fast.next.next != None):
+            slow = slow.next
+            fast = fast.next.next
+             
+        return slow
 
 
 # ---------------------- Data filters ------------------------ #
