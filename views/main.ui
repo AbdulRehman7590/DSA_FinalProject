@@ -3042,7 +3042,7 @@ border-radius:10%;</string>
            <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>4</number>
           </property>
           <widget class="QWidget" name="customer_start_page">
            <layout class="QHBoxLayout" name="horizontalLayout_21">
