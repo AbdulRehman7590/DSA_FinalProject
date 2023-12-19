@@ -118,6 +118,9 @@ class LinkedList:
                 temp = temp.next
         return count
     
+    
+   
+    
     # ----------------------- Display ---------------------------- #
     def display(self):
         print("Null->", end="")

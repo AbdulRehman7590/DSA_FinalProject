@@ -45,7 +45,7 @@ class BST:
                 temp = temp.right
             else:
                 return temp
-        return lastNode
+        return None
 
     # -------------------- Total nodes ------------------------ #
     def NumberOfNodes(self, T):

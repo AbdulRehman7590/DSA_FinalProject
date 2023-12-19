@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>Icons &amp; logos/icon.png</normaloff>Icons &amp; logos/icon.png</iconset>
+    <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/icon.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -123,7 +123,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>Icons &amp; logos/logo.png</pixmap>
+              <pixmap>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/logo.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -171,7 +171,7 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>Icons &amp; logos/about.png</normaloff>Icons &amp; logos/about.png</iconset>
+               <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/about.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/about.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -257,7 +257,7 @@
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap>Images/main_logo.jpg</pixmap>
+                    <pixmap>C:/Users/Laptop Hubs/.designer/backup/Images/main_logo.jpg</pixmap>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -567,7 +567,7 @@ QPushButton:hover{
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>Icons &amp; logos/logo.png</pixmap>
+              <pixmap>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/logo.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -615,7 +615,7 @@ QPushButton:hover{
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>Icons &amp; logos/about.png</normaloff>Icons &amp; logos/about.png</iconset>
+               <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/about.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/about.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -694,7 +694,7 @@ QPushButton:hover{
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap>Images/spegetti.jpg</pixmap>
+                 <pixmap>C:/Users/Laptop Hubs/.designer/backup/Images/spegetti.jpg</pixmap>
                 </property>
                 <property name="scaledContents">
                  <bool>true</bool>
@@ -1052,7 +1052,7 @@ QPushButton:hover{
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap>Images/s1.jpg</pixmap>
+                 <pixmap>C:/Users/Laptop Hubs/.designer/backup/Images/s1.jpg</pixmap>
                 </property>
                 <property name="scaledContents">
                  <bool>true</bool>
@@ -1130,7 +1130,7 @@ QPushButton:hover{
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>Icons &amp; logos/logo.png</pixmap>
+              <pixmap>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/logo.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -1178,7 +1178,7 @@ QPushButton:hover{
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>Icons &amp; logos/back.png</normaloff>Icons &amp; logos/back.png</iconset>
+               <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/back.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/back.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -1353,7 +1353,7 @@ border-top-right-radius : 20%; </string>
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>Images/s4.jpg</pixmap>
+              <pixmap>C:/Users/Laptop Hubs/.designer/backup/Images/s4.jpg</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -1428,7 +1428,7 @@ border-top-right-radius : 20%; </string>
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>Icons &amp; logos/logo.png</pixmap>
+              <pixmap>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/logo.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -1476,7 +1476,7 @@ border-top-right-radius : 20%; </string>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>Icons &amp; logos/logout.png</normaloff>Icons &amp; logos/logout.png</iconset>
+               <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/logout.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/logout.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -1566,7 +1566,7 @@ QPushButton:hover{
                 </property>
                 <property name="icon">
                  <iconset>
-                  <normaloff>Icons &amp; logos/stats.png</normaloff>Icons &amp; logos/stats.png</iconset>
+                  <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/stats.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/stats.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -1614,7 +1614,7 @@ QPushButton:hover{
                 </property>
                 <property name="icon">
                  <iconset>
-                  <normaloff>Icons &amp; logos/customers.png</normaloff>Icons &amp; logos/customers.png</iconset>
+                  <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/customers.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/customers.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -1662,7 +1662,7 @@ QPushButton:hover{
                 </property>
                 <property name="icon">
                  <iconset>
-                  <normaloff>Icons &amp; logos/view.png</normaloff>Icons &amp; logos/view.png</iconset>
+                  <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/view.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/view.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -1710,7 +1710,7 @@ QPushButton:hover{
                 </property>
                 <property name="icon">
                  <iconset>
-                  <normaloff>Icons &amp; logos/orders.png</normaloff>Icons &amp; logos/orders.png</iconset>
+                  <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/orders.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/orders.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -1729,7 +1729,7 @@ QPushButton:hover{
               <string notr="true">background-color:rgba(245, 206, 50, 1);</string>
              </property>
              <property name="currentIndex">
-              <number>2</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="viewadminoption_pages">
               <layout class="QHBoxLayout" name="horizontalLayout_34">
@@ -1759,8 +1759,8 @@ QPushButton:hover{
                  <property name="styleSheet">
                   <string notr="true">background-color: rgba(230, 0, 35, 1);</string>
                  </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_13">
-                  <item>
+                 <layout class="QGridLayout" name="gridLayout_14">
+                  <item row="0" column="0">
                    <widget class="QWidget" name="widget_18" native="true">
                     <property name="minimumSize">
                      <size>
@@ -1768,117 +1768,120 @@ QPushButton:hover{
                       <height>80</height>
                      </size>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_10">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="sflabel_4">
-                       <property name="minimumSize">
-                        <size>
-                         <width>200</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Rockwell</family>
-                         <pointsize>12</pointsize>
-                         <weight>75</weight>
-                         <bold>true</bold>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">color: rgba(230, 0, 35, 1);
+                    <widget class="QLabel" name="sflabel_4">
+                     <property name="geometry">
+                      <rect>
+                       <x>6</x>
+                       <y>6</y>
+                       <width>200</width>
+                       <height>16</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Rockwell</family>
+                       <pointsize>12</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color: rgba(230, 0, 35, 1);
 background-color:rgba(245, 206, 50, 1);
 border-radius:10%;</string>
-                       </property>
-                       <property name="text">
-                        <string>Select column</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="1">
-                      <widget class="QLineEdit" name="search_content">
-                       <property name="minimumSize">
-                        <size>
-                         <width>200</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Rockwell</family>
-                         <pointsize>12</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(244,244,244);</string>
-                       </property>
-                       <property name="placeholderText">
-                        <string>Enter Item to search</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="2" rowspan="3">
-                      <widget class="QWidget" name="widget_29" native="true">
-                       <layout class="QHBoxLayout" name="horizontalLayout_40">
-                        <property name="spacing">
-                         <number>6</number>
+                     </property>
+                     <property name="text">
+                      <string>Select column</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                    <widget class="QLineEdit" name="search_content">
+                     <property name="geometry">
+                      <rect>
+                       <x>210</x>
+                       <y>6</y>
+                       <width>200</width>
+                       <height>19</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Rockwell</family>
+                       <pointsize>12</pointsize>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(244,244,244);</string>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Enter Item to search</string>
+                     </property>
+                    </widget>
+                    <widget class="QWidget" name="widget_29" native="true">
+                     <property name="geometry">
+                      <rect>
+                       <x>414</x>
+                       <y>6</y>
+                       <width>266</width>
+                       <height>53</height>
+                      </rect>
+                     </property>
+                     <layout class="QGridLayout" name="gridLayout_10">
+                      <item row="0" column="0">
+                       <widget class="QPushButton" name="start_Search">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>0</height>
+                         </size>
                         </property>
-                        <property name="leftMargin">
-                         <number>0</number>
+                        <property name="maximumSize">
+                         <size>
+                          <width>200</width>
+                          <height>30</height>
+                         </size>
                         </property>
-                        <property name="topMargin">
-                         <number>0</number>
+                        <property name="font">
+                         <font>
+                          <family>Rockwell</family>
+                          <pointsize>15</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
                         </property>
-                        <property name="rightMargin">
-                         <number>0</number>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
                         </property>
-                        <property name="bottomMargin">
-                         <number>0</number>
-                        </property>
-                        <item>
-                         <widget class="QPushButton" name="start_Search">
-                          <property name="minimumSize">
-                           <size>
-                            <width>0</width>
-                            <height>0</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>200</width>
-                            <height>30</height>
-                           </size>
-                          </property>
-                          <property name="font">
-                           <font>
-                            <family>Rockwell</family>
-                            <pointsize>15</pointsize>
-                            <weight>75</weight>
-                            <bold>true</bold>
-                           </font>
-                          </property>
-                          <property name="cursor">
-                           <cursorShape>PointingHandCursor</cursorShape>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">QPushButton{
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 	color: rgba(230, 0, 35, 1);
 	background-color:rgba(245, 206, 50, 1);
 	border-radius:10%;
@@ -1887,152 +1890,203 @@ QPushButton:hover{
 	background-color: rgb(244,244,244);
 	color:rgba(245, 206, 50, 1);
 }	</string>
-                          </property>
-                          <property name="text">
-                           <string>Search</string>
-                          </property>
-                         </widget>
+                        </property>
+                        <property name="text">
+                         <string>Search</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0">
+                       <widget class="QPushButton" name="start_Sort_Btn_2">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>200</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Rockwell</family>
+                          <pointsize>15</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
+	color: rgba(230, 0, 35, 1);
+	background-color:rgba(245, 206, 50, 1);
+	border-radius:10%;
+}
+QPushButton:hover{
+	background-color: rgb(244,244,244);
+	color:rgba(245, 206, 50, 1);
+}	</string>
+                        </property>
+                        <property name="text">
+                         <string>Sort</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="1">
+                       <widget class="QComboBox" name="admin_attribute_2">
+                        <property name="minimumSize">
+                         <size>
+                          <width>200</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>200</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Rockwell</family>
+                          <pointsize>12</pointsize>
+                          <weight>50</weight>
+                          <bold>false</bold>
+                         </font>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">background-color:rgb(244,244,244);</string>
+                        </property>
+                        <item>
+                         <property name="text">
+                          <string>A-Z</string>
+                         </property>
                         </item>
                         <item>
-                         <widget class="QComboBox" name="admin_attribute_2">
-                          <property name="minimumSize">
-                           <size>
-                            <width>200</width>
-                            <height>0</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>200</width>
-                            <height>30</height>
-                           </size>
-                          </property>
-                          <property name="font">
-                           <font>
-                            <family>Rockwell</family>
-                            <pointsize>12</pointsize>
-                            <weight>50</weight>
-                            <bold>false</bold>
-                           </font>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">background-color:rgb(244,244,244);</string>
-                          </property>
-                          <item>
-                           <property name="text">
-                            <string>A-Z</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>Z-A</string>
-                           </property>
-                          </item>
-                         </widget>
+                         <property name="text">
+                          <string>Z-A</string>
+                         </property>
                         </item>
-                       </layout>
-                      </widget>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QComboBox" name="admin_attribute">
+                     <property name="geometry">
+                      <rect>
+                       <x>6</x>
+                       <y>31</y>
+                       <width>200</width>
+                       <height>19</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Rockwell</family>
+                       <pointsize>12</pointsize>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgb(244,244,244);</string>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>Food Name</string>
+                      </property>
                      </item>
-                     <item row="1" column="0">
-                      <widget class="QComboBox" name="admin_attribute">
-                       <property name="minimumSize">
-                        <size>
-                         <width>200</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Rockwell</family>
-                         <pointsize>12</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color:rgb(244,244,244);</string>
-                       </property>
-                       <item>
-                        <property name="text">
-                         <string>Food Name</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Price</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Description</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Rating</string>
-                        </property>
-                       </item>
-                      </widget>
+                     <item>
+                      <property name="text">
+                       <string>Price</string>
+                      </property>
                      </item>
-                     <item row="1" column="1">
-                      <widget class="QComboBox" name="search_filter">
-                       <property name="minimumSize">
-                        <size>
-                         <width>200</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <family>Rockwell</family>
-                         <pointsize>12</pointsize>
-                         <weight>50</weight>
-                         <bold>false</bold>
-                        </font>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color:rgb(244,244,244);</string>
-                       </property>
-                       <item>
-                        <property name="text">
-                         <string>contains</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>starts_with</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>ends_with</string>
-                        </property>
-                       </item>
-                      </widget>
+                     <item>
+                      <property name="text">
+                       <string>Description</string>
+                      </property>
                      </item>
-                    </layout>
+                     <item>
+                      <property name="text">
+                       <string>Rating</string>
+                      </property>
+                     </item>
+                    </widget>
+                    <widget class="QComboBox" name="search_filter">
+                     <property name="geometry">
+                      <rect>
+                       <x>210</x>
+                       <y>31</y>
+                       <width>200</width>
+                       <height>19</height>
+                      </rect>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Rockwell</family>
+                       <pointsize>12</pointsize>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color:rgb(244,244,244);</string>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>contains</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>starts_with</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>ends_with</string>
+                      </property>
+                     </item>
+                    </widget>
                    </widget>
                   </item>
-                  <item>
+                  <item row="1" column="0">
                    <widget class="QTableView" name="admin_table">
                     <property name="styleSheet">
                      <string notr="true">background-color:rgb(244,244,244);</string>
                     </property>
                    </widget>
                   </item>
-                  <item>
+                  <item row="2" column="0">
                    <widget class="QStackedWidget" name="admin_suboptions_stack">
                     <property name="minimumSize">
                      <size>
@@ -2797,7 +2851,7 @@ border-radius:10%;</string>
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>Icons &amp; logos/logo.png</pixmap>
+              <pixmap>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/logo.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -2845,7 +2899,7 @@ border-radius:10%;</string>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>Icons &amp; logos/home.png</normaloff>Icons &amp; logos/home.png</iconset>
+               <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/home.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/home.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -2880,7 +2934,7 @@ border-radius:10%;</string>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>Icons &amp; logos/credentials.png</normaloff>Icons &amp; logos/credentials.png</iconset>
+               <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/credentials.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/credentials.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -2915,7 +2969,7 @@ border-radius:10%;</string>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>Icons &amp; logos/wishlisht.png</normaloff>Icons &amp; logos/wishlisht.png</iconset>
+               <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/wishlisht.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/wishlisht.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -2950,7 +3004,7 @@ border-radius:10%;</string>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>Icons &amp; logos/cart.png</normaloff>Icons &amp; logos/cart.png</iconset>
+               <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/cart.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/cart.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -2985,7 +3039,7 @@ border-radius:10%;</string>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>Icons &amp; logos/view.png</normaloff>Icons &amp; logos/view.png</iconset>
+               <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/view.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/view.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -3020,7 +3074,7 @@ border-radius:10%;</string>
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>Icons &amp; logos/logout.png</normaloff>Icons &amp; logos/logout.png</iconset>
+               <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/logout.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/logout.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -3466,7 +3520,7 @@ QPushButton:hover{
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap>Images/about_pic.jpg</pixmap>
+                  <pixmap>C:/Users/Laptop Hubs/.designer/backup/Images/about_pic.jpg</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -3567,7 +3621,7 @@ QPushButton:hover{
                  </property>
                  <property name="icon">
                   <iconset>
-                   <normaloff>Icons &amp; logos/touch_fvt.png</normaloff>Icons &amp; logos/touch_fvt.png</iconset>
+                   <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/touch_fvt.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/touch_fvt.png</iconset>
                  </property>
                  <property name="iconSize">
                   <size>
@@ -4650,7 +4704,7 @@ QPushButton:hover{
                     </property>
                     <property name="icon">
                      <iconset>
-                      <normaloff>Icons &amp; logos/like.png</normaloff>Icons &amp; logos/like.png</iconset>
+                      <normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/like.png</normaloff>C:/Users/Laptop Hubs/.designer/backup/Icons &amp; logos/like.png</iconset>
                     </property>
                     <property name="iconSize">
                      <size>
