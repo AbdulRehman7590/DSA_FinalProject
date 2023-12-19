@@ -77,14 +77,17 @@ def ends_With(value, search_key):
 
     # ---------------------- Searching ------------------------------- #
 def LinearSearch(df, columnName, search_key, filter_type):
-            indexList = []
-            for index, value in enumerate(df):
-                row = str(value[columnName])
-                if filter_type == 0 and search_key in row:
-                    indexList.append(value)
-                elif filter_type == 1 and row.startswith(search_key):
-                    indexList.append(value)
-                elif filter_type == 2 and row.endswith(search_key):
-                    indexList.append(value)
-            
-            return indexList
+        indexList = []
+        for index, value in enumerate(df):
+            row = str(value[columnName])
+            if filter_type == 0 and search_key in row:
+                indexList.append(value)
+            elif filter_type == 1 and row.startswith(search_key):
+                indexList.append(value)
+            elif filter_type == 2 and row.endswith(search_key):
+                indexList.append(value)
+        
+        return indexList
+    
+    
+    

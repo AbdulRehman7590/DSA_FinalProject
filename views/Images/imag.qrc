@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="back">
+    <file>WelcomePage.jpg</file>
+    <file>background.jpg</file>
+  </qresource>
+</RCC>

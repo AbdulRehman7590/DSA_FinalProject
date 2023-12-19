@@ -1,5 +1,6 @@
 # ------------------------ Imports ------------------------------ #
 from models.Linkedlist import LinkedList
+from utils.algorithms import *
 
 # ------------------------ Queue --------------------------------- #
 class Queue:
@@ -39,4 +40,28 @@ class Queue:
             print("Queue is empty")
         else:
             self._queue_list.display()
+     # --------------------- Search --------------------------- #        
+    def search_data_with_filter(self, columnName, search_key, filter):
+        data = []
+        
+        if self.is_empty():
+            return None
+        else:
+            temp = self._queue_list.head
+
+            while temp is not None:
+                current_data = temp.data
+
+                column_value = getattr(current_data, columnName)
+
+                if filter == 1 and search_key in column_value:
+                    data.append(current_data)
+                elif filter == 2 and column_value.startswith(search_key):
+                    data.append(current_data)
+                elif filter == 3 and column_value.endswith(search_key):
+                    data.append(current_data)
+
+                temp = temp.next
+
+        return None if len(data) == 0 else data
 
