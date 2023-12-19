@@ -1,38 +1,40 @@
-# ---------------------- Merge Sort ------------------------------- #
-def MergeSort(array,column,start = 0,end = None):
-    end = len(array) if end is None else end
+from classes.DL.menu import Menu
 
-    if start < end:
-        mid = (start + end) // 2
-        MergeSort(array,column, start, mid) 
-        MergeSort(array,column, mid + 1, end)
-        Merge(array, start, mid, end,column)
+# Assuming Menu._food_list is a linked list
 
-def Merge(arr, p, q, r, column):
-    lefthalf = arr[p:q + 1]
-    righthalf = arr[q + 1:r + 1]
+def merge_sort_linked_list(linked_list):
+    if len(linked_list) <= 1:
+        return linked_list
 
-    i = j = 0
-    k = p 
+    mid = len(linked_list) // 2 
+    left_half = linked_list[:mid]
+    right_half = linked_list[mid:]
 
-    while i < len(lefthalf) and j < len(righthalf):
-        if lefthalf[i][column] < righthalf[j][column]:
-            arr[k] = lefthalf[i]
-            i += 1
+    left_half = merge_sort_linked_list(left_half)
+    right_half = merge_sort_linked_list(right_half)
+
+    return merge_linked_lists(left_half, right_half)
+
+def merge_linked_lists(left, right):
+    merged = []
+    left_index = right_index = 0
+
+    while left_index < len(left) and right_index < len(right):
+        if left[left_index] < right[right_index]:  # Assuming sorting based on some property
+            merged.append(left[left_index])
+            left_index += 1
         else:
-            arr[k] = righthalf[j]
-            j += 1
-        k += 1
-        
-    while i < len(lefthalf):
-        arr[k] = lefthalf[i]
-        i += 1
-        k += 1
+            merged.append(right[right_index])
+            right_index += 1
 
-    while j < len(righthalf):
-        arr[k] = righthalf[j]
-        j += 1
-        k += 1
+    merged.extend(left[left_index:])
+    merged.extend(right[right_index:])
+
+    return merged
+
+# Example usage:
+sorted_food_list = merge_sort_linked_list(Menu._food_list)
+print(sorted_food_list)
 
 
 # ---------------------- Data filters ------------------------ #

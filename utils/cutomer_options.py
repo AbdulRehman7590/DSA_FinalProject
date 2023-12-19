@@ -8,6 +8,7 @@ from datetime import date
 
 from classes.BL.order import Order
 from classes.DL.menu import Menu
+from classes.DL.usersDL import UsersDL as dL
 
 
 # -------------------- Showing first page -------------------------- #
@@ -26,7 +27,7 @@ def showing_explore_menu(self):
     self.changing_customerStack_PageNo(1)
 
     if self.explore_more_page.layout() is None:
-        self.explore_more_page.setLayout(add_foodtab_in_widget(self, Menu._food_list, True))
+        add_foodtab_in_widget(self, self.explore_more_page.layout(), Menu._food_list, True)
 
 
 # ------------------ Showing fvt items list ------------------------ #
@@ -36,12 +37,9 @@ def showing_fvt_items(self):
     if self.cust_fvt_page.layout() is not None:
         for i in reversed(range(self.cust_fvt_page.layout().count())):
             self.cust_fvt_page.layout().itemAt(i).widget().setParent(None)
-    #print(self.cust_fvt_page)
-    #print(self.cust_fvt_page.layout())
+
     if self.cust_fvt_page.layout() is None:
-        self.cust_fvt_page.setLayout(add_foodtab_in_widget(self, self.user.wishlist, False))
-    else:
-        add_foodtab_in_widget2(self, self.cust_fvt_page.layout(),self.user.wishlist, False)
+        add_foodtab_in_widget(self, self.cust_fvt_page.layout(), self.user.wishlist, False)
 
 
 # ----------------- Showing add to cart page ----------------------- #
@@ -76,7 +74,7 @@ def showing_add_to_cart(self, food):
 
     no_of_items = self.findChild(QSpinBox, "items_no_for_order")
     no_of_items.setValue(1)
-    no_of_items.valueChanged.connect(lambda: self.findChild(QLabel, "food_price_Lbl").setText(f"{int(food.food_price) * int(no_of_items.value())}"))
+    no_of_items.valueChanged.connect(lambda: price.setText(f"{int(food.food_price) * int(no_of_items.value())}"))
     
     if self.checking_the_connection(self.backexplore_Btn):
         self.backexplore_Btn.clicked.connect(self.back_from_cart_interface)
@@ -94,34 +92,30 @@ def showing_cart_items(self):
     self.view_orders(self.user.cart, self.customer_table)
     
     if self.checking_the_connection(self.customer_table):
-        self.customer_table.clicked.connect(lambda: get_whole_row(self, self.customer_table.currentIndex(), self.customer_table))
+        self.customer_table.clicked.connect(lambda: self.get_whole_row(self.customer_table.currentIndex(), self.customer_table))
     
     if self.checking_the_connection(self.remove_cart_Btn):
-        self.remove_cart_Btn.clicked.connect(lambda: check_item(self, False))
+        self.remove_cart_Btn.clicked.connect(lambda: check_item(self))
 
     if self.checking_the_connection(self.buy_items_Btn):
-        self.buy_items_Btn.clicked.connect(lambda: check_item(self, True))
+        self.buy_items_Btn.clicked.connect(lambda: buy_all_items(self))
 
-def check_item(self, flag):
-    if self.cart_item == "":
+def check_item(self):
+    if self.table_item == "":
         self.show_Warning("Please select an item first")
     else:
-        item = self.user.cart.search(self.cart_item[0])
-        self.cart_item = ""
-        if flag:
-            self.user.add_to_ordered_items_list(item)
-            self.show_Information("Item bought successfully. Check the order history section")
-        else:
-            self.user.remove_from_cart(item)
-            self.show_Information("Item removed from cart successfully.")
+        item = self.user.cart.search(self.table_item[0])
+        self.table_item = ""
+        
+        self.user.remove_from_cart(item)
+        self.show_Information("Item removed from cart successfully.")
 
+def buy_all_items(self):
+    keys = self.user.cart.get_keys()
+    for i in range(self.user.cart.size()):
+        self.user.add_to_ordered_items_list(self.user.cart.get_item_at_index(i))
+        self.show_Information("Items bought successfully. Check the order history section")
 
-def get_whole_row(self, index, table):
-    row = index.row()
-    model = table.model()
-
-    if model is not None:
-        self.cart_item = [model.index(row, column).data(Qt.DisplayRole) for column in range(model.columnCount(index))]
 
 # ------------------- Showing order history ------------------------ #
 def showing_all_orders(self):
@@ -135,8 +129,8 @@ def showing_all_orders(self):
         self.delivered_Items_Btn.clicked.connect(lambda: self.view_orders(self.user.delivered_order_list, self.customer_table_2))
 
     if self.checking_the_connection(self.customer_table_2):
-        self.customer_table_2.clicked.connect(lambda: get_whole_row(self, self.customer_table_2.currentIndex(), self.customer_table_2))
-        self.customer_table_2.clicked.connect(lambda: showing_item(self, Menu._food_list.search_data(self.cart_item[3])))
+        self.customer_table_2.clicked.connect(lambda: self.get_whole_row(self.customer_table_2.currentIndex(), self.customer_table_2))
+        self.customer_table_2.clicked.connect(lambda: showing_item(self, Menu._food_list.search_data(self.table_item[3])))
 
 def showing_item(self, item):
     self.order_item_Lbl.setText(item.food_name)
@@ -147,11 +141,13 @@ def showing_item(self, item):
         self.like_Btn.clicked.connect(lambda: handle_like_button(self, item))
 
 def handle_like_button(self, item):
-    if self.like_Btn.icon().hasThemeIcon("views/Icons & logos/like.png"):
-        item.add_like_and_rate()  
+    if self.like_bton == 0:
+        item.add_like_and_rate()
+        self.like_bton = 1  
         self.like_Btn.setIcon(QtGui.QIcon("views/Icons & logos/fill_like.png"))
     else:
         item.remove_like_and_rate()
+        self.like_bton = 0
         self.like_Btn.setIcon(QtGui.QIcon("views/Icons & logos/like.png"))
 
 
@@ -166,7 +162,8 @@ def add_to_fvt(self, food):
 # ----------------- Removing food in fvt list --------------------- #
 def remove_from_fvt(self, food):
     if self.user.remove_from_wishlist(food):
-        self.show_Information("Item removed from wishlist successfully. Please refresh the page to see changes.")
+        self.show_Information("Item removed from wishlist successfully.")
+        showing_fvt_items(self)
     else:
         self.show_Warning("Item not in wishlist")
 
@@ -214,6 +211,7 @@ def change_name(self):
     else:
         self.user.username = new_name.text()
         self.show_Information("Name updated successfully")
+        dL.store_in_csv()
 
 def change_email(self):
     new_email = self.findChild(QLineEdit, "change_email_Line")
@@ -222,6 +220,7 @@ def change_email(self):
     else:
         self.user.email = new_email.text()
         self.show_Information("Email updated successfully")
+        dL.store_in_csv()
 
 def change_password(self):
     new_password = self.findChild(QLineEdit, "change_password_Line")
@@ -230,6 +229,7 @@ def change_password(self):
     else:
         self.user.password = new_password.text()
         self.show_Information("Password updated successfully")
+        dL.store_in_csv()
 
 def change_address(self):
     new_address = self.findChild(QLineEdit, "change_address_Line")
@@ -238,7 +238,7 @@ def change_address(self):
     else:
         self.user.address = new_address.text()
         self.show_Information("Address updated successfully")
-
+        dL.store_in_csv()
 
 
 # ------------------------ Food Tab ------------------------------- #
@@ -359,34 +359,7 @@ def food_tab(self, food, menu_flag):
 
 
 # ------------------- Adding tab in widget ------------------------ #
-def add_foodtab_in_widget(self, food_list, menu_flag):
-    scroll_area = QScrollArea()
-    scroll_area.setWidgetResizable(True)
-    scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-
-    content_widget = QWidget()
-    scroll_area.setWidget(content_widget)
-
-    
-    grid_layout = QGridLayout(content_widget)
-
-    row = 0
-    col = 0
-    for i in range(food_list.get_items_count()):
-        grid_layout.addWidget(food_tab(self, food_list.get_item_at_index(i), menu_flag), row, col)
-        col += 1
-        if col >= 3:
-            col = 0
-            row += 1
-
-    layout = QVBoxLayout()
-    layout.addWidget(scroll_area)
-
-    return layout
-
-# Settings Pending
-
-def add_foodtab_in_widget2(self, layout,food_list, menu_flag):
+def add_foodtab_in_widget(self, layout, food_list, menu_flag):
     scroll_area = QScrollArea()
     scroll_area.setWidgetResizable(True)
     scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
@@ -406,7 +379,6 @@ def add_foodtab_in_widget2(self, layout,food_list, menu_flag):
             col = 0
             row += 1
     layout.addWidget(scroll_area)
-
 
 
 # ------------------- Food tab for 1st page ----------------------- #

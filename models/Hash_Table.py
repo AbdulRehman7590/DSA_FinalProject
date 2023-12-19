@@ -64,15 +64,6 @@ class HashTable:
                     self._table[index].remove(user)
                     self._count -= 1
                     return
-
-    # ------------------------ Get Order ------------------------- #
-    def get_order(self, order_id):
-        index = self._hash_function(order_id)
-        if self._table[index]:
-            for order in self._table[index]:
-                if order.order_id == order_id:
-                    return order
-        return None
     
     # ------------------------ Search ---------------------------- #
     def search(self, order_id):
@@ -82,6 +73,5 @@ class HashTable:
                 if order.order_id == order_id:
                     return order
         return None
-    
     
     

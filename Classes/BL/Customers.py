@@ -1,7 +1,7 @@
 # ------------------------ Libraries ------------------------------- #
 from classes.BL.users import User
 from models.Hash_Table import HashTable
-from models.Doubly_Linkedlist import DoubleLinkedList
+from models.Linkedlist import LinkedList
 from models.Stack import Stack
 from models.Queue import Queue
 
@@ -14,7 +14,7 @@ class Customer(User):
                 self.__order_history = HashTable()
                 self.__ordered_items_list = Queue()
                 self.__delivered_order_list = Stack()
-                self.__wishlist = DoubleLinkedList()
+                self.__wishlist = LinkedList()
 
         # ------------------------ Getter ------------------------------ #
         @property
@@ -34,7 +34,7 @@ class Customer(User):
                 return self.__delivered_order_list
         
         @property
-        def wishlist(self)->DoubleLinkedList:
+        def wishlist(self)->LinkedList:
                 return self.__wishlist
         
         # ------------------------ Methods ------------------------------ #
@@ -49,7 +49,7 @@ class Customer(User):
 
         def remove_from_wishlist(self,item):
                 if self.__wishlist.search_data(item.food_name) is not None:
-                        self.__wishlist.delete_data(item)
+                        self.__wishlist.delete_node(item)
                         print("item removed from wishlist")
                         return True
                 else:

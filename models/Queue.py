@@ -21,6 +21,10 @@ class Queue:
             return None
         return self._queue_list.head.data
 
+    # --------------- get item at index ------------------------- #
+    def get_item_at(self, index):
+        return self._queue_list.get_item_at_index(index)
+
     # ---------------------- Empty? --------------------------- #
     def is_empty(self):
         return self._queue_list.get_items_count() == 0
@@ -36,6 +40,3 @@ class Queue:
         else:
             self._queue_list.display()
 
-    # --------------- get item at index ------------------------- #
-    def get_item_at(self, index):
-        return self._queue_list.get_item_at_index(index)

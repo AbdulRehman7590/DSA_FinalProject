@@ -24,11 +24,9 @@ class OrderTableModel(QAbstractTableModel):
             value = None
             if isinstance(self._orderdata, HashTable):
                 key = self._orderdata.keys()[index.row()]
-                value = self._orderdata.get_order(key)
-            elif isinstance(self._orderdata, Stack):
-                value = self._orderdata.top_element()
-            elif isinstance(self._orderdata, Queue):
-                value = self._orderdata.front_element()
+                value = self._orderdata.search(key)
+            else:
+                value = self._orderdata.get_item_at(index.row())
             
             if value:
                 if column == "Order_ID":

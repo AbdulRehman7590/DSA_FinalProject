@@ -37,7 +37,8 @@ class Mainwindow(QMainWindow):
         self.food_img_path = ""
         self.about_pagerecord = -1
         self.back_from_cart = -1
-        self.cart_item = ""
+        self.tab_item = ""
+        self.like_bton = 0
 
 
         # ---------------------- Columns ------------------------- #
@@ -76,15 +77,10 @@ class Mainwindow(QMainWindow):
         self.viewCustomers_Btn.clicked.connect(self.view_customers)
         self.viewStats_Btn.clicked.connect(lambda: showing_stats(self))
         self.addnew_Food_Btn.clicked.connect(lambda: self.changing_adminStack_PageNo(1))
-        if self.add_food_Btn.clicked:            
-            self.add_food_Btn.clicked.connect(lambda: add_new_food(self))
-            self.view_foods()
-        self.SortBtn.clicked.connect(lambda: Sort(self))
-        if self.add_food_Btn.clicked:  
-            
-            self.start_Search.clicked.connect(lambda: Search(self))
-            self.view_foods()
-        
+        self.add_food_Btn.clicked.connect(lambda: add_new_food(self))
+        self.uploadPhoto_Btn.clicked.connect(lambda: upload_photo(self))
+
+
         # -------------------- Customer Options ----------------------- #
         self.home_Btn.clicked.connect(lambda: self.changing_customerStack_PageNo(0))
         self.customer_logout_Btn.clicked.connect(lambda: self.changing_mainStack_PageNo(0))
@@ -92,7 +88,27 @@ class Mainwindow(QMainWindow):
         self.fvt_Btn.clicked.connect(lambda: showing_fvt_items(self))
         self.cart_Btn.clicked.connect(lambda: showing_cart_items(self))
         self.order_history_Btn.clicked.connect(lambda: showing_all_orders(self))
-        self.credentials_Btn.clicked.connect(lambda: self.changing_customerStack_PageNo(6))
+        self.credentials_Btn.clicked.connect(lambda: update_data(self))
+
+
+    # ------------------- Changing Connections ------------------- #
+    def checking_the_connection(self, btn_or_table):
+        num_receivers = btn_or_table.receivers(btn_or_table.clicked)
+        # less than and equal to zero means the button is not connected to any function
+        if num_receivers > 0:
+            btn_or_table.clicked.disconnect()
+            return True
+        else:
+            return True
+
+
+    # ---------------------- Getting Data ------------------------ #
+    def get_whole_row(self, index, table):
+        row = index.row()
+        model = table.model()
+
+        if model is not None:
+            self.table_item = [model.index(row, column).data(Qt.DisplayRole) for column in range(model.columnCount(index))]
 
 
     # ---------------------- Message Boxes ------------------------ #
@@ -108,10 +124,6 @@ class Mainwindow(QMainWindow):
         self.changing_mainStack_PageNo(self.about_pagerecord)
 
     def back_from_cart_interface(self):
-        self.backexplore_Btn.clicked.disconnect(self.back_from_cart_interface)
-        self.add_tofvt_Btn.clicked.disconnect(self.add_tofvt_Btn_lambda)
-        self.add_tocart_Btn.clicked.disconnect(self.add_tocart_Btn_lambda)
-
         self.changing_customerStack_PageNo(self.back_from_cart)
 
     def changing_mainStack_PageNo(self, index):
@@ -136,11 +148,11 @@ class Mainwindow(QMainWindow):
     def changing_customerStack_PageNo(self, index):
         if index == 0:
             showing_first_page(self)
-
         elif index == 2:
             self.back_from_cart = self.customerStack.currentIndex()
-
+        
         self.customerStack.setCurrentIndex(index)
+
 
 
     # -------------------- Load admin Tables -------------------- #
