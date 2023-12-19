@@ -87,7 +87,7 @@ def Sort(self):
 
     column = 1  # Change this to the appropriate column index
     print(column)
-    merge_sort_linked_list(Menu._food_list)
+    mergeSort(self,Menu._food_list.head)
 
     print("Sorted list:")
     temp = Menu._food_list.head

@@ -2,67 +2,62 @@ from classes.DL.menu import Menu
 from models.Linkedlist import *
 # Assuming Menu._food_list is a linked list
 
-def merge_sort_linked_list(linked_list):
-    if not linked_list or not linked_list.head or not linked_list.head.next:
-        return linked_list
-
-    mid = find_midpoint(linked_list)
-    left_half = LinkedList()
-    left_half.head = linked_list.head
-    right_half = LinkedList()
-    right_half.head = mid.next
-    mid.next = None             # Disconnect the two halves
-
-    left_half = merge_sort_linked_list(left_half)
-    right_half = merge_sort_linked_list(right_half)
-
-    return merge_linked_lists(left_half, right_half)
-
-def find_midpoint(linked_list):
-    slow = linked_list.head
-    fast = linked_list.head
-
-    while fast.next and fast.next.next:
-        slow = slow.next
-        fast = fast.next.next
-
-    return slow
-
-def merge_linked_lists(left, right):
-    merged = LinkedList()
-    current = merged.head
-
-    left_ptr = left.head
-    right_ptr = right.head
-
-    while left_ptr and right_ptr:
-        if left_ptr.value < right_ptr.value:
-            if not current:
-                merged.head = Node(left_ptr.value)
-                current = merged.head
-            else:
-                current.next = Node(left_ptr.value)
-                current = current.next
-            left_ptr = left_ptr.next
+def sortedMerge(self, a, b):
+        result = None
+         
+        # Base cases
+        if a == None:
+            return b
+        if b == None:
+            return a
+             
+        # pick either a or b and recur..
+        if a.data <= b.data:
+            result = a
+            result.next = self.sortedMerge(a.next, b)
         else:
-            if not current:
-                merged.head = Node(right_ptr.value)
-                current = merged.head
-            else:
-                current.next = Node(right_ptr.value)
-                current = current.next
-            right_ptr = right_ptr.next
-
-    if left_ptr:
-        current.next = left_ptr
-    elif right_ptr:
-        current.next = right_ptr
-
-    return merged
-
-# # Example usage:
-# sorted_food_list = merge_sort_linked_list(Menu._food_list)
-# print(sorted_food_list)
+            result = b
+            result.next = self.sortedMerge(a, b.next)
+        return result
+     
+def mergeSort(self, h):
+         
+        # Base case if head is None
+        if h == None or h.next == None:
+            return h
+ 
+        # get the middle of the list 
+        middle = self.getMiddle(h)
+        nexttomiddle = middle.next
+ 
+        # set the next of middle node to None
+        middle.next = None
+ 
+        # Apply mergeSort on left list 
+        left = self.mergeSort(h)
+         
+        # Apply mergeSort on right list
+        right = self.mergeSort(nexttomiddle)
+ 
+        # Merge the left and right lists 
+        sortedlist = self.sortedMerge(left, right)
+        return sortedlist
+     
+    # Utility function to get the middle 
+    # of the linked list 
+def getMiddle(self, head):
+        if (head == None):
+            return head
+ 
+        slow = head
+        fast = head
+ 
+        while (fast.next != None and
+               fast.next.next != None):
+            slow = slow.next
+            fast = fast.next.next
+             
+        return slow
 
 
 # ---------------------- Data filters ------------------------ #
