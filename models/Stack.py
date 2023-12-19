@@ -1,5 +1,7 @@
 # ------------------------- Imports --------------------------------- #
 from models.Linkedlist import LinkedList
+# ------------------------- Imports --------------------------------- #
+from models.Linkedlist import LinkedList
 
 # ------------------------ Stack --------------------------------- #
 class Stack:

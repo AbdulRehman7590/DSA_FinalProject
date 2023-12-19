@@ -59,10 +59,10 @@ class Food():
         # ------------------------ Methods ------------------------------ #
         def add_like_and_rate(self):
                 self.__food_likes += 1
-                if self.__food_likes > 2:
+                if int(self.__food_likes) > 2:
                         self.__food_rating += 1
                         self.__food_likes = 0
-                if self.__food_rating > 5:
+                if int(self.__food_rating) > 5:
                         self.__food_rating = 5
                 print("Thanks for liking the food")
 
