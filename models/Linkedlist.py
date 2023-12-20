@@ -1,5 +1,3 @@
-# ----------------------- imports -------------------------------- #
-from utils.algorithms import *
 # ------------------------- Node --------------------------------- #
 class Node:
     def __init__(self, data):
@@ -93,24 +91,6 @@ class LinkedList:
                     temp = temp.next
         return None
     
-    # ----------------------- Search ---------------------------- #
-    def search_data_with_filter(self, columnName, search_key, filter):
-        data = []
-        if self.head is None:
-            return None
-        else:
-            temp = self.head
-            while temp is not None:
-                if filter == 1 and search_key in temp.data.columnName:
-                    data.append(temp.data)
-                elif filter == 2 and temp.data.columnName.starts_With(search_key):
-                    data.append(temp.data)
-                elif filter == 3 and temp.data.columnName.ends_With(search_key):
-                    data.append(temp.data)
-                else:
-                    temp = temp.next
-        return None if len(data) == 0 else data
-    
     # ------------------- Get item at Index  --------------------- #
     def get_item_at_index(self, index):
         idx = 0
@@ -127,7 +107,7 @@ class LinkedList:
         return None
     
     # --------------------- Get items count ---------------------- #
-    def get_items_count(self):
+    def size(self):
         count = 0
         if self.head is None:
             return count
@@ -138,6 +118,67 @@ class LinkedList:
                 temp = temp.next
         return count
     
+    # --------------------- Merge Sort Algo ---------------------- #
+    def merge_sort(self, head, key, isAscending: bool = True):
+        if not head or not head.next:
+            return head
+
+        middle = self.get_middle(head)
+        next_to_middle = middle.next
+        middle.next = None
+
+        left = self.merge_sort(head, key, isAscending)
+        right = self.merge_sort(next_to_middle, key, isAscending)
+
+        sorted_list = self.merge(left, right, key, isAscending)
+        return sorted_list
+
+    def get_middle(self, head):
+        if not head:
+            return head
+
+        slow = head
+        fast = head
+
+        while fast.next and fast.next.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow
+
+    def merge(self, left, right, key, isAscending: bool = True):
+        dummy = Node(None)
+        current = dummy
+
+        while left and right:
+            if isAscending:
+                if getattr(left.data, int(key) if key != "food_name" else key) < getattr(right.data, int(key) if key != "food_name" else key):
+                    current.next = left
+                    left = left.next
+                else:
+                    current.next = right
+                    right = right.next
+            else:
+                if getattr(left.data, int(key) if key != "food_name" else key) > getattr(right.data, int(key) if key != "food_name" else key):
+                    current.next = left
+                    left = left.next
+                else:
+                    current.next = right
+                    right = right.next
+            
+            current = current.next
+
+        if left:
+            current.next = left
+        if right:
+            current.next = right
+
+        return dummy.next
+
+    def sort(self, key, isAscending: bool = True):
+        self.head = self.merge_sort(self.head, key, isAscending)
+
+
     # ----------------------- Display ---------------------------- #
     def display(self):
         print("Null->", end="")

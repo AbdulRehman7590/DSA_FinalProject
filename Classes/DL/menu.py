@@ -48,7 +48,7 @@ class Menu():
                                 next(reader)
                                 for row in reader:
                                         if row:
-                                                food = Food(row[0], row[1], f"views/Images/{row[0]}.jpg", row[2], row[3])
+                                                food = Food(row[0], row[1], f"views/Images/{row[0]}.jpg", row[2], int(row[3]))
                                                 food.food_likes = int(row[4])
                                                 Menu._food_list.insert_at_tail(food)
                         except Exception as e:

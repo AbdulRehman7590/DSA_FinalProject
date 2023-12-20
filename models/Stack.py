@@ -1,5 +1,7 @@
 # ------------------------- Imports --------------------------------- #
 from models.Linkedlist import LinkedList
+# ------------------------- Imports --------------------------------- #
+from models.Linkedlist import LinkedList
 
 # ------------------------ Stack --------------------------------- #
 class Stack:
@@ -24,11 +26,11 @@ class Stack:
 
     # ----------------------- Empty? ---------------------------- #
     def is_empty(self):
-        return self._stack_list.get_items_count() == 0
+        return self._stack_list.size() == 0
 
     # ----------------------- Size ---------------------------- #
     def size(self):
-        return self._stack_list.get_items_count()
+        return self._stack_list.size()
 
     # ----------------------- Display ---------------------------- #
     def display(self):

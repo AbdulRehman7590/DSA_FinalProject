@@ -13,7 +13,7 @@ class OrderTableModel(QAbstractTableModel):
         self._headers = headers
 
     def rowCount(self, index):
-        return self._orderdata.size()
+        return self._orderdata.size() if self._orderdata else 0
 
     def columnCount(self, index):
         return len(self._headers)
@@ -24,13 +24,15 @@ class OrderTableModel(QAbstractTableModel):
             value = None
             if isinstance(self._orderdata, HashTable):
                 key = self._orderdata.keys()[index.row()]
-                value = self._orderdata.search(key)
+                value = self._orderdata.get_item_at_index(key)
             else:
                 value = self._orderdata.get_item_at(index.row())
             
             if value:
                 if column == "Order_ID":
                     return value.order_id
+                elif column == "Order_Name":
+                    return value.order_name.username
                 elif column == "Order_Date":
                     return value.order_date
                 elif column == "Order_Address":

@@ -10,7 +10,6 @@ class Node:
 class BST:
     def __init__(self):
         self.root = None
-        self.counter = 0
 
     # ---------------------- Insert --------------------------- #
     def insertNode(self, value):
@@ -35,17 +34,26 @@ class BST:
     # ---------------------- Search --------------------------- #
     def findNode(self, value):
         temp = self.root
-        lastNode = None
         while temp is not None:
             if value < temp.data.username:
-                lastNode = temp
                 temp = temp.left
             elif value > temp.data.username:
-                lastNode = temp
+                temp = temp.right
+            else:
+                return temp.data
+        return None
+
+    # ---------------------- Search --------------------------- #
+    def find_node(self, value):
+        temp = self.root
+        while temp is not None:
+            if value < temp.data.username:
+                temp = temp.left
+            elif value > temp.data.username:
                 temp = temp.right
             else:
                 return temp
-        return lastNode
+        return None
 
     # -------------------- Total nodes ------------------------ #
     def NumberOfNodes(self, T):
@@ -55,7 +63,7 @@ class BST:
 
     # ---------------------- Delete --------------------------- #
     def deleteNode(self, value):
-        nodeToDelete = self.findNode(value)
+        nodeToDelete = self.find_node(value.username)
         if nodeToDelete is None:
             return False  # Node not found
 
@@ -95,6 +103,17 @@ class BST:
                 T = temp
                 temp = temp.parent
             return temp
+    
+    # ---------------------- Tree Minimum ---------------------- #
+    def treeMinimum(self, T):
+        if T is None:
+            return None
+
+        current = T
+        while current.left is not None:
+            current = current.left
+
+        return current.data
 
     # ------------------- Pre Order Traversal ------------------- #
     def preOrderTraversal(self, T):
@@ -108,27 +127,5 @@ class BST:
 
         return nodes
 
-    # ------------------- In Order Traversal -------------------- #
-    def inOrderTraversal(self, T, idx):
-        if T is None:
-            return None
-
-        left = self.inOrderTraversal(T.left, idx)
-        if left is not None:
-            if hasattr(left, 'data'):
-                return left.data
-
-        if self.counter == idx:
-            if hasattr(T, 'data'):
-                return T.data
-
-        self.counter += 1
-
-        right = self.inOrderTraversal(T.right, idx)
-        if right is not None:
-            if hasattr(right, 'data'):
-                return right.data
-
-        return None
 
 

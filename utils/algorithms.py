@@ -2,6 +2,7 @@ from classes.DL.menu import Menu
 from models.Linkedlist import *
 # Assuming Menu._food_list is a linked list
 
+
 def sortedMerge(self, a, b):
         result = None
          
@@ -21,7 +22,7 @@ def sortedMerge(self, a, b):
         return result
      
 def mergeSort(self, h):
-         
+        
         # Base case if head is None
         if h == None or h.next == None:
             return h
@@ -34,10 +35,10 @@ def mergeSort(self, h):
         middle.next = None
  
         # Apply mergeSort on left list 
-        left = self.mergeSort(h)
+        left = mergeSort(self,h)
          
         # Apply mergeSort on right list
-        right = self.mergeSort(nexttomiddle)
+        right = mergeSort(self,nexttomiddle)
  
         # Merge the left and right lists 
         sortedlist = self.sortedMerge(left, right)
@@ -58,25 +59,23 @@ def getMiddle(self, head):
             fast = fast.next.next
              
         return slow
-
-
 # ---------------------- Data filters ------------------------ #
 def starts_With(value, search_key):
-        size = len(str(search_key))
-        for i in range(size):
-            if value[i] != search_key[i]:
-                return False
-        return True
+            size = len(str(search_key))
+            for i in range(size):
+                if value[i] != search_key[i]:
+                    return False
+            return True
 
 def ends_With(value, search_key):
-        n = len(str(search_key))
-        for i in range(len(value) - n, len(value)):
-            if search_key[i - (len(value) - n)] != value[i]:
-                return False
-        return True
+            n = len(str(search_key))
+            for i in range(len(value) - n, len(value)):
+                if search_key[i - (len(value) - n)] != value[i]:
+                    return False
+            return True
 
 
-# ---------------------- Searching ------------------------------- #
+    # ---------------------- Searching ------------------------------- #
 def LinearSearch(df, columnName, search_key, filter_type):
         indexList = []
         for index, value in enumerate(df):

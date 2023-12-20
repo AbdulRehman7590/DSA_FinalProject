@@ -18,11 +18,14 @@ def TakeInput_SignIn(self):
         return
     else:
         user = Customer(Name, email, Password, address)
-        dL.add_user(user)
-        self.show_Information("Sign Up Successful")
-        self.changing_mainStack_PageNo(0)
+        if dL.get_user(Name) == None:
+            dL.add_user(user)
+            self.show_Information("Sign Up Successful")
+            self.changing_mainStack_PageNo(0)
+            dL.store_in_csv()                        # Storing in csv file
+        else:
+            self.show_Warning("User already exists")
         
-        dL.store_in_csv()                        # Storing in csv file
 
 
 # -------------------- Sign In Implementation ----------------- #
@@ -34,11 +37,13 @@ def TakeInput_LogIn(self):
         self.show_Warning("Please fill all the fields")
         return
     else:
-        us = dL.get_user(self.userName)
-        if us.data.username == self.userName and us.data.password == self.passWord:
-            self.user = us.data
+        us = dL.get_user(userName)
+        if us is not None and us.username == userName and us.password == passWord:
+            self.user = us
             self.show_Information("Sign In Successful")
-            if type(us.data) == Customer:
+            self.userName.setText("")
+            self.passWord.setText("")
+            if type(us) == Customer:
                 self.changing_mainStack_PageNo(4)
             else:
                 self.changing_mainStack_PageNo(3)

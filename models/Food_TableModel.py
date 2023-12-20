@@ -10,7 +10,7 @@ class FoodTableModel(QAbstractTableModel):
         self._headers = headers
 
     def rowCount(self, parent):
-        return self._linked_list.get_items_count()
+        return self._linked_list.size()
 
     def columnCount(self, parent):
         return len(self._headers)

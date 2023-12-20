@@ -68,7 +68,7 @@ class HashTable:
                     return
     
     # ------------------------ Search ---------------------------- #
-    def search(self, order_id):
+    def get_item_at_index(self, order_id):
         index = self._hash_function(order_id)
         if self._table[index]:
             for order in self._table[index]:

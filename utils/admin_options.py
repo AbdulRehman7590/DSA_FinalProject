@@ -4,19 +4,22 @@ from PyQt5.QtCore import *
 
 from classes.BL.foods import Food
 from classes.DL.menu import Menu
-from utils.algorithms import *
+from classes.DL.usersDL import UsersDL as dL
+from classes.BL.Customers import Customer
+from utils.searching_algo import LinearSearch
+from models.Linkedlist import LinkedList
 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
-# --------------------- Admin Options -------------------------- #
+# ---------------------- Admin Options -------------------------- #
 def upload_photo(self):
         path , _ = QFileDialog.getOpenFileName(self, "Upload food image", "","")
         self.food_img_path = path.split("/")[-1]
         print(self.food_img_path)
 
 
-# -------------------- Add foodin list ------------------------- #
+# --------------------- Add foodin list ------------------------- #
 def add_new_food(self):
     food_name = self.findChild(QLineEdit, "food_name").text()
     food_price = self.findChild(QLineEdit, "food_price").text()
@@ -38,7 +41,69 @@ def add_new_food(self):
         Menu.store_in_csv()
 
 
-# ------------------- View food stats --------------------------- #
+# ---------------------- Remove food ---------------------------- #
+def remove_food(self):
+    if self.table_item != "" and Menu._food_list.search_data(self.table_item[0]):
+        item = Menu._food_list.search_data(self.table_item[0])
+        self.table_item = ""
+        
+        Menu._food_list.delete_node(item)
+        self.show_Information("Food removed successfully.")
+        Menu.store_in_csv()
+    else:
+        self.show_Warning("Please select a food to remove")
+
+
+# ---------------------- Searching food ------------------------- #
+def search_food(self):
+    column = self.searching_attribute.currentText().lower()
+    filte = self.search_filter.currentIndex()
+    search_key = self.search_content.text()
+
+    if search_key == "":
+        self.show_Warning("Please enter a key to search")
+    else:
+        data = LinearSearch(Menu._food_list, column, search_key, filte)
+        dummy = LinkedList()
+        for item in data:
+            dummy.insert_at_tail(item)
+        self.view_foods(dummy)
+
+
+
+
+# ---------------------- Sorting food --------------------------- #
+def sorting_foods(self):
+    sorting_attribute = self.findChild(QComboBox, "sorting_attribute").currentText().lower()
+    sorting_order = self.findChild(QComboBox, "sorting_order").currentIndex()
+    if sorting_order == 0:
+        Menu._food_list.sort(sorting_attribute, True)
+    else:
+        Menu._food_list.sort(sorting_attribute, False)
+
+# --------------------- View order list ------------------------- #
+def view_orders_for_admin(self):
+    self.changing_adminoption_stack_PageNo(1)
+    self.view_orders(None, self.adminTable)
+    
+    self.order_complete_Btn.hide()
+    
+    if self.checking_the_connection(self.view_pending_Btn):
+        self.view_pending_Btn.clicked.connect(lambda: self.view_orders(self.user.pending_orders, self.adminTable))
+        self.view_pending_Btn.clicked.connect(lambda: self.order_complete_Btn.show())
+    
+    if self.checking_the_connection(self.order_complete_Btn):
+        self.order_complete_Btn.clicked.connect(lambda: complete_order(self))
+
+    if self.checking_the_connection(self.view_delivered_Btn):
+        self.view_delivered_Btn.clicked.connect(lambda: self.view_orders(self.user.delivered_orders, self.adminTable))
+
+def complete_order(self):
+    self.user.add_delivered_order()
+    self.show_Information("1st Order Completed")
+
+
+# --------------------- View food stats ------------------------- #
 def showing_stats(self):
     self.changing_adminStack_PageNo(2)
 
@@ -77,24 +142,22 @@ def showing_stats(self):
     self.canvas.draw()
 
 
-#----------------------------- Sort Data --------------------------#
-def Sort(self):
-    print("Entered")
-    temp = Menu._food_list.head
-    while temp is not None:
-        print(f"Food Name: {temp.data.food_name}, Price: {temp.data.food_price}, Description: {temp.data.food_description}, Rating: {temp.data.food_rating}")
-        temp = temp.next
-
-    column = 1  # Change this to the appropriate column index
-    print(column)
-    mergeSort(self,Menu._food_list.head)
-
-    print("Sorted list:")
-    temp = Menu._food_list.head
-    while temp is not None:
-        print(f"Food Name: {temp.data.food_name}, Price: {temp.data.food_price}")
-        temp = temp.next
-
+# --------------------- View users list ------------------------- #
+def view_users_for_admin(self):
+    self.view_customers()
     
-    print("Sorting done")
-    
+    if self.checking_the_connection(self.remove_user_Btn):
+        self.remove_user_Btn.clicked.connect(lambda: remove_user(self))
+
+def remove_user(self):
+    if self.table_item != "" and dL._user_list.findNode(self.table_item[0]):
+        item = dL._user_list.findNode(self.table_item[0])
+        self.table_item = ""
+        if type(item) == Customer:
+            dL._user_list.deleteNode(item)
+            self.show_Information("User removed successfully.")
+            dL.store_in_csv()
+        else:
+            self.show_Warning("You can't remove admin")
+    else:
+        self.show_Warning("Please select a user to remove")

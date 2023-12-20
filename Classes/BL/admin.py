@@ -12,7 +12,6 @@ class Admin(User):
                 self.__all_orders_history = HashTable()
                 self.__pending_orders = Queue()
                 self.__delivered_orders = Stack()
-                self.__cancel_orders = HashTable()
 
         # ------------------------ Getter ------------------------------ #
         @property
@@ -38,22 +37,14 @@ class Admin(User):
                 self.__pending_orders.enqueue(order)
                 print("Order Added in pending")
         
-        def add_delivered_order(self,order):
-                self.__pending_orders.dequeue()
+        def add_delivered_order(self):
+                order = self.__pending_orders.dequeue()
                 print("Order Removed from pending")
                 self.__delivered_orders.push(order)
                 print("Order Added in delivered")
+                order.order_name.add_to_delivered_order_list()
+                print("Order Added in Customer delivered list")
         
-        def add_cancel_order(self):
-                self.__cancel_orders.insert(self.__pending_orders.dequeue())
-                print("Order Removed from pending")
-
-        def remove_cancel_order(self,order):
-                self.__cancel_orders.remove(order)
-                print("Order Removed from cancel")
-                self.__pending_orders.enqueue(order)
-                print("Order Added in pending")
-
         def remove_order(self,order):
                 self.__all_orders_history.remove(order)
                 print("Order Removed from history")

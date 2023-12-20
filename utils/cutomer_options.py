@@ -9,6 +9,8 @@ from datetime import date
 from classes.BL.order import Order
 from classes.DL.menu import Menu
 from classes.DL.usersDL import UsersDL as dL
+from utils.searching_algo import LinearSearch
+from models.Linkedlist import LinkedList
 
 
 # -------------------- Showing first page -------------------------- #
@@ -27,19 +29,36 @@ def showing_explore_menu(self):
     self.changing_customerStack_PageNo(1)
 
     Layout = self.findChild(QHBoxLayout, "explore_layout")
-
     if Layout.count() > 0:
         for i in reversed(range(Layout.count())):
             Layout.itemAt(i).widget().setParent(None)
-
     add_foodtab_in_widget(self, Layout, Menu._food_list, True)
+
+    if self.checking_the_connection(self.explore_search_Btn):
+        self.explore_search_Btn.clicked.connect(lambda: searching_food(self, Layout))
+
+def searching_food(self, layout):
+    search_key = self.explore_search_Line.text()
+
+    if search_key == "":
+        self.show_Warning("Please enter a key to search")
+    else:
+        data = LinearSearch(Menu._food_list, "food_name", search_key, 1)
+        dummy = LinkedList()
+        for item in data:
+            dummy.insert_at_tail(item)
+        
+        if layout.count() > 0:
+            for i in reversed(range(layout.count())):
+                layout.itemAt(i).widget().setParent(None)
+        add_foodtab_in_widget(self, layout, dummy, True)
 
 
 # ------------------ Showing fvt items list ------------------------ #
 def showing_fvt_items(self):
     self.changing_customerStack_PageNo(3)
 
-    if self.user.wishlist.get_items_count() == 0:
+    if self.user.wishlist.size() == 0:
         self.show_Warning("No items in wishlist")
     else:
         Layout = self.findChild(QHBoxLayout, "fvt_items_layout")
@@ -111,7 +130,7 @@ def check_item(self):
     if self.table_item == "":
         self.show_Warning("Please select an item first")
     else:
-        item = self.user.cart.search(self.table_item[0])
+        item = self.user.cart.get_item_at_index(self.table_item[0])
         self.table_item = ""
         
         self.user.remove_from_cart(item)
@@ -121,7 +140,7 @@ def buy_all_items(self):
     key = self.user.cart.keys()
     if len(key) > 0:
         for i in range(len(key)):
-            ord = self.user.cart.search(key[i])
+            ord = self.user.cart.get_item_at_index(key[i])
             self.user.add_to_ordered_items_list(ord)
             admin = dL.get_user("admin")
             admin.add_order(ord)
@@ -143,7 +162,7 @@ def showing_all_orders(self):
 
     if self.checking_the_connection(self.customer_table_2):
         self.customer_table_2.clicked.connect(lambda: self.get_whole_row(self.customer_table_2.currentIndex(), self.customer_table_2))
-        self.customer_table_2.clicked.connect(lambda: showing_item(self, Menu._food_list.search_data(self.table_item[3])))
+        self.customer_table_2.clicked.connect(lambda: showing_item(self, Menu._food_list.search_data(self.table_item[4])))
 
 def showing_item(self, item):
     self.order_item_Lbl.setText(item.food_name)
@@ -183,7 +202,7 @@ def remove_from_fvt(self, food):
 
 # ------------------ Adding food in cart -------------------------- #
 def add_to_cart(self, food, no_of_items):
-    if self.user.add_to_cart(Order(str(rnd.randint(1, 999)), date.today().strftime("%d/%m/%Y"), self.user.address, food, no_of_items, int(food.food_price) * no_of_items)):
+    if self.user.add_to_cart(Order(self.user, str(rnd.randint(1, 999)), date.today().strftime("%d/%m/%Y"), self.user.address, food, no_of_items, int(food.food_price) * no_of_items)):
         self.show_Information("Item added to cart successfully")
     else:
         self.show_Warning("Item already in cart")
@@ -227,7 +246,7 @@ def change_name(self):
         dL.store_in_csv()
 
 def change_email(self):
-    new_email = self.findChild(QLineEdit, "change_email_Line")
+    new_email = self.findChild(QLineEdit, "change_mail_Line")
     if new_email.text() == "":
         self.show_Warning("Please enter a valid email")
     else:
@@ -245,7 +264,7 @@ def change_password(self):
         dL.store_in_csv()
 
 def change_address(self):
-    new_address = self.findChild(QLineEdit,"change_address_Line")
+    new_address = self.findChild(QLineEdit, "change_address_Line")
     if new_address.text() == "":
         self.show_Warning("Please enter a valid address")
     else:
@@ -385,7 +404,7 @@ def add_foodtab_in_widget(self, layout, food_list, menu_flag):
 
     row = 0
     col = 0
-    for i in range(food_list.get_items_count()):
+    for i in range(food_list.size()):
         grid_layout.addWidget(food_tab(self, food_list.get_item_at_index(i), menu_flag), row, col)
         col += 1
         if col >= 3:
@@ -461,7 +480,7 @@ def add_foodtab_for_first_page(self, food_list, top_flag):
     horizontal_layout = QHBoxLayout(content_widget)
 
     count = 0
-    for i in range(food_list.get_items_count()):
+    for i in range(food_list.size()):
         if int(top_flag and food_list.get_item_at_index(i).food_rating) >= 4 and count < 10:
             horizontal_layout.addWidget(food_tab_for_first_page(self, food_list.get_item_at_index(i)))
             count += 1

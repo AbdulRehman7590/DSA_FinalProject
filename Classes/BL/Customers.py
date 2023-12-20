@@ -57,7 +57,7 @@ class Customer(User):
                         return False
 
         def add_to_cart(self,item):
-                if self.__cart.search(item.order_id) is None:
+                if self.__cart.get_item_at_index(item.order_id) is None:
                         self.__cart.insert(item)
                         print("item stored in cart")
                         return True
@@ -66,7 +66,7 @@ class Customer(User):
                         return False
 
         def remove_from_cart(self,item):
-                if self.__cart.search(item.order_id):
+                if self.__cart.get_item_at_index(item.order_id):
                         self.__cart.remove(item)
                         print("item removed from cart")
                         return True
