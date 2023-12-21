@@ -181,6 +181,7 @@ def handle_like_button(self, item):
         item.remove_like_and_rate()
         self.like_bton = 0
         self.like_Btn.setIcon(QtGui.QIcon("views/Icons & logos/like.png"))
+    Menu.store_in_csv()
 
 
 # ----------------- Adding food in fvt list ----------------------- #

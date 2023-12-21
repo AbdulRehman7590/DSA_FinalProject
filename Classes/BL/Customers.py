@@ -11,7 +11,6 @@ class Customer(User):
                 super().__init__(username, email, password, address)
 
                 self.__cart = HashTable()
-                self.__order_history = HashTable()
                 self.__ordered_items_list = Queue()
                 self.__delivered_order_list = Stack()
                 self.__wishlist = LinkedList()
@@ -20,10 +19,6 @@ class Customer(User):
         @property
         def cart(self)->HashTable:
                 return self.__cart
-        
-        @property
-        def order_history(self)->HashTable:
-                return self.__order_history
         
         @property
         def ordered_items_list(self)->Queue:
@@ -75,8 +70,6 @@ class Customer(User):
                         return False
 
         def add_to_ordered_items_list(self,item):
-                self.__order_history.insert(item)
-                print("item stored in order history")
                 self.__ordered_items_list.enqueue(item)
                 print("item stored in ordered items list")
                 self.remove_from_cart(item)

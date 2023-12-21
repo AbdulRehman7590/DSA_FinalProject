@@ -1,8 +1,6 @@
 #----------------------- Imports ---------------------------------#
 from PyQt5.QtCore import QAbstractTableModel, Qt, QVariant
 from models.Hash_Table import HashTable
-from models.Stack import Stack
-from models.Queue import Queue
 
 
 # ------------------ orderdata into Model ---------------------- #
