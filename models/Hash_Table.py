@@ -1,5 +1,3 @@
-# ----------------------- imports -------------------------------- #
-from utils.algorithms import *
 # ----------------------- HashTable -------------------------------- #
 class HashTable:
     def __init__(self, size=30):
@@ -76,22 +74,4 @@ class HashTable:
                     return order
         return None
     
-    
-     # ------------------------ Search ---------------------------- #
-        
-    def search_data_with_filter(self, columnName, search_key, filter):
-        data = []
-        for item in self._table:
-            if item:
-                for order in item:
-                    order_data = getattr(order, columnName) 
-                    if filter == 1 and search_key in order_data:
-                        data.append(order)
-                    elif filter == 2 and order_data.startswith(search_key):
-                        data.append(order)
-                    elif filter == 3 and order_data.endswith(search_key):
-                        data.append(order)
-
-        return None if len(data) == 0 else data
-
     

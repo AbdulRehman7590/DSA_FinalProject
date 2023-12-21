@@ -21,7 +21,6 @@ from models.User_TableModel import UserTableModel
 from models.Food_TableModel import FoodTableModel
 from models.Order_TableModel import OrderTableModel
 
-
 # ---------------------- Program -------------------------------- #
 class Mainwindow(QMainWindow):
     def __init__(self):
@@ -58,10 +57,11 @@ class Mainwindow(QMainWindow):
         self.adminStack = self.findChild(QStackedWidget,"adminoption_stack")
         self.adminoption_stack = self.findChild(QStackedWidget,"adminsuboption_Stack")
         self.customerStack = self.findChild(QStackedWidget,"customerpages_stack")
-        self.changing_mainStack_PageNo(0)
+        self.changing_mainStack_PageNo(5)
 
 
         # ------------------- Button Connections ----------------- #
+        self.Divein_btn.clicked.connect(lambda: self.changing_mainStack_PageNo(0))
         self.signUp_Btn.clicked.connect(lambda: self.changing_mainStack_PageNo(1))
         self.signin_about_Btn.clicked.connect(lambda: self.changing_mainStack_PageNo(2))
         self.login_Btn.clicked.connect(lambda: TakeInput_LogIn(self))
@@ -73,7 +73,7 @@ class Mainwindow(QMainWindow):
 
         # ---------------------- Admin Options ------------------------ #
         self.admin_logout_Btn.clicked.connect(lambda: self.changing_mainStack_PageNo(0))
-        self.viewFood_Btn.clicked.connect(self.view_foods)
+        self.viewFood_Btn.clicked.connect(lambda: self.view_foods())
         self.sorting_order.currentIndexChanged.connect(lambda: sorting_foods(self))
         self.viewOrders_Btn.clicked.connect(lambda: view_orders_for_admin(self))
         self.viewCustomers_Btn.clicked.connect(lambda: view_users_for_admin(self))

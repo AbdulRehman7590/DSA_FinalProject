@@ -149,31 +149,36 @@ class LinkedList:
     def merge(self, left, right, key, isAscending: bool = True):
         dummy = Node(None)
         current = dummy
-
+    
         while left and right:
             if isAscending:
-                if getattr(left.data, int(key) if key != "food_name" else key) < getattr(right.data, int(key) if key != "food_name" else key):
+                left_value = int(getattr(left.data, key)) if key != "food_name" else getattr(left.data, key)  # Ensure int comparison if not "food_name"
+                right_value = int(getattr(right.data, key)) if key != "food_name" else getattr(right.data, key)
+                if left_value < right_value:
                     current.next = left
                     left = left.next
                 else:
                     current.next = right
                     right = right.next
             else:
-                if getattr(left.data, int(key) if key != "food_name" else key) > getattr(right.data, int(key) if key != "food_name" else key):
+                left_value = int(getattr(left.data, key)) if key != "food_name" else getattr(left.data, key)
+                right_value = int(getattr(right.data, key)) if key != "food_name" else getattr(right.data, key)
+                if left_value > right_value:
                     current.next = left
                     left = left.next
                 else:
                     current.next = right
                     right = right.next
-            
+    
             current = current.next
-
+    
         if left:
             current.next = left
         if right:
             current.next = right
-
+    
         return dummy.next
+
 
     def sort(self, key, isAscending: bool = True):
         self.head = self.merge_sort(self.head, key, isAscending)
