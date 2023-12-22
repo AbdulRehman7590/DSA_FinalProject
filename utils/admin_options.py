@@ -128,8 +128,8 @@ def showing_stats(self):
     self.ax.set_ylabel("Food Rating")
     self.ax.grid(True)
     self.ax.set_ylim(0, 5)
-    self.ax.set_yticks([])
-    self.ax.set_yticklabels([])
+    self.ax.set_yticks([0,1,2,3,4,5])
+    self.ax.set_yticklabels([0,1,2,3,4,5])
     self.ax.spines['top'].set_visible(True)
     self.ax.spines['right'].set_visible(True)
     self.ax.spines['bottom'].set_visible(True)
@@ -140,7 +140,7 @@ def showing_stats(self):
     food_names = []
     food_ratings = []
     while foods is not None:
-        food_names.append(foods.data.food_name)
+        food_names.append(foods.data.food_name.split(' ')[-1])
         food_ratings.append(foods.data.food_rating)
         foods = foods.next
 
