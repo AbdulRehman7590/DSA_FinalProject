@@ -6,7 +6,7 @@ from PyQt5.QtCore import *
 import random as rnd
 from datetime import date
 
-from classes.BL.order import order
+from classes.BL.order import Order
 from classes.DL.menu import Menu
 from classes.DL.usersDL import UsersDL as dL
 from utils.searching_algo import LinearSearch
@@ -203,7 +203,7 @@ def remove_from_fvt(self, food):
 
 # ------------------ Adding food in cart -------------------------- #
 def add_to_cart(self, food, no_of_items):
-    if self.user.add_to_cart(Order(self.user, str(rnd.randint(1, 999)), date.today().strftime("%d/%m/%Y"), self.user.address, food, no_of_items, int(food.food_price) * no_of_items)):
+    if self.user.add_to_cart(order(self.user, str(rnd.randint(1, 999)), date.today().strftime("%d/%m/%Y"), self.user.address, food, no_of_items, int(food.food_price) * no_of_items)):
         self.show_Information("Item added to cart successfully")
     else:
         self.show_Warning("Item already in cart")
