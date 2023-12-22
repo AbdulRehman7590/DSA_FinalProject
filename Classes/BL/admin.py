@@ -1,5 +1,5 @@
 # ------------------------ Libraries ------------------------------- #
-from classes.BL.users import User
+from classes.BL.Users import User
 from models.Stack import Stack
 from models.Queue import Queue
 from models.Hash_Table import HashTable
