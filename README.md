@@ -37,7 +37,7 @@ To successfully use our application, follow these instructions:
 
 1. **Library Installation:** Ensure all the mentioned libraries are installed. Additionally, set the environmental variables for Graphviz after installing it.
 
-2. **Data Source:** The data used in the application is accessible via the link provided in the 'Data Used' file.
+2. **Data Source:** The data used in the application is accessible via the link provided in the 'Data Used' file,add to use our program you have the download that data and placed in the inputs folder.If this folder is not available make a new one with name "inputs".
 
 3. **Admin Credentials:** Use the following admin credentials for access:
    - **Username:** admin
