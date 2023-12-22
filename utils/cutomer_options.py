@@ -6,7 +6,7 @@ from PyQt5.QtCore import *
 import random as rnd
 from datetime import date
 
-from classes.BL.order import Order
+from classes.BL.order import order
 from classes.DL.menu import Menu
 from classes.DL.usersDL import UsersDL as dL
 from utils.searching_algo import LinearSearch
