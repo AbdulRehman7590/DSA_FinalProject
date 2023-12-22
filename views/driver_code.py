@@ -14,8 +14,8 @@ from utils.sign_In_Up import *
 from utils.admin_options import *
 from utils.cutomer_options import *
 
-from classes.DL.usersDL import UsersDL as dL
-from classes.DL.menu import Menu
+from Classes.DL.usersDL import UsersDL as dL
+from Classes.DL.menu import Menu
 
 from models.User_TableModel import UserTableModel
 from models.Food_TableModel import FoodTableModel

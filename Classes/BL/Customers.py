@@ -1,5 +1,5 @@
 # ------------------------ Libraries ------------------------------- #
-from classes.BL.Users import User
+from Classes.BL.Users import User
 from models.Hash_Table import HashTable
 from models.Linkedlist import LinkedList
 from models.Stack import Stack

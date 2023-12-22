@@ -2,34 +2,34 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
-from classes.BL.foods import Food
-from classes.DL.menu import Menu
-from classes.DL.usersDL import UsersDL as dL
-from classes.BL.Customers import Customer
+from Classes.DL.menu import Menu
+from Classes.BL.foods import Food
+from Classes.DL.usersDL import UsersDL as dL
+from Classes.BL.Customers import Customer
 from utils.searching_algo import LinearSearch
 from models.Linkedlist import LinkedList
-
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-import pydot
 
+import pydot
 # ---------------------- Admin Options -------------------------- #
 def upload_photo(self):
+
         path , _ = QFileDialog.getOpenFileName(self, "Upload food image", "","")
         self.food_img_path = path.split("/")[-1]
         print(self.food_img_path)
 
-
 # --------------------- Add foodin list ------------------------- #
 def add_new_food(self):
+
     food_name = self.findChild(QLineEdit, "food_name").text()
     food_price = self.findChild(QLineEdit, "food_price").text()
     food_description = self.findChild(QLineEdit, "food_description").text()
     
     image_path = f"views/Images/{self.food_img_path}"
-
     if food_name == "" or food_price == "" or food_description == "" or image_path == "":
         self.show_Warning("Please fill all the fields")
+
         
     else:
         food = Food(food_name, food_price, image_path, food_description, 0)

@@ -1,6 +1,6 @@
 #----------------------- Imports ---------------------------------#
 from PyQt5.QtCore import Qt, QAbstractTableModel, QVariant
-from classes.BL.Customers import Customer
+from Classes.BL.Customers import Customer
 
 # -------------------- BST into Model -------------------------- #
 class UserTableModel(QAbstractTableModel):

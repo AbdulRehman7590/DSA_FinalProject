@@ -1,6 +1,6 @@
 # ------------------------ Libraries ------------------------------- #
 from models.Linkedlist import LinkedList
-from classes.BL.foods import Food
+from Classes.BL.foods import Food
 import csv
 
 # ------------------------ Menu CLass ------------------------------ #

@@ -6,9 +6,9 @@ from PyQt5.QtCore import *
 import random as rnd
 from datetime import date
 
-from classes.BL.order import Order
-from classes.DL.menu import Menu
-from classes.DL.usersDL import UsersDL as dL
+from Classes.BL.order import Order
+from Classes.DL.menu import Menu
+from Classes.DL.usersDL import UsersDL as dL
 from utils.searching_algo import LinearSearch
 from models.Linkedlist import LinkedList
 
