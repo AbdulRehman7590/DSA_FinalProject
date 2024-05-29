@@ -1,9 +1,9 @@
-# Food Villa Online Food Application
+# Food Villa Desktop Food Application
 
 ## 1. Overview
 
 ### 1.1 Introduction
-Food Villa, our Online food application, addresses current challenges through a three-pronged approach. Firstly, we prioritize a diverse food selection, offering users a broader range of choices to cater to diverse preferences. Secondly, we simplify the ordering process with an intuitive interface, minimizing complexity through user-centric design principles. Lastly, we implement feedback mechanisms for continuous improvement. The system’s architecture leverages advanced data structures and algorithms, implemented through Object-Oriented Programming, ensuring a robust backend that supports a dynamic and user-friendly frontend experience. Together, these strategies aim to enhance overall effectiveness and user satisfaction, setting a new standard for Online Food Applications.
+Food Villa, our desktop food application, addresses current challenges through a three-pronged approach. Firstly, we prioritize a diverse food selection, offering users a broader range of choices to cater to diverse preferences. Secondly, we simplify the ordering process with an intuitive interface, minimizing complexity through user-centric design principles. Lastly, we implement feedback mechanisms for continuous improvement. The system’s architecture leverages advanced data structures and algorithms, implemented through Object-Oriented Programming, ensuring a robust backend that supports a dynamic and user-friendly frontend experience. Together, these strategies aim to enhance overall effectiveness and user satisfaction, setting a new standard for Online Food Applications.
 
 ### 1.2 Objectives
 To address the challenges outlined, our food management system aims to achieve the following objectives:
